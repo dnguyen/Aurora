@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>menuFont.spritefont</Source>
+      <Name>menuFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\menuFont.xnb</Output>
+      <Time>2011-03-13T00:38:10.0810547-05:00</Time>
+    </Item>
+    <Item>
+      <Source>PlayerShip.PNG</Source>
+      <Name>PlayerShip</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\PlayerShip.xnb</Output>
+      <Time>2011-03-13T14:57:52.6699219-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Spikey001.png</Source>
+      <Name>Spikey001</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Spikey001.xnb</Output>
+      <Time>2011-03-13T15:08:51.0419922-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Projectile1.png</Source>
+      <Name>Projectile1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Projectile1.xnb</Output>
+      <Time>2011-03-14T21:03:09.5566407-04:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\AuroraContent\</RootDirectory>
+      <LoggerRootDirectory>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\</LoggerRootDirectory>
+      <IntermediateDirectory>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\AuroraContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2011-01-30T19:44:43.8240936-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

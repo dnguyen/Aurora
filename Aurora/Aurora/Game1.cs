@@ -11,26 +11,26 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Aurora
 {
-    /// <summary>
-    /// This is the main type for your game
-    /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        GraphicsDeviceManager graphics;
+        public static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        KeyboardState keyboardState;
+        KeyboardState oldKeyboardState;
+
+        GameScreen activeScreen;
+        StartScreen startScreen;
+        ActionScreen actionScreen;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            IsMouseVisible = true;
         }
 
-        /// <summary>
-        /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
-        /// related content.  Calling base.Initialize will enumerate through any components
-        /// and initialize them as well.
-        /// </summary>
+
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
@@ -38,54 +38,70 @@ namespace Aurora
             base.Initialize();
         }
 
-        /// <summary>
-        /// LoadContent will be called once per game and is the place to load
-        /// all of your content.
-        /// </summary>
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            startScreen = new StartScreen(this, spriteBatch, Content.Load<SpriteFont>("menuFont"));
+            Components.Add(startScreen);
+            startScreen.Hide();
+
+            actionScreen = new ActionScreen(this, spriteBatch);
+            Components.Add(actionScreen);
+            actionScreen.LoadContent(Content);
+            actionScreen.Hide();
+
+            activeScreen = startScreen;
+            activeScreen.Show();
         }
 
-        /// <summary>
-        /// UnloadContent will be called once per game and is the place to unload
-        /// all content.
-        /// </summary>
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
         }
 
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        private bool CheckKey(Keys theKey)
+        {
+            return keyboardState.IsKeyUp(theKey) && oldKeyboardState.IsKeyDown(theKey);
+        }
+
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
+            keyboardState = Keyboard.GetState();
+
+            if (activeScreen == startScreen)
+            {
+                if (CheckKey(Keys.Enter))
+                {
+                    if (startScreen.SelectedIndex == 0)
+                    {
+                        activeScreen.Hide();
+                        activeScreen = actionScreen;
+                        activeScreen.Show();
+                    }
+                    if (startScreen.SelectedIndex == 1)
+                    {
+                        this.Exit();
+                    }
+                }
+            }
 
             base.Update(gameTime);
+            oldKeyboardState = keyboardState;
         }
 
-        /// <summary>
-        /// This is called when the game should draw itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
-            // TODO: Add your drawing code here
-
+            spriteBatch.Begin();
             base.Draw(gameTime);
+            spriteBatch.End();
         }
     }
 }

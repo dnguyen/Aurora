@@ -1,0 +1,11 @@
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Aurora.exe
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Aurora.pdb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Aurora.exe
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Aurora.pdb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\menuFont.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\PlayerShip.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\ProjectMercury.dll
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Spikey001.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Projectile1.xnb
