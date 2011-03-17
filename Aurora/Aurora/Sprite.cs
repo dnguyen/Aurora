@@ -13,11 +13,21 @@ namespace Aurora
         protected Texture2D sprite;
         protected Vector2 position;
         protected Vector2 velocity;
+        protected Vector2 center;
         protected string assetName;
 
         public Texture2D spriteImage { get { return sprite; } set { sprite = value; } }
         public Vector2 Position { get { return position; } set { position = value; } }
         public Vector2 Velocity { get { return velocity; } set { velocity = value; } }
+        public Vector2 Center
+        {
+            get
+            {
+                center.X = sprite.Width / 2;
+                center.Y = sprite.Height / 2;
+                return center;
+            }
+        }
 
         public virtual void Initialize(string asset)
         {

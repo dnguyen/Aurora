@@ -11,6 +11,7 @@ namespace Aurora
     {
         private int type;
         private float angle;
+
         public Projectile(int type_, Texture2D texture, Vector2 pos, Vector2 direct, float ang)
         {
             type = type_;
@@ -23,7 +24,7 @@ namespace Aurora
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(sprite, position, null, Color.White, angle, new Vector2(sprite.Width / 2, sprite.Height / 2), 1.0F, SpriteEffects.None, 0f);
+            spriteBatch.Draw(sprite, position, null, Color.White, angle, Center, 1.0F, SpriteEffects.None, 0f);
         }
     }
 }
