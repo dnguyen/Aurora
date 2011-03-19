@@ -2,3 +2,4 @@ Content\menuFont.xnb
 Content\PlayerShip.xnb
 Content\Spikey001.xnb
 Content\Projectile1.xnb
+Content\testbg.xnb

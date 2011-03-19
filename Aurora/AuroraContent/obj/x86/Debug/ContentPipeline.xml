@@ -37,6 +37,15 @@
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Projectile1.xnb</Output>
       <Time>2011-03-14T21:03:09.5566407-04:00</Time>
     </Item>
+    <Item>
+      <Source>testbg.png</Source>
+      <Name>testbg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\testbg.xnb</Output>
+      <Time>2011-03-18T22:16:40.6425781-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

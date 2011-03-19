@@ -119,7 +119,7 @@ namespace Aurora
             base.Draw(gameTime);
             Vector2 location = position;
             Color tint;
-
+            spriteBatch.Begin();
             for (int i = 0; i < menuItems.Length; i++)
             {
                 if (i == selectedIndex)
@@ -129,6 +129,7 @@ namespace Aurora
                 spriteBatch.DrawString(spriteFont, menuItems[i], location, tint);
                 location.Y += spriteFont.LineSpacing + 5;
             }
+            spriteBatch.End();
         }
     }
 }

@@ -18,6 +18,8 @@ namespace Aurora
 
         public Texture2D spriteImage { get { return sprite; } set { sprite = value; } }
         public Vector2 Position { get { return position; } set { position = value; } }
+        public float X { get { return position.X; } set { position.X = value; } }
+        public float Y { get { return position.Y; } set { position.Y = value; } }
         public Vector2 Velocity { get { return velocity; } set { velocity = value; } }
         public Vector2 Center
         {

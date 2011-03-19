@@ -35,11 +35,15 @@ namespace Aurora
         Texture2D bulletSprite;
         List<Projectile> bullets = new List<Projectile>();
 
+        Rectangle bounds;
+
+        public float Angle { get { return angle; } set { angle = value; } }
+
         public Player(Texture2D texture, Texture2D bulletTexture)
         {
             lives = 8;
             score = 0;
-            position = Vector2.Zero;
+            position = new Vector2(Game1.graphics.GraphicsDevice.Viewport.Width / 2, Game1.graphics.GraphicsDevice.Viewport.Height / 2);
             velocity = Vector2.Zero;
             #region Particles
             particleEffect = new ParticleEffect {
@@ -130,10 +134,13 @@ namespace Aurora
                 bullet.Update(gameTime);
             }
 
+            
             base.Update(gameTime);
 
             velocity.X -= (velocity.X * DRAG) * elapsedTime;
             velocity.Y -= (velocity.Y * DRAG) * elapsedTime;
+
+            ClampToViewPort();
 
             //particleEffect.Trigger(getCenterPosition());
             //float deltaseconds = (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -160,6 +167,18 @@ namespace Aurora
             newPos.Y = position.Y + sprite.Height / 2;
 
             return newPos;
+        }
+
+        private void ClampToViewPort()
+        {
+            if (position.X < sprite.Width / 2)
+                position.X = sprite.Width / 2;
+            if (position.X > Game1.SCREEN_WIDTH - sprite.Width / 2)
+                position.X = Game1.SCREEN_WIDTH - sprite.Width / 2;
+            if (position.Y < sprite.Height / 2)
+                position.Y = sprite.Height / 2;
+            if (position.Y > Game1.SCREEN_HEIGHT - sprite.Height / 2)
+                position.Y = Game1.SCREEN_HEIGHT - sprite.Height / 2;
         }
     }
 }
