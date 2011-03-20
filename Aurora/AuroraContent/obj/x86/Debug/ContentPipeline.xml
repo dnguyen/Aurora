@@ -46,6 +46,15 @@
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\testbg.xnb</Output>
       <Time>2011-03-18T22:16:40.6425781-04:00</Time>
     </Item>
+    <Item>
+      <Source>SMALL_ASTEROID.png</Source>
+      <Name>SMALL_ASTEROID</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_ASTEROID.xnb</Output>
+      <Time>2011-03-19T23:30:57.2568359-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

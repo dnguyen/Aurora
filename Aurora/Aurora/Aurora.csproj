@@ -111,6 +111,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionScreen.cs" />
+    <Compile Include="Enemy.cs" />
+    <Compile Include="EnemyManager.cs" />
     <Compile Include="GameScreen.cs" />
     <Compile Include="MenuComponent.cs" />
     <Compile Include="Player.cs" />

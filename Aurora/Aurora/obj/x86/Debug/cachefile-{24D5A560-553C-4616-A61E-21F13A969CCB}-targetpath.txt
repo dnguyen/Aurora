@@ -3,3 +3,4 @@ Content\PlayerShip.xnb
 Content\Spikey001.xnb
 Content\Projectile1.xnb
 Content\testbg.xnb
+Content\SMALL_ASTEROID.xnb

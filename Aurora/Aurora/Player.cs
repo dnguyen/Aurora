@@ -38,6 +38,7 @@ namespace Aurora
         Rectangle bounds;
 
         public float Angle { get { return angle; } set { angle = value; } }
+        public int Lives { get { return lives; } set { lives = value; } }
 
         public Player(Texture2D texture, Texture2D bulletTexture)
         {
@@ -48,8 +49,8 @@ namespace Aurora
             #region Particles
             particleEffect = new ParticleEffect {
                 new Emitter {
-                    Budget = 600, // How many particles
-                    Term = 1F,
+                    Budget = 400, // How many particles
+                    Term = .5F,
                     Name = "FirstEmitter",
                     BlendMode = EmitterBlendMode.Alpha,
                     ReleaseQuantity = 3,
@@ -63,8 +64,11 @@ namespace Aurora
                             Ultimate = 0F
                         },
                         new ColourModifier {
-                            InitialColour = Color.Tomato.ToVector3(),
-                            UltimateColour = Color.OrangeRed.ToVector3()
+                            InitialColour = Color.SkyBlue.ToVector3(),
+                            UltimateColour = Color.AliceBlue.ToVector3()
+                        },
+                        new RotationModifier {
+                            RotationRate = 2.3F
                         }
                     }
                 },
@@ -79,12 +83,12 @@ namespace Aurora
             bulletSprite = bulletTexture;
         }
 
-        /*public override void LoadContent(ContentManager content)
+        public override void LoadContent(ContentManager content)
         {
             //base.LoadContent(content);
             particleEffect.LoadContent(content);
             particleRenderer.LoadContent(content);
-        }*/
+        }
 
         public override void Update(GameTime gameTime)
         {
@@ -137,25 +141,26 @@ namespace Aurora
             
             base.Update(gameTime);
 
+           
             velocity.X -= (velocity.X * DRAG) * elapsedTime;
             velocity.Y -= (velocity.Y * DRAG) * elapsedTime;
 
             ClampToViewPort();
 
-            //particleEffect.Trigger(getCenterPosition());
-            //float deltaseconds = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            //particleEffect.Update(deltaseconds);
+            if (velocity != Vector2.Zero)
+            {
+                particleEffect.Trigger(position);
+                float deltaseconds = (float)gameTime.ElapsedGameTime.TotalSeconds;
+                particleEffect.Update(deltaseconds);
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(sprite, position, null, Color.White, angle, Center, 1.0F, SpriteEffects.None, 0f);
-            //particleRenderer.RenderEffect(particleEffect);
+            particleRenderer.RenderEffect(particleEffect);
             foreach (Projectile bullet in bullets)
             {
-                //bullet.Draw(spriteBatch);
-                //spriteBatch.Draw(bullet.spriteImage, bullet.Position, null, Color.White, angle, position, 1.0F, SpriteEffects.None, 0f);
-                //spriteBatch.Draw(bullet.spriteImage, bullet.Position, null, Color.White, angle, new Vector2(sprite.Width / 2, sprite.Height / 2), 1.0F, SpriteEffects.None, 0f);
                 bullet.Draw(spriteBatch);
             }
         }

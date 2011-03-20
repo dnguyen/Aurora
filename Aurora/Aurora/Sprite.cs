@@ -36,6 +36,11 @@ namespace Aurora
             assetName = asset;
         }
 
+        public virtual void LoadContent(ContentManager content)
+        {
+            sprite = content.Load<Texture2D>(assetName);
+        }
+
         public virtual void Update(GameTime gameTime)
         {
             float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
