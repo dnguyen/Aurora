@@ -10,7 +10,7 @@ namespace Aurora
 {
     class EnemyManager
     {
-        private List<Enemy> enemies;
+        private List<Enemy> enemies = new List<Enemy>();
         public Dictionary<string, Texture2D> enemyTextures = new Dictionary<string, Texture2D>();
 
         private float spawnDelay = 2.0F;
@@ -34,8 +34,6 @@ namespace Aurora
                 if (delayTimer.TotalSeconds <= 0)
                 {
                     Enemy newEnemy = new Enemy(EnemyType.SMALL_ASTEROID, enemyTextures["SMALL_ASTEROID"]);
-                    newEnemy.TextureData = new Color[newEnemy.spriteImage.Width * newEnemy.spriteImage.Height];
-                    newEnemy.spriteImage.GetData(newEnemy.TextureData);
                     newEnemy.Position = new Vector2(rand.Next(10, Game1.SCREEN_WIDTH), rand.Next(10, Game1.SCREEN_HEIGHT));
                     newEnemy.Transformation = Matrix.CreateTranslation(new Vector3(-newEnemy.Center, 0.0f)) *
                         // Matrix.CreateScale(block.Scale) *  would go here
@@ -45,19 +43,40 @@ namespace Aurora
                     delayTimer = TimeSpan.FromSeconds(spawnDelay);
                 }
 
-                foreach (Enemy enemy in enemies)
+                //forreach (Enemy enemy in enemies)
+                for (int i = enemies.Count - 1; i >= 0; i--)
                 {
-                    enemy.Collided = false;
-                    enemy.Update(gameTime);
-                    if (enemy.Bounds.Intersects(player.Bounds))
+                    if (!enemies[i].Collided)
                     {
-                        if (!IntersectPixels(enemy.Transformation, enemy.spriteImage.Width, enemy.spriteImage.Height, enemy.TextureData,
-                                            player.Transformation, player.spriteImage.Width, player.spriteImage.Height, player.TextureData))
+                        enemies[i].Update(gameTime);
+                        if (enemies[i].Bounds.Intersects(player.Bounds))
                         {
-                            enemy.Collided = true;
+                            if (!IntersectPixels(enemies[i].Transformation, enemies[i].spriteImage.Width, enemies[i].spriteImage.Height, enemies[i].TextureData,
+                                                player.Transformation, player.spriteImage.Width, player.spriteImage.Height, player.TextureData))
+                            {
+                                enemies[i].Collided = true;
+                                //enemies.RemoveAt(i);
+                            }
+                        }
+
+                        //foreach (Projectile bullet in player.Bullets)
+                        for (int j = player.Bullets.Count - 1; j >= 0; j--)
+                        {
+                            if (enemies[i].Bounds.Intersects(player.Bullets[j].Bounds))
+                            {
+
+                                if (!IntersectPixels(enemies[i].Transformation, enemies[i].spriteImage.Width, enemies[i].spriteImage.Height, enemies[i].TextureData,
+                                                    player.Bullets[j].Transformation, player.Bullets[j].spriteImage.Width, player.Bullets[j].spriteImage.Height, player.Bullets[j].TextureData))
+                                {
+                                    enemies[i].Collided = true;
+                                    //enemies.RemoveAt(i);
+                                    player.Bullets[j].Collided = true;
+                                    //player.Bullets.RemoveAt(j);
+                                }
+
+                            }
                         }
                     }
-                    
                 }
             }
         }

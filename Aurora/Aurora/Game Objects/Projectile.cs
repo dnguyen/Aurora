@@ -17,7 +17,7 @@ namespace Aurora
             sprite = texture;
             position = pos;
             direct.Normalize();
-            velocity = direct * 300 * -1;
+            velocity = direct * 200 * -1;
             angle = ang;
             base.Initialize();
         }

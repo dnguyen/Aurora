@@ -46,6 +46,8 @@ namespace Aurora
 
         public virtual void Initialize()
         {
+            textureData = new Color[sprite.Width * sprite.Height];
+            sprite.GetData(textureData);
             bounds = new BoundingSphere(new Vector3(Center.X, Center.Y, 0), sprite.Width / 2);
         }
 

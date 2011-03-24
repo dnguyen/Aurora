@@ -18,7 +18,7 @@ namespace Aurora
         private const float DRAG = 0.9F;
         private const int ACCELERATION = 1;
         private const int BASE_SPEED = 7;
-        private const float FIRE_DELAY = 0.1F;
+        private const float FIRE_DELAY = 0.2F;
 
         private int lives;
         private int score;
@@ -32,10 +32,11 @@ namespace Aurora
         Renderer particleRenderer;
        
         Texture2D bulletSprite;
-        List<Projectile> bullets = new List<Projectile>();
+        private List<Projectile> bullets = new List<Projectile>();
 
 
         public int Lives { get { return lives; } set { lives = value; } }
+        public List<Projectile> Bullets { get { return bullets; } set { bullets = value; } }
 
         public Player(Texture2D texture, Texture2D bulletTexture)
         {
@@ -77,7 +78,9 @@ namespace Aurora
             particleEffect.Initialise();
             #endregion
             sprite = texture;
+
             bulletSprite = bulletTexture;
+
             base.Initialize();
         }
 
@@ -126,7 +129,6 @@ namespace Aurora
             if (mouseState.LeftButton == ButtonState.Pressed && fireTime > FIRE_DELAY)
             {
                 Projectile bullet = new Projectile(1, bulletSprite, position, direction, angle);
-                
                 bullets.Add(bullet);
                 fireTime = 0;
             }
@@ -134,6 +136,10 @@ namespace Aurora
             foreach (Projectile bullet in bullets)
             {
                 bullet.Update(gameTime);
+                bullet.Transformation = Matrix.CreateTranslation(new Vector3(-bullet.Center, 0.0f)) *
+                    // Matrix.CreateScale(block.Scale) *  would go here
+                    Matrix.CreateRotationZ(bullet.Angle) *
+                    Matrix.CreateTranslation(new Vector3(bullet.Position, 0.0f));
             }
 
             
@@ -161,7 +167,8 @@ namespace Aurora
             particleRenderer.RenderEffect(particleEffect);
             foreach (Projectile bullet in bullets)
             {
-                bullet.Draw(spriteBatch);
+                if (!bullet.Collided)
+                    bullet.Draw(spriteBatch);
             }
         }
 

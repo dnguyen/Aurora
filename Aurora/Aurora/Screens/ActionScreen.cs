@@ -27,8 +27,6 @@ namespace Aurora
         {
             playerLives = content.Load<SpriteFont>("menuFont");
             player = new Player(content.Load<Texture2D>("PlayerShip"), content.Load<Texture2D>("Projectile1"));
-            player.TextureData = new Color[player.spriteImage.Width * player.spriteImage.Height];
-            player.spriteImage.GetData(player.TextureData);
             player.LoadContent(content);
             background = content.Load<Texture2D>("testbg");
 
