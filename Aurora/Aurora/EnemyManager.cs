@@ -55,6 +55,7 @@ namespace Aurora
                                                 player.Transformation, player.spriteImage.Width, player.spriteImage.Height, player.TextureData))
                             {
                                 enemies[i].Collided = true;
+                                player.Lives -= 1;
                                 //enemies.RemoveAt(i);
                             }
                         }
@@ -62,18 +63,20 @@ namespace Aurora
                         //foreach (Projectile bullet in player.Bullets)
                         for (int j = player.Bullets.Count - 1; j >= 0; j--)
                         {
-                            if (enemies[i].Bounds.Intersects(player.Bullets[j].Bounds))
+                            if (!player.Bullets[j].Collided)
                             {
-
-                                if (!IntersectPixels(enemies[i].Transformation, enemies[i].spriteImage.Width, enemies[i].spriteImage.Height, enemies[i].TextureData,
-                                                    player.Bullets[j].Transformation, player.Bullets[j].spriteImage.Width, player.Bullets[j].spriteImage.Height, player.Bullets[j].TextureData))
+                                if (enemies[i].Bounds.Intersects(player.Bullets[j].Bounds))
                                 {
-                                    enemies[i].Collided = true;
-                                    //enemies.RemoveAt(i);
-                                    player.Bullets[j].Collided = true;
-                                    //player.Bullets.RemoveAt(j);
-                                }
 
+                                    if (!IntersectPixels(enemies[i].Transformation, enemies[i].spriteImage.Width, enemies[i].spriteImage.Height, enemies[i].TextureData,
+                                                        player.Bullets[j].Transformation, player.Bullets[j].spriteImage.Width, player.Bullets[j].spriteImage.Height, player.Bullets[j].TextureData))
+                                    {
+                                        enemies[i].Collided = true;
+                                        //enemies.RemoveAt(i);
+                                        player.Bullets[j].Collided = true;
+                                        //player.Bullets.RemoveAt(j);
+                                    }
+                                }
                             }
                         }
                     }

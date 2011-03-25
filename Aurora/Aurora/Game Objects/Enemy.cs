@@ -24,12 +24,7 @@ namespace Aurora
         public Enemy(EnemyType eType, Texture2D texture)
         {
             type = eType;
-            switch (type)
-            {
-                case EnemyType.SMALL_ASTEROID:
-                    sprite = texture;
-                    break;
-            }
+            sprite = texture;
             base.Initialize();
         }
     }
