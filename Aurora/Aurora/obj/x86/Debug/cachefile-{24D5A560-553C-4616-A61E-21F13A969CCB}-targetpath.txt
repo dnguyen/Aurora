@@ -1,6 +1,8 @@
 Content\menuFont.xnb
-Content\PlayerShip.xnb
 Content\Spikey001.xnb
 Content\Projectile1.xnb
 Content\testbg.xnb
 Content\SMALL_ASTEROID.xnb
+Content\MEDIUM_ASTEROID.xnb
+Content\LARGE_ASTEROID.xnb
+Content\PlayerShip.xnb

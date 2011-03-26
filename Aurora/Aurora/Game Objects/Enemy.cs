@@ -27,5 +27,18 @@ namespace Aurora
             sprite = texture;
             base.Initialize();
         }
+
+        public override void Update(GameTime gameTime)
+        {
+
+            angle += .05F;
+            base.Update(gameTime);
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(sprite, position, null, Color.White, angle, Center, 1.0F, SpriteEffects.None, 0f);
+           
+        }
     }
 }

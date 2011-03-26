@@ -11,15 +11,6 @@
       <Time>2011-03-13T00:38:10.0810547-05:00</Time>
     </Item>
     <Item>
-      <Source>PlayerShip.PNG</Source>
-      <Name>PlayerShip</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\PlayerShip.xnb</Output>
-      <Time>2011-03-13T14:57:52.6699219-04:00</Time>
-    </Item>
-    <Item>
       <Source>Spikey001.png</Source>
       <Name>Spikey001</Name>
       <Importer>TextureImporter</Importer>
@@ -53,7 +44,34 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_ASTEROID.xnb</Output>
-      <Time>2011-03-19T23:30:57.2568359-04:00</Time>
+      <Time>2011-03-26T14:33:49.1845703-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MEDIUM_ASTEROID.png</Source>
+      <Name>MEDIUM_ASTEROID</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID.xnb</Output>
+      <Time>2011-03-26T14:38:31.352539-04:00</Time>
+    </Item>
+    <Item>
+      <Source>LARGE_ASTEROID.png</Source>
+      <Name>LARGE_ASTEROID</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTEROID.xnb</Output>
+      <Time>2011-03-26T14:58:24.2802734-04:00</Time>
+    </Item>
+    <Item>
+      <Source>PlayerShip.png</Source>
+      <Name>PlayerShip</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\PlayerShip.xnb</Output>
+      <Time>2011-03-26T14:58:04.7138671-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

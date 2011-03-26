@@ -27,6 +27,8 @@ namespace Aurora
         public float X { get { return position.X; } set { position.X = value; } }
         public float Y { get { return position.Y; } set { position.Y = value; } }
         public Vector2 Velocity { get { return velocity; } set { velocity = value; } }
+        public float VX { get { return velocity.X; } set { velocity.X = value; } }
+        public float VY { get { return velocity.Y; } set { velocity.Y = value; } }
         public Color[] TextureData { get { return textureData; } set { textureData = value; } }
         public bool Collided { get { return collided; } set { collided = value; } }
         public float Angle { get { return angle; } set { angle = value; } }
@@ -38,8 +40,6 @@ namespace Aurora
         {
             get
             {
-                center.X = sprite.Width / 2;
-                center.Y = sprite.Height / 2;
                 return center;
             }
         }
@@ -48,6 +48,7 @@ namespace Aurora
         {
             textureData = new Color[sprite.Width * sprite.Height];
             sprite.GetData(textureData);
+            center = new Vector2(sprite.Width / 2, sprite.Height / 2);
             bounds = new BoundingSphere(new Vector3(Center.X, Center.Y, 0), sprite.Width / 2);
         }
 

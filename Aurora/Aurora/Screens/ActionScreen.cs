@@ -16,6 +16,7 @@ namespace Aurora
         Texture2D background;
 
         SpriteFont playerLives;
+        SpriteFont score;
         EnemyManager enemyManager;
 
         public ActionScreen(Game game, SpriteBatch spriteBatch) : base(game, spriteBatch)
@@ -26,11 +27,14 @@ namespace Aurora
         public void LoadContent(ContentManager content)
         {
             playerLives = content.Load<SpriteFont>("menuFont");
+            score = content.Load<SpriteFont>("menuFont");
             player = new Player(content.Load<Texture2D>("PlayerShip"), content.Load<Texture2D>("Projectile1"));
             player.LoadContent(content);
             background = content.Load<Texture2D>("testbg");
 
             enemyManager.enemyTextures.Add("SMALL_ASTEROID", content.Load<Texture2D>("SMALL_ASTEROID"));
+            enemyManager.enemyTextures.Add("MEDIUM_ASTEROID", content.Load<Texture2D>("MEDIUM_ASTEROID"));
+            enemyManager.enemyTextures.Add("LARGE_ASTEROID", content.Load<Texture2D>("LARGE_ASTEROID"));
            // player.LoadContent(content);
         }
 
@@ -46,11 +50,11 @@ namespace Aurora
             //spriteBatch.Begin();
             //spriteBatch.Draw(background, (player.Position / 4) * -1, Color.White);
             //spriteBatch.End();
-
             spriteBatch.Begin();
             enemyManager.Draw(spriteBatch);
             player.Draw(spriteBatch);
             spriteBatch.DrawString(playerLives, "Lives: " + player.Lives.ToString(), new Vector2(15, 10), Color.White);
+            spriteBatch.DrawString(score, "Score: " + player.Score.ToString(), new Vector2(170, 10), Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }

@@ -36,6 +36,7 @@ namespace Aurora
 
 
         public int Lives { get { return lives; } set { lives = value; } }
+        public int Score { get { return score; } set { score = value; } }
         public List<Projectile> Bullets { get { return bullets; } set { bullets = value; } }
 
         public Player(Texture2D texture, Texture2D bulletTexture)

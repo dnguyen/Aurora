@@ -49,13 +49,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PlayerShip.PNG">
-      <Name>PlayerShip</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Spikey001.png">
       <Name>Spikey001</Name>
       <Importer>TextureImporter</Importer>
@@ -79,6 +72,27 @@
   <ItemGroup>
     <Compile Include="SMALL_ASTEROID.png">
       <Name>SMALL_ASTEROID</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MEDIUM_ASTEROID.png">
+      <Name>MEDIUM_ASTEROID</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LARGE_ASTEROID.png">
+      <Name>LARGE_ASTEROID</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PlayerShip.png">
+      <Name>PlayerShip</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

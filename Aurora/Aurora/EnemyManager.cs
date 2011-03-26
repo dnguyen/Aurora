@@ -33,13 +33,7 @@ namespace Aurora
 
                 if (delayTimer.TotalSeconds <= 0)
                 {
-                    Enemy newEnemy = new Enemy(EnemyType.SMALL_ASTEROID, enemyTextures["SMALL_ASTEROID"]);
-                    newEnemy.Position = new Vector2(rand.Next(10, Game1.SCREEN_WIDTH), rand.Next(10, Game1.SCREEN_HEIGHT));
-                    newEnemy.Transformation = Matrix.CreateTranslation(new Vector3(-newEnemy.Center, 0.0f)) *
-                        // Matrix.CreateScale(block.Scale) *  would go here
-                    Matrix.CreateRotationZ(newEnemy.Angle) *
-                    Matrix.CreateTranslation(new Vector3(newEnemy.Position, 0.0f));
-                    enemies.Add(newEnemy);
+                    SpawnRandomEnemy(EnemyType.LARGE_ASTEROID);
                     delayTimer = TimeSpan.FromSeconds(spawnDelay);
                 }
 
@@ -74,6 +68,7 @@ namespace Aurora
                                         enemies[i].Collided = true;
                                         //enemies.RemoveAt(i);
                                         player.Bullets[j].Collided = true;
+                                        player.Score += 100;
                                         //player.Bullets.RemoveAt(j);
                                     }
                                 }
@@ -93,12 +88,46 @@ namespace Aurora
             }
         }
 
-        /*
-         * Loads all enemy textures
-         */
-        public void LoadContent(ContentManager content)
+        private void SpawnRandomEnemy(EnemyType eType)
         {
-
+            Enemy enemy = new Enemy(eType, enemyTextures[eType.ToString()]);
+            int direction = rand.Next(0, 3); // Generate a number 0 - 3 [0, 1, 2, 3] to determine what side to spawn on.
+            switch (direction)
+            {
+                case 0: // Top
+                    enemy.Position = new Vector2(rand.Next(-50, Game1.SCREEN_WIDTH + 50), rand.Next(-50, 50));
+                    break;
+                case 1: // Bottom
+                    enemy.Position = new Vector2(rand.Next(-50, Game1.SCREEN_WIDTH + 50), rand.Next(Game1.SCREEN_HEIGHT - 50, Game1.SCREEN_HEIGHT + 50));
+                    break;
+                case 2: // Left
+                    enemy.Position = new Vector2(rand.Next(-50, 50), rand.Next(-50, Game1.SCREEN_HEIGHT + 50));
+                    break;
+                case 3: // Right
+                    enemy.Position = new Vector2(rand.Next(Game1.SCREEN_WIDTH + 50, Game1.SCREEN_WIDTH - 50), rand.Next(-50, Game1.SCREEN_HEIGHT + 50));
+                    break;
+            }
+            if (enemy.Position.Y < 50)
+            {
+                enemy.VY += 50;
+            }
+            if (enemy.Position.X < 50)
+            {
+                enemy.VX += 50;
+            }
+            if (enemy.Position.X > Game1.SCREEN_WIDTH - 50)
+            {
+                enemy.VX -= 50;
+            }
+            if (enemy.Position.Y > Game1.SCREEN_HEIGHT - 50)
+            {
+                enemy.VY -= 50;
+            }
+            enemy.Transformation = Matrix.CreateTranslation(new Vector3(-enemy.Center, 0.0f)) *
+                // Matrix.CreateScale(block.Scale) *  would go here
+            Matrix.CreateRotationZ(enemy.Angle) *
+            Matrix.CreateTranslation(new Vector3(enemy.Position, 0.0f));
+            enemies.Add(enemy);
         }
 
         /// <summary>
