@@ -7,11 +7,22 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Aurora
 {
+    public enum ProjectileType
+    {
+        NORMAL_BULLET,
+        DOUBLE_BULLET,
+        NORMAL_MISSLE,
+        DOUBLE_MISSLE
+    }
+
     class Projectile : Sprite
     {
-        private int type;
+        private ProjectileType type;
+        private int damage;
 
-        public Projectile(int type_, Texture2D texture, Vector2 pos, Vector2 direct, float ang)
+        public int Damage { get { return damage; } set { damage = value; } }
+
+        public Projectile(ProjectileType type_, Texture2D texture, Vector2 pos, Vector2 direct, float ang)
         {
             type = type_;
             sprite = texture;
@@ -19,6 +30,7 @@ namespace Aurora
             direct.Normalize();
             velocity = direct * 300 * -1;
             angle = ang;
+            damage = 1;
             base.Initialize();
         }
 

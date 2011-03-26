@@ -31,7 +31,7 @@ namespace Aurora
         ParticleEffect particleEffect;
         Renderer particleRenderer;
        
-        Texture2D bulletSprite;
+        public Dictionary<string, Texture2D> projectileTextures = new Dictionary<string, Texture2D>();
         private List<Projectile> bullets = new List<Projectile>();
 
 
@@ -39,7 +39,7 @@ namespace Aurora
         public int Score { get { return score; } set { score = value; } }
         public List<Projectile> Bullets { get { return bullets; } set { bullets = value; } }
 
-        public Player(Texture2D texture, Texture2D bulletTexture)
+        public Player(Texture2D texture)
         {
             lives = 8;
             score = 0;
@@ -79,8 +79,6 @@ namespace Aurora
             particleEffect.Initialise();
             #endregion
             sprite = texture;
-
-            bulletSprite = bulletTexture;
 
             base.Initialize();
         }
@@ -129,7 +127,7 @@ namespace Aurora
             fireTime += elapsedTime;
             if (mouseState.LeftButton == ButtonState.Pressed && fireTime > FIRE_DELAY)
             {
-                Projectile bullet = new Projectile(1, bulletSprite, position, direction, angle);
+                Projectile bullet = new Projectile(ProjectileType.NORMAL_BULLET, projectileTextures["NORMAL_BULLET"], position, direction, angle);
                 bullets.Add(bullet);
                 fireTime = 0;
             }

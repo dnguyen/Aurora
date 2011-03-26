@@ -28,13 +28,17 @@ namespace Aurora
         {
             playerLives = content.Load<SpriteFont>("menuFont");
             score = content.Load<SpriteFont>("menuFont");
-            player = new Player(content.Load<Texture2D>("PlayerShip"), content.Load<Texture2D>("Projectile1"));
+            player = new Player(content.Load<Texture2D>("PlayerShip"));
             player.LoadContent(content);
             background = content.Load<Texture2D>("testbg");
 
+            // Load enemy textures
             enemyManager.enemyTextures.Add("SMALL_ASTEROID", content.Load<Texture2D>("SMALL_ASTEROID"));
             enemyManager.enemyTextures.Add("MEDIUM_ASTEROID", content.Load<Texture2D>("MEDIUM_ASTEROID"));
             enemyManager.enemyTextures.Add("LARGE_ASTEROID", content.Load<Texture2D>("LARGE_ASTEROID"));
+
+            // Load projectile textures
+            player.projectileTextures.Add("NORMAL_BULLET", content.Load<Texture2D>("Projectile1"));
            // player.LoadContent(content);
         }
 

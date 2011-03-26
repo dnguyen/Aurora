@@ -13,7 +13,7 @@ namespace Aurora
         private List<Enemy> enemies = new List<Enemy>();
         public Dictionary<string, Texture2D> enemyTextures = new Dictionary<string, Texture2D>();
 
-        private float spawnDelay = 2.0F;
+        private float spawnDelay = 1.0F;
         private TimeSpan delayTimer;
         static Random rand = new Random();
 
@@ -43,6 +43,7 @@ namespace Aurora
                     if (!enemies[i].Collided)
                     {
                         enemies[i].Update(gameTime);
+                        // Collision detection for enemies and player
                         if (enemies[i].Bounds.Intersects(player.Bounds))
                         {
                             if (!IntersectPixels(enemies[i].Transformation, enemies[i].spriteImage.Width, enemies[i].spriteImage.Height, enemies[i].TextureData,
@@ -50,11 +51,10 @@ namespace Aurora
                             {
                                 enemies[i].Collided = true;
                                 player.Lives -= 1;
-                                //enemies.RemoveAt(i);
                             }
                         }
 
-                        //foreach (Projectile bullet in player.Bullets)
+                        // Collision detection for enemies and bullets
                         for (int j = player.Bullets.Count - 1; j >= 0; j--)
                         {
                             if (!player.Bullets[j].Collided)
@@ -65,11 +65,14 @@ namespace Aurora
                                     if (!IntersectPixels(enemies[i].Transformation, enemies[i].spriteImage.Width, enemies[i].spriteImage.Height, enemies[i].TextureData,
                                                         player.Bullets[j].Transformation, player.Bullets[j].spriteImage.Width, player.Bullets[j].spriteImage.Height, player.Bullets[j].TextureData))
                                     {
-                                        enemies[i].Collided = true;
-                                        //enemies.RemoveAt(i);
+                                        enemies[i].Health -= player.Bullets[j].Damage;
+                                        if (enemies[i].Health <= 0)
+                                        {
+                                            // TODO: "Downgrade" to lower asteroid (Large -> Medium -> Small -> dead)
+                                            enemies[i].Collided = true;
+                                            player.Score += 100;
+                                        }
                                         player.Bullets[j].Collided = true;
-                                        player.Score += 100;
-                                        //player.Bullets.RemoveAt(j);
                                     }
                                 }
                             }

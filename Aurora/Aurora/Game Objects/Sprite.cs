@@ -14,7 +14,6 @@ namespace Aurora
         protected Vector2 position;
         protected Vector2 velocity;
         protected Vector2 center;
-        protected string assetName;
         protected Color[] textureData;
         protected bool collided = false;
         protected float angle;
@@ -54,14 +53,14 @@ namespace Aurora
 
         public virtual void LoadContent(ContentManager content)
         {
-            sprite = content.Load<Texture2D>(assetName);
+           
         }
 
         public virtual void Update(GameTime gameTime)
         {
             float elapsedTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
             position += velocity * elapsedTime;
-            bounds = new BoundingSphere(new Vector3(position.X + (sprite.Width / 2), position.Y + (sprite.Height / 2), 0), sprite.Width / 2);
+            bounds = new BoundingSphere(new Vector3(position.X, position.Y, 0), sprite.Width / 2);
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
