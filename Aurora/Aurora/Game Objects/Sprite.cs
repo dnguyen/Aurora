@@ -41,6 +41,10 @@ namespace Aurora
             {
                 return center;
             }
+            set
+            {
+                center = value;
+            }
         }
 
         public virtual void Initialize()

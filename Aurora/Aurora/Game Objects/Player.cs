@@ -10,6 +10,7 @@ using ProjectMercury.Renderers;
 using ProjectMercury.Emitters;
 using ProjectMercury.Modifiers;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Aurora
 {
@@ -32,12 +33,14 @@ namespace Aurora
         Renderer particleRenderer;
        
         public Dictionary<string, Texture2D> projectileTextures = new Dictionary<string, Texture2D>();
+        private SoundEffect shootSound;
         private List<Projectile> bullets = new List<Projectile>();
 
 
         public int Lives { get { return lives; } set { lives = value; } }
         public int Score { get { return score; } set { score = value; } }
         public List<Projectile> Bullets { get { return bullets; } set { bullets = value; } }
+        public SoundEffect ShootSound { get { return shootSound; } set { shootSound = value; } }
 
         public Player(Texture2D texture)
         {
@@ -129,6 +132,7 @@ namespace Aurora
             {
                 Projectile bullet = new Projectile(ProjectileType.NORMAL_BULLET, projectileTextures["NORMAL_BULLET"], position, direction, angle);
                 bullets.Add(bullet);
+                shootSound.Play();
                 fireTime = 0;
             }
 

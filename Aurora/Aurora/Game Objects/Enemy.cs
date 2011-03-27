@@ -20,8 +20,11 @@ namespace Aurora
     {
         private EnemyType type;
         private int health;
+        private int pointValue;
+        private float rotationSpeed;
 
         public int Health { get { return health; } set { health = value; } }
+        public EnemyType Type { get { return type; } set { type = value; } }
 
         public Enemy(EnemyType eType, Texture2D texture)
         {

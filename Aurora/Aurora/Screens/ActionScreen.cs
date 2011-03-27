@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Aurora
 {
@@ -39,6 +40,8 @@ namespace Aurora
 
             // Load projectile textures
             player.projectileTextures.Add("NORMAL_BULLET", content.Load<Texture2D>("Projectile1"));
+
+            player.ShootSound = content.Load<SoundEffect>("LaserShoot");
            // player.LoadContent(content);
         }
 

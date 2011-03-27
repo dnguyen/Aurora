@@ -68,8 +68,32 @@ namespace Aurora
                                         enemies[i].Health -= player.Bullets[j].Damage;
                                         if (enemies[i].Health <= 0)
                                         {
-                                            // TODO: "Downgrade" to lower asteroid (Large -> Medium -> Small -> dead)
-                                            enemies[i].Collided = true;
+                                            // Only "downgrade" if enemy is an asteroid
+                                            if (enemies[i].Type == EnemyType.SMALL_ASTEROID || enemies[i].Type == EnemyType.MEDIUM_ASTEROID || enemies[i].Type == EnemyType.LARGE_ASTEROID)
+                                            {
+                                                if (enemies[i].Type == EnemyType.LARGE_ASTEROID)
+                                                {
+                                                    enemies[i].Health = 5;
+                                                    enemies[i].Type = EnemyType.MEDIUM_ASTEROID;
+                                                    enemies[i].spriteImage = enemyTextures["MEDIUM_ASTEROID"];
+                                                    enemies[i].Center = new Vector2(enemies[i].spriteImage.Width / 2, enemies[i].spriteImage.Height / 2);
+                                                }
+                                                else if (enemies[i].Type == EnemyType.MEDIUM_ASTEROID)
+                                                {
+                                                    enemies[i].Health = 3;
+                                                    enemies[i].Type = EnemyType.SMALL_ASTEROID;
+                                                    enemies[i].spriteImage = enemyTextures["SMALL_ASTEROID"];
+                                                    enemies[i].Center = new Vector2(enemies[i].spriteImage.Width / 2, enemies[i].spriteImage.Height / 2);
+                                                }
+                                                else
+                                                {
+                                                    enemies[i].Collided = true;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                enemies[i].Collided = true;
+                                            }
                                             player.Score += 100;
                                         }
                                         player.Bullets[j].Collided = true;

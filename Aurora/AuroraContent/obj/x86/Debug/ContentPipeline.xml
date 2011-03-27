@@ -73,6 +73,15 @@
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\PlayerShip.xnb</Output>
       <Time>2011-03-26T14:58:04.7138671-04:00</Time>
     </Item>
+    <Item>
+      <Source>LaserShoot.wav</Source>
+      <Name>LaserShoot</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LaserShoot.xnb</Output>
+      <Time>2011-03-26T19:04:47.9072265-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
