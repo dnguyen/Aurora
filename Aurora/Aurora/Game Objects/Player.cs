@@ -19,7 +19,7 @@ namespace Aurora
         private const float DRAG = 0.9F;
         private const int ACCELERATION = 1;
         private const int BASE_SPEED = 7;
-        private const float FIRE_DELAY = 0.2F;
+        private const float FIRE_DELAY = 0.1F;
 
         private int lives;
         private int score;

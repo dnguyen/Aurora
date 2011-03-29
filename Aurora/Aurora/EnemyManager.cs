@@ -10,11 +10,11 @@ namespace Aurora
 {
     class EnemyManager
     {
-        private List<Enemy> enemies = new List<Enemy>();
-        public Dictionary<string, Texture2D> enemyTextures = new Dictionary<string, Texture2D>();
+        private List<Enemy> enemies = new List<Enemy>(); // List of enemy objects
+        public Dictionary<string, Texture2D> enemyTextures = new Dictionary<string, Texture2D>(); // List of enemy textures, keys is the enemy type
 
-        private float spawnDelay = 1.0F;
-        private TimeSpan delayTimer;
+        private float spawnDelay = 1.0F; // Time between each enemy spawn
+        private TimeSpan delayTimer; // Timer for spawn delay
         static Random rand = new Random();
 
         public EnemyManager()
@@ -33,19 +33,25 @@ namespace Aurora
 
                 if (delayTimer.TotalSeconds <= 0)
                 {
+                    // TODO: Create some kind of "algorithm" to figure out what enemies to spawn. Base it on
+                    // points scored? Total time the player has survived?
+
                     SpawnRandomEnemy(EnemyType.LARGE_ASTEROID);
                     delayTimer = TimeSpan.FromSeconds(spawnDelay);
                 }
 
-                //forreach (Enemy enemy in enemies)
+                // Update all enemies in the enemies list
                 for (int i = enemies.Count - 1; i >= 0; i--)
                 {
+                    // Only update enemies that have no collided yet (Enemies that are not dead)
                     if (!enemies[i].Collided)
                     {
                         enemies[i].Update(gameTime);
+                        
                         // Collision detection for enemies and player
                         if (enemies[i].Bounds.Intersects(player.Bounds))
                         {
+                            // Per pixel collision detection
                             if (!IntersectPixels(enemies[i].Transformation, enemies[i].spriteImage.Width, enemies[i].spriteImage.Height, enemies[i].TextureData,
                                                 player.Transformation, player.spriteImage.Width, player.spriteImage.Height, player.TextureData))
                             {
@@ -71,18 +77,9 @@ namespace Aurora
                                             // Only "downgrade" if enemy is an asteroid
                                             if (enemies[i].Type == EnemyType.SMALL_ASTEROID || enemies[i].Type == EnemyType.MEDIUM_ASTEROID || enemies[i].Type == EnemyType.LARGE_ASTEROID)
                                             {
-                                                if (enemies[i].Type == EnemyType.LARGE_ASTEROID)
+                                                if (enemies[i].Type == EnemyType.LARGE_ASTEROID || enemies[i].Type == EnemyType.MEDIUM_ASTEROID)
                                                 {
-                                                    enemies[i].Health = 5;
-                                                    enemies[i].Type = EnemyType.MEDIUM_ASTEROID;
-                                                    enemies[i].spriteImage = enemyTextures["MEDIUM_ASTEROID"];
-                                                    enemies[i].Center = new Vector2(enemies[i].spriteImage.Width / 2, enemies[i].spriteImage.Height / 2);
-                                                }
-                                                else if (enemies[i].Type == EnemyType.MEDIUM_ASTEROID)
-                                                {
-                                                    enemies[i].Health = 3;
-                                                    enemies[i].Type = EnemyType.SMALL_ASTEROID;
-                                                    enemies[i].spriteImage = enemyTextures["SMALL_ASTEROID"];
+                                                    downgradeEnemy(enemies[i]);
                                                     enemies[i].Center = new Vector2(enemies[i].spriteImage.Width / 2, enemies[i].spriteImage.Height / 2);
                                                 }
                                                 else
@@ -94,7 +91,7 @@ namespace Aurora
                                             {
                                                 enemies[i].Collided = true;
                                             }
-                                            player.Score += 100;
+                                            player.Score += enemies[i].PointValue;
                                         }
                                         player.Bullets[j].Collided = true;
                                     }
@@ -112,6 +109,22 @@ namespace Aurora
             {
                 if (!enemy.Collided)
                     enemy.Draw(spriteBatch);
+            }
+        }
+
+        private void downgradeEnemy(Enemy enemy)
+        {
+            enemy.getStatsForType(enemy.Type);
+            switch (enemy.Type)
+            {
+                case EnemyType.LARGE_ASTEROID:
+                    enemy.Type = EnemyType.MEDIUM_ASTEROID;
+                    enemy.spriteImage = enemyTextures["MEDIUM_ASTEROID"];
+                    break;
+                case EnemyType.MEDIUM_ASTEROID:
+                    enemy.Type = EnemyType.SMALL_ASTEROID;
+                    enemy.spriteImage = enemyTextures["SMALL_ASTEROID"];
+                    break;
             }
         }
 
@@ -136,20 +149,21 @@ namespace Aurora
             }
             if (enemy.Position.Y < 50)
             {
-                enemy.VY += 50;
+                enemy.VY += 100;
             }
             if (enemy.Position.X < 50)
             {
-                enemy.VX += 50;
+                enemy.VX += 100;
             }
             if (enemy.Position.X > Game1.SCREEN_WIDTH - 50)
             {
-                enemy.VX -= 50;
+                enemy.VX -= 100;
             }
             if (enemy.Position.Y > Game1.SCREEN_HEIGHT - 50)
             {
-                enemy.VY -= 50;
+                enemy.VY -= 100;
             }
+            //enemy.Velocity += new Vector2(rand.Next(-50, 50), rand.Next(-50, 50));
             enemy.Transformation = Matrix.CreateTranslation(new Vector3(-enemy.Center, 0.0f)) *
                 // Matrix.CreateScale(block.Scale) *  would go here
             Matrix.CreateRotationZ(enemy.Angle) *

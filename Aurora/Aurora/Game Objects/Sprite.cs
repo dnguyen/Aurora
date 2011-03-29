@@ -71,5 +71,13 @@ namespace Aurora
         {
             spriteBatch.Draw(sprite, position, Color.White);
         }
+
+        public void ReflectOffViewport(int padding)
+        {
+            if (position.X > Game1.SCREEN_WIDTH + padding || position.X < -padding || position.Y > Game1.SCREEN_HEIGHT + padding || position.Y < -padding)
+            {
+                velocity *= -1;
+            }
+        }
     }
 }
