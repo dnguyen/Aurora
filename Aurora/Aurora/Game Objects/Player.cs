@@ -48,7 +48,8 @@ namespace Aurora
             score = 0;
             position = new Vector2(Game1.graphics.GraphicsDevice.Viewport.Width / 2, Game1.graphics.GraphicsDevice.Viewport.Height / 2);
             velocity = Vector2.Zero;
-            #region Particles
+            
+            /*#region Particles
             particleEffect = new ParticleEffect {
                 new Emitter {
                     Budget = 400, // How many particles
@@ -80,7 +81,7 @@ namespace Aurora
                 GraphicsDeviceService = Game1.graphics
             };
             particleEffect.Initialise();
-            #endregion
+            #endregion*/
             sprite = texture;
 
             base.Initialize();
@@ -88,9 +89,15 @@ namespace Aurora
 
         public override void LoadContent(ContentManager content)
         {
+            particleRenderer = new SpriteBatchRenderer
+            {
+                GraphicsDeviceService = Game1.graphics
+            };
             //base.LoadContent(content);
+            particleEffect = content.Load<ParticleEffect>("Explosion-Red");
             particleEffect.LoadContent(content);
             particleRenderer.LoadContent(content);
+            particleEffect.Initialise();
         }
 
         public override void Update(GameTime gameTime)

@@ -21,11 +21,12 @@ namespace Aurora
         private EnemyType type;
         private int health;
         private int pointValue;
-        private float rotationSpeed;
+        private int speed;
 
         public int Health { get { return health; } set { health = value; } }
         public EnemyType Type { get { return type; } set { type = value; } }
         public int PointValue { get { return pointValue; } set { pointValue = value; } }
+        public int Speed { get { return speed; } set { speed = value; } }
 
         public Enemy(EnemyType eType, Texture2D texture)
         {
@@ -56,14 +57,17 @@ namespace Aurora
                 case EnemyType.SMALL_ASTEROID:
                     health = 3;
                     pointValue = 10;
+                    speed = 100;
                     break;
                 case EnemyType.MEDIUM_ASTEROID:
                     health = 5;
                     pointValue = 50;
+                    speed = 85;
                     break;
                 case EnemyType.LARGE_ASTEROID:
                     health = 10;
                     pointValue = 100;
+                    speed = 50;
                     break;
             }
         }

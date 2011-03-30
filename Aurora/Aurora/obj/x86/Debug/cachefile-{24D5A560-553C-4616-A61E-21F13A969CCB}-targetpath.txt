@@ -7,3 +7,7 @@ Content\MEDIUM_ASTEROID.xnb
 Content\LARGE_ASTEROID.xnb
 Content\PlayerShip.xnb
 Content\LaserShoot.xnb
+Content\Explosion-Red.xnb
+Content\Cloud001.xnb
+Content\Particle004.xnb
+Content\Particle005.xnb

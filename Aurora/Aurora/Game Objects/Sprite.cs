@@ -74,9 +74,12 @@ namespace Aurora
 
         public void ReflectOffViewport(int padding)
         {
-            if (position.X > Game1.SCREEN_WIDTH + padding || position.X < -padding || position.Y > Game1.SCREEN_HEIGHT + padding || position.Y < -padding)
+            if (position.X > Game1.SCREEN_WIDTH + padding || position.X < -padding )
             {
-                velocity *= -1;
+                velocity.X *= -1;
+            }
+            else if (position.Y > Game1.SCREEN_HEIGHT + padding || position.Y < -padding){
+                velocity.Y *= -1;
             }
         }
     }

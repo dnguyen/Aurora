@@ -13,7 +13,7 @@ namespace Aurora
         private List<Enemy> enemies = new List<Enemy>(); // List of enemy objects
         public Dictionary<string, Texture2D> enemyTextures = new Dictionary<string, Texture2D>(); // List of enemy textures, keys is the enemy type
 
-        private float spawnDelay = 1.0F; // Time between each enemy spawn
+        private float spawnDelay = 2.0F; // Time between each enemy spawn
         private TimeSpan delayTimer; // Timer for spawn delay
         static Random rand = new Random();
 
@@ -36,7 +36,7 @@ namespace Aurora
                     // TODO: Create some kind of "algorithm" to figure out what enemies to spawn. Base it on
                     // points scored? Total time the player has survived?
 
-                    SpawnRandomEnemy(EnemyType.LARGE_ASTEROID);
+                    SpawnRandomEnemy(EnemyType.SMALL_ASTEROID);
                     delayTimer = TimeSpan.FromSeconds(spawnDelay);
                 }
 
@@ -149,21 +149,21 @@ namespace Aurora
             }
             if (enemy.Position.Y < 50)
             {
-                enemy.VY += 100;
+                enemy.VY += enemy.Speed;
             }
             if (enemy.Position.X < 50)
             {
-                enemy.VX += 100;
+                enemy.VX += enemy.Speed;
             }
             if (enemy.Position.X > Game1.SCREEN_WIDTH - 50)
             {
-                enemy.VX -= 100;
+                enemy.VX -= enemy.Speed;
             }
             if (enemy.Position.Y > Game1.SCREEN_HEIGHT - 50)
             {
-                enemy.VY -= 100;
+                enemy.VY -= enemy.Speed;
             }
-            //enemy.Velocity += new Vector2(rand.Next(-50, 50), rand.Next(-50, 50));
+            enemy.Velocity += new Vector2(rand.Next(-enemy.Speed, enemy.Speed), rand.Next(-enemy.Speed, enemy.Speed));
             enemy.Transformation = Matrix.CreateTranslation(new Vector3(-enemy.Center, 0.0f)) *
                 // Matrix.CreateScale(block.Scale) *  would go here
             Matrix.CreateRotationZ(enemy.Angle) *

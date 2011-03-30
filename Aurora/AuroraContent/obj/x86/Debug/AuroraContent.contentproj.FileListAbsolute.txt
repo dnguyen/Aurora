@@ -1,1 +1,2 @@
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\AuroraContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\AuroraContent\obj\x86\Debug\ResolveAssemblyReference.cache
