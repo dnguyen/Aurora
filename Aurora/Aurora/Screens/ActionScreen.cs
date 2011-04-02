@@ -21,17 +21,17 @@ namespace Aurora
         SpriteFont score;
         EnemyManager enemyManager;
         ParticleManager particleManager;
-
         public ActionScreen(Game game, SpriteBatch spriteBatch) : base(game, spriteBatch)
         {
             particleManager = new ParticleManager();
-            enemyManager = new EnemyManager(particleManager);
         }
 
         public void LoadContent(ContentManager content)
         {
-            // Load particle effects
-            particleManager.particleEffects.Add("small-red-explosion", content.Load<ParticleEffect>("Explosion-Red"));
+
+            // Load explosions
+            particleManager.addEffect("SMALL_EXPLOSION", content.Load<ParticleEffect>("Explosion-Red"));
+            particleManager.addEffect("SMALL_EXPLOSION2", content.Load<ParticleEffect>("Explosion-Orange"));
             particleManager.LoadContent(content);
 
             playerLives = content.Load<SpriteFont>("menuFont");
@@ -41,6 +41,7 @@ namespace Aurora
             background = content.Load<Texture2D>("testbg");
 
             // Load enemy textures
+            enemyManager = new EnemyManager(player);
             enemyManager.enemyTextures.Add("SMALL_ASTEROID", content.Load<Texture2D>("SMALL_ASTEROID"));
             enemyManager.enemyTextures.Add("MEDIUM_ASTEROID", content.Load<Texture2D>("MEDIUM_ASTEROID"));
             enemyManager.enemyTextures.Add("LARGE_ASTEROID", content.Load<Texture2D>("LARGE_ASTEROID"));

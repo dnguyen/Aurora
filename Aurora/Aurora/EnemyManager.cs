@@ -5,6 +5,9 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using ProjectMercury;
+using ProjectMercury.Renderers;
+using ProjectMercury.Emitters;
 
 namespace Aurora
 {
@@ -16,30 +19,25 @@ namespace Aurora
         private float spawnDelay = 1.0F; // Time between each enemy spawn
         private TimeSpan delayTimer; // Timer for spawn delay
         static Random rand = new Random();
-        private ParticleManager particleManager;
 
         int smallAsteroidChance = 50;
         int mediumAsteroidChance = 30;
         int largeAsteroidChance = 20;
         int spawnChance = 0;
-
-        SpriteFont debug;
-
-        public EnemyManager(ParticleManager pm)
+        public EnemyManager(Player player)
         {
             enemies = new List<Enemy>();
             delayTimer = TimeSpan.FromSeconds(spawnDelay);
-            particleManager = pm;
         }
 
         public void Update(GameTime gameTime, Player player)
         {
             float elapsedTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
-
             if (player.Lives > 0) // Keep spawning enemies until player runs out of lives
             {
                 delayTimer = delayTimer.Subtract(gameTime.ElapsedGameTime);
 
+                // Spawn enemies
                 if (delayTimer.TotalSeconds <= 0)
                 {
                     // TODO: Create some kind of "algorithm" to figure out what enemies to spawn. Base it on
@@ -52,19 +50,17 @@ namespace Aurora
                         SpawnRandomEnemy(EnemyType.MEDIUM_ASTEROID);
                     else if (spawnChance >= smallAsteroidChance)
                         SpawnRandomEnemy(EnemyType.SMALL_ASTEROID);
-                    
-                    //SpawnRandomEnemy(EnemyType.SMALL_ASTEROID);
+
                     delayTimer = TimeSpan.FromSeconds(spawnDelay);
                 }
-
+                player.Collided = false;
                 // Update all enemies in the enemies list
                 for (int i = enemies.Count - 1; i >= 0; i--)
                 {
                     // Only update enemies that have no collided yet (Enemies that are not dead)
                     if (!enemies[i].Collided)
                     {
-                        enemies[i].Update(gameTime);
-                        
+
                         // Collision detection for enemies and player
                         if (enemies[i].Bounds.Intersects(player.Bounds))
                         {
@@ -73,9 +69,8 @@ namespace Aurora
                                                 player.Transformation, player.spriteImage.Width, player.spriteImage.Height, player.TextureData))
                             {
                                 enemies[i].Collided = true;
+                                player.Collided = true;
                                 player.Lives -= 1;
-                                particleManager.particleEffects["small-red-explosion"].Trigger(new Vector2(100, 100));
-                                particleManager.particleEffects["small-red-explosion"].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
                             }
                         }
 
@@ -117,14 +112,19 @@ namespace Aurora
                                 }
                             }
                         }
+                        enemies[i].Update(gameTime);
                     }
                 }
+            }
+            // Player lost
+            else
+            {
+                player.Collided = false;
             }
         }
 
         public void LoadContent(ContentManager content)
         {
-            debug = content.Load<SpriteFont>("menuFont");
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -134,9 +134,6 @@ namespace Aurora
                 if (!enemy.Collided)
                     enemy.Draw(spriteBatch);
             }
-
-            particleManager.Draw(spriteBatch);
-            spriteBatch.DrawString(debug, spawnChance.ToString(), new Vector2(100, 100), Color.White);
         }
 
         private void downgradeEnemy(Enemy enemy)

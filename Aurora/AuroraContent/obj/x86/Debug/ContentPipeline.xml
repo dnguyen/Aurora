@@ -118,6 +118,15 @@
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle005.xnb</Output>
       <Time>2011-03-30T08:42:31.0175781-04:00</Time>
     </Item>
+    <Item>
+      <Source>Explosion-Orange.xml</Source>
+      <Name>Explosion-Orange</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Orange.xnb</Output>
+      <Time>2011-04-02T08:58:40.5195312-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

@@ -33,7 +33,6 @@ namespace Aurora
         private SoundEffect shootSound;
         private List<Projectile> bullets = new List<Projectile>();
 
-
         public int Lives { get { return lives; } set { lives = value; } }
         public int Score { get { return score; } set { score = value; } }
         public List<Projectile> Bullets { get { return bullets; } set { bullets = value; } }
@@ -52,16 +51,16 @@ namespace Aurora
 
         public override void LoadContent(ContentManager content)
         {
-            /*particleRenderer = new SpriteBatchRenderer
-            {
-                GraphicsDeviceService = Game1.graphics
-            };
+            //particleRenderer = new SpriteBatchRenderer
+            //{
+            //    GraphicsDeviceService = Game1.graphics
+            //};
             //base.LoadContent(content);
             //particleEffect = content.Load<ParticleEffect>("Explosion-Red");
-            particleEffect = ParticleManager.explosionEffects["SMALL-RED"];
-            particleEffect.LoadContent(content);
-            particleRenderer.LoadContent(content);
-            particleEffect.Initialise();*/
+            //particleEffect = ParticleManager.particleEffects["SMALL_EXPLOSION"];
+            //particleEffect.LoadContent(content);
+            //particleEffect.Initialise();
+            //particleRenderer.LoadContent(content);
         }
 
         public override void Update(GameTime gameTime)
@@ -126,19 +125,19 @@ namespace Aurora
 
             ClampToViewPort();
 
-            /*if (velocity != Vector2.Zero)
+            if (Collided)
             {
-                particleEffect.Trigger(position);
-                particleEffect.Update(elapsedTime);
-            }*/
+                //ParticleManager.particleEffects["SMALL_EXPLOSION"].Trigger(position);
+            }
 
+            //ParticleManager.particleEffects["SMALL_EXPLOSION"].Update(elapsedTime);
 
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(sprite, position, null, Color.White, angle, Center, 1.0F, SpriteEffects.None, 0f);
-            //particleRenderer.RenderEffect(particleEffect);
+            //ParticleManager.particleRenderer.RenderEffect(ParticleManager.particleEffects["SMALL_EXPLOSION"]);
             foreach (Projectile bullet in bullets)
             {
                 if (!bullet.Collided)

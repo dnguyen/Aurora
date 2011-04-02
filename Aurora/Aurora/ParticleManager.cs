@@ -12,12 +12,13 @@ namespace Aurora
 {
     class ParticleManager
     {
-        
-        public Dictionary<string, ParticleEffect> particleEffects = new Dictionary<string, ParticleEffect>();
-        public Renderer particleRenderer;
+
+        public static Dictionary<string, ParticleEffect> particleEffects = new Dictionary<string, ParticleEffect>();
+        public static Renderer particleRenderer;
 
         public ParticleManager()
         {
+            particleEffects = new Dictionary<string, ParticleEffect>(); 
             particleRenderer = new SpriteBatchRenderer
             {
                 GraphicsDeviceService = Game1.graphics
@@ -26,20 +27,18 @@ namespace Aurora
 
         public void LoadContent(ContentManager content)
         {
-            foreach (KeyValuePair<string, ParticleEffect> effect in particleEffects)
+            foreach (KeyValuePair<string, ParticleEffect> effectPair in particleEffects)
             {
-                effect.Value.Initialise();
-                effect.Value.LoadContent(content);
+                effectPair.Value.LoadContent(content);
+                effectPair.Value.Initialise();
             }
             particleRenderer.LoadContent(content);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
-        {            
-            foreach (KeyValuePair<string, ParticleEffect> effect in particleEffects)
-            {
-                particleRenderer.RenderEffect(effect.Value);
-            }
+        public void addEffect(string key, ParticleEffect effect)
+        {
+            particleEffects.Add(key, effect);
+
         }
 
     }

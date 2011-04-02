@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using ProjectMercury;
+using ProjectMercury.Renderers;
 
 namespace Aurora
 {
@@ -38,7 +40,14 @@ namespace Aurora
 
         public override void Update(GameTime gameTime)
         {
+            float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
+            if (collided || health == 0)
+            {
+                ParticleManager.particleEffects["SMALL_EXPLOSION2"].Trigger(position);
+            }
+            ParticleManager.particleEffects["SMALL_EXPLOSION2"].Update(dt);
+            
             angle += .05F;
             base.Update(gameTime);
             ReflectOffViewport(50);
@@ -46,6 +55,8 @@ namespace Aurora
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+           
+                ParticleManager.particleRenderer.RenderEffect(ParticleManager.particleEffects["SMALL_EXPLOSION2"]);
             spriteBatch.Draw(sprite, position, null, Color.White, angle, Center, 1.0F, SpriteEffects.None, 0f);
            
         }
