@@ -46,11 +46,11 @@ namespace Aurora
             {
                 case ProjectileType.NORMAL_BULLET:
                     damage = 1;
-                    speed = 300;
+                    speed = 200;
                     break;
                 case ProjectileType.DOUBLE_BULLET:
                     damage = 2;
-                    speed = 300;
+                    speed = 200;
                     break;
                 case ProjectileType.NORMAL_MISSLE:
                     damage = 3;

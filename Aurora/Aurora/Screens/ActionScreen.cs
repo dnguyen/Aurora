@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Audio;
+using ProjectMercury;
 
 namespace Aurora
 {
@@ -19,14 +20,20 @@ namespace Aurora
         SpriteFont playerLives;
         SpriteFont score;
         EnemyManager enemyManager;
+        ParticleManager particleManager;
 
         public ActionScreen(Game game, SpriteBatch spriteBatch) : base(game, spriteBatch)
         {
-            enemyManager = new EnemyManager();
+            particleManager = new ParticleManager();
+            enemyManager = new EnemyManager(particleManager);
         }
 
         public void LoadContent(ContentManager content)
         {
+            // Load particle effects
+            particleManager.particleEffects.Add("small-red-explosion", content.Load<ParticleEffect>("Explosion-Red"));
+            particleManager.LoadContent(content);
+
             playerLives = content.Load<SpriteFont>("menuFont");
             score = content.Load<SpriteFont>("menuFont");
             player = new Player(content.Load<Texture2D>("PlayerShip"));
@@ -37,11 +44,13 @@ namespace Aurora
             enemyManager.enemyTextures.Add("SMALL_ASTEROID", content.Load<Texture2D>("SMALL_ASTEROID"));
             enemyManager.enemyTextures.Add("MEDIUM_ASTEROID", content.Load<Texture2D>("MEDIUM_ASTEROID"));
             enemyManager.enemyTextures.Add("LARGE_ASTEROID", content.Load<Texture2D>("LARGE_ASTEROID"));
-
+            enemyManager.LoadContent(content);
             // Load projectile textures
             player.projectileTextures.Add("NORMAL_BULLET", content.Load<Texture2D>("Projectile1"));
 
+            // Load sounds
             player.ShootSound = content.Load<SoundEffect>("LaserShoot");
+
            // player.LoadContent(content);
         }
 
@@ -49,7 +58,6 @@ namespace Aurora
         {
             player.Update(gameTime);
             enemyManager.Update(gameTime, player);
-            base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)

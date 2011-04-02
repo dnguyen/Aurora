@@ -13,14 +13,23 @@ namespace Aurora
         private List<Enemy> enemies = new List<Enemy>(); // List of enemy objects
         public Dictionary<string, Texture2D> enemyTextures = new Dictionary<string, Texture2D>(); // List of enemy textures, keys is the enemy type
 
-        private float spawnDelay = 2.0F; // Time between each enemy spawn
+        private float spawnDelay = 1.0F; // Time between each enemy spawn
         private TimeSpan delayTimer; // Timer for spawn delay
         static Random rand = new Random();
+        private ParticleManager particleManager;
 
-        public EnemyManager()
+        int smallAsteroidChance = 50;
+        int mediumAsteroidChance = 30;
+        int largeAsteroidChance = 20;
+        int spawnChance = 0;
+
+        SpriteFont debug;
+
+        public EnemyManager(ParticleManager pm)
         {
             enemies = new List<Enemy>();
             delayTimer = TimeSpan.FromSeconds(spawnDelay);
+            particleManager = pm;
         }
 
         public void Update(GameTime gameTime, Player player)
@@ -35,8 +44,16 @@ namespace Aurora
                 {
                     // TODO: Create some kind of "algorithm" to figure out what enemies to spawn. Base it on
                     // points scored? Total time the player has survived?
+                    spawnChance = rand.Next(100);
 
-                    SpawnRandomEnemy(EnemyType.SMALL_ASTEROID);
+                    if (spawnChance <= largeAsteroidChance)
+                        SpawnRandomEnemy(EnemyType.LARGE_ASTEROID);
+                    else if (spawnChance >= mediumAsteroidChance && spawnChance < smallAsteroidChance)
+                        SpawnRandomEnemy(EnemyType.MEDIUM_ASTEROID);
+                    else if (spawnChance >= smallAsteroidChance)
+                        SpawnRandomEnemy(EnemyType.SMALL_ASTEROID);
+                    
+                    //SpawnRandomEnemy(EnemyType.SMALL_ASTEROID);
                     delayTimer = TimeSpan.FromSeconds(spawnDelay);
                 }
 
@@ -57,6 +74,8 @@ namespace Aurora
                             {
                                 enemies[i].Collided = true;
                                 player.Lives -= 1;
+                                particleManager.particleEffects["small-red-explosion"].Trigger(new Vector2(100, 100));
+                                particleManager.particleEffects["small-red-explosion"].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
                             }
                         }
 
@@ -103,6 +122,11 @@ namespace Aurora
             }
         }
 
+        public void LoadContent(ContentManager content)
+        {
+            debug = content.Load<SpriteFont>("menuFont");
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             foreach (Enemy enemy in enemies)
@@ -110,6 +134,9 @@ namespace Aurora
                 if (!enemy.Collided)
                     enemy.Draw(spriteBatch);
             }
+
+            particleManager.Draw(spriteBatch);
+            spriteBatch.DrawString(debug, spawnChance.ToString(), new Vector2(100, 100), Color.White);
         }
 
         private void downgradeEnemy(Enemy enemy)

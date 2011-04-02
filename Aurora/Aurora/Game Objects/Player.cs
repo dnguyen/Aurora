@@ -28,9 +28,6 @@ namespace Aurora
         private Vector2 maxVelocity = new Vector2(1000, 1000);
         private Vector2 mousePosition = Vector2.Zero;
         private Vector2 direction;
-
-        ParticleEffect particleEffect;
-        Renderer particleRenderer;
        
         public Dictionary<string, Texture2D> projectileTextures = new Dictionary<string, Texture2D>();
         private SoundEffect shootSound;
@@ -48,40 +45,6 @@ namespace Aurora
             score = 0;
             position = new Vector2(Game1.graphics.GraphicsDevice.Viewport.Width / 2, Game1.graphics.GraphicsDevice.Viewport.Height / 2);
             velocity = Vector2.Zero;
-            
-            /*#region Particles
-            particleEffect = new ParticleEffect {
-                new Emitter {
-                    Budget = 400, // How many particles
-                    Term = .5F,
-                    Name = "FirstEmitter",
-                    BlendMode = EmitterBlendMode.Alpha,
-                    ReleaseQuantity = 3,
-                    ReleaseScale = 16F,
-                    ReleaseRotation = new VariableFloat { Value = 0F, Variation = MathHelper.Pi },
-                    ReleaseSpeed = new VariableFloat { Value = 32F, Variation = 16F },
-                    ParticleTextureAssetName = "Spikey001",
-                    Modifiers = new ModifierCollection {
-                        new OpacityModifier {
-                            Initial = 1F,
-                            Ultimate = 0F
-                        },
-                        new ColourModifier {
-                            InitialColour = Color.SkyBlue.ToVector3(),
-                            UltimateColour = Color.AliceBlue.ToVector3()
-                        },
-                        new RotationModifier {
-                            RotationRate = 2.3F
-                        }
-                    }
-                },
-            };
-            particleRenderer = new SpriteBatchRenderer
-            {
-                GraphicsDeviceService = Game1.graphics
-            };
-            particleEffect.Initialise();
-            #endregion*/
             sprite = texture;
 
             base.Initialize();
@@ -89,15 +52,16 @@ namespace Aurora
 
         public override void LoadContent(ContentManager content)
         {
-            particleRenderer = new SpriteBatchRenderer
+            /*particleRenderer = new SpriteBatchRenderer
             {
                 GraphicsDeviceService = Game1.graphics
             };
             //base.LoadContent(content);
-            particleEffect = content.Load<ParticleEffect>("Explosion-Red");
+            //particleEffect = content.Load<ParticleEffect>("Explosion-Red");
+            particleEffect = ParticleManager.explosionEffects["SMALL-RED"];
             particleEffect.LoadContent(content);
             particleRenderer.LoadContent(content);
-            particleEffect.Initialise();
+            particleEffect.Initialise();*/
         }
 
         public override void Update(GameTime gameTime)
@@ -139,7 +103,7 @@ namespace Aurora
             {
                 Projectile bullet = new Projectile(ProjectileType.NORMAL_BULLET, projectileTextures["NORMAL_BULLET"], position, direction, angle);
                 bullets.Add(bullet);
-                shootSound.Play();
+                //shootSound.Play();
                 fireTime = 0;
             }
 
@@ -162,11 +126,11 @@ namespace Aurora
 
             ClampToViewPort();
 
-            if (velocity != Vector2.Zero)
+            /*if (velocity != Vector2.Zero)
             {
                 particleEffect.Trigger(position);
                 particleEffect.Update(elapsedTime);
-            }
+            }*/
 
 
         }
@@ -174,7 +138,7 @@ namespace Aurora
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(sprite, position, null, Color.White, angle, Center, 1.0F, SpriteEffects.None, 0f);
-            particleRenderer.RenderEffect(particleEffect);
+            //particleRenderer.RenderEffect(particleEffect);
             foreach (Projectile bullet in bullets)
             {
                 if (!bullet.Collided)
