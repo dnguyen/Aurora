@@ -6,7 +6,7 @@
       <Budget>500</Budget>
       <Term>2.5</Term>
       <ReleaseQuantity>5</ReleaseQuantity>
-      <Enabled>true</Enabled>
+      <Enabled>false</Enabled>
       <ReleaseSpeed>
         <Value>0</Value>
         <Variation>128</Variation>

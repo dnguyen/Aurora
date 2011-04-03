@@ -44,7 +44,7 @@ namespace Aurora
 
             if (collided || health == 0)
             {
-                ParticleManager.particleEffects["SMALL_EXPLOSION2"].Trigger(position);
+                ParticleManager.particleEffects["SMALL_EXPLOSION"].Trigger(position);
             }
             
             angle += .05F;
@@ -55,7 +55,6 @@ namespace Aurora
         public override void Draw(SpriteBatch spriteBatch)
         {
            
-                ParticleManager.particleRenderer.RenderEffect(ParticleManager.particleEffects["SMALL_EXPLOSION2"]);
             spriteBatch.Draw(sprite, position, null, Color.White, angle, Center, 1.0F, SpriteEffects.None, 0f);
            
         }

@@ -6,7 +6,7 @@
       <Budget>500</Budget>
       <Term>2.5</Term>
       <ReleaseQuantity>5</ReleaseQuantity>
-      <Enabled>False</Enabled>
+      <Enabled>false</Enabled>
       <ReleaseSpeed>
         <Value>0</Value>
         <Variation>128</Variation>
@@ -61,14 +61,14 @@
       <Name>Flames</Name>
       <Budget>1000</Budget>
       <Term>1</Term>
-      <ReleaseQuantity>32</ReleaseQuantity>
-      <Enabled>True</Enabled>
+      <ReleaseQuantity>128</ReleaseQuantity>
+      <Enabled>true</Enabled>
       <ReleaseSpeed>
         <Value>0</Value>
-        <Variation>100</Variation>
+        <Variation>150</Variation>
       </ReleaseSpeed>
       <ReleaseColour>
-        <Value>1 0.5019608 0.5019608</Value>
+        <Value>0.7529412 1 1</Value>
         <Variation>0 0 0</Variation>
       </ReleaseColour>
       <ReleaseOpacity>
@@ -99,7 +99,7 @@
       </Modifiers>
       <BlendMode>Add</BlendMode>
       <TriggerOffset>0 0</TriggerOffset>
-      <MinimumTriggerPeriod>0.25</MinimumTriggerPeriod>
+      <MinimumTriggerPeriod>0.1</MinimumTriggerPeriod>
       <Radius>1</Radius>
       <Ring>true</Ring>
       <Radiate>true</Radiate>
@@ -109,7 +109,7 @@
       <Budget>250</Budget>
       <Term>0.75</Term>
       <ReleaseQuantity>35</ReleaseQuantity>
-      <Enabled>True</Enabled>
+      <Enabled>true</Enabled>
       <ReleaseSpeed>
         <Value>0</Value>
         <Variation>250</Variation>
@@ -150,9 +150,9 @@
       <Budget>32</Budget>
       <Term>0.1</Term>
       <ReleaseQuantity>1</ReleaseQuantity>
-      <Enabled>True</Enabled>
+      <Enabled>true</Enabled>
       <ReleaseSpeed>
-        <Value>50</Value>
+        <Value>90</Value>
         <Variation>0</Variation>
       </ReleaseSpeed>
       <ReleaseColour>
@@ -164,7 +164,7 @@
         <Variation>0</Variation>
       </ReleaseOpacity>
       <ReleaseScale>
-        <Value>192</Value>
+        <Value>10</Value>
         <Variation>0</Variation>
       </ReleaseScale>
       <ReleaseRotation>
@@ -179,7 +179,7 @@
           <Ultimate>0</Ultimate>
         </Item>
       </Modifiers>
-      <BlendMode>Add</BlendMode>
+      <BlendMode>Alpha</BlendMode>
       <TriggerOffset>0 0</TriggerOffset>
       <MinimumTriggerPeriod>0.25</MinimumTriggerPeriod>
     </Item>

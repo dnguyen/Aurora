@@ -24,6 +24,7 @@ namespace Aurora
         int mediumAsteroidChance = 30;
         int largeAsteroidChance = 20;
         int spawnChance = 0;
+
         public EnemyManager(Player player)
         {
             enemies = new List<Enemy>();
@@ -144,10 +145,12 @@ namespace Aurora
                 case EnemyType.LARGE_ASTEROID:
                     enemy.Type = EnemyType.MEDIUM_ASTEROID;
                     enemy.spriteImage = enemyTextures["MEDIUM_ASTEROID"];
+                    ParticleManager.particleEffects["LARGE_EXPLOSION_BLUE"].Trigger(enemy.Position);
                     break;
                 case EnemyType.MEDIUM_ASTEROID:
                     enemy.Type = EnemyType.SMALL_ASTEROID;
                     enemy.spriteImage = enemyTextures["SMALL_ASTEROID"];
+                    ParticleManager.particleEffects["MEDIUM_EXPLOSION_PINK"].Trigger(enemy.Position);
                     break;
             }
         }

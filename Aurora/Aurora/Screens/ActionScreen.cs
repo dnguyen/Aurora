@@ -30,15 +30,19 @@ namespace Aurora
         public void LoadContent(ContentManager content)
         {
 
-            // Load explosions
+            // Load particles
             particleManager.addEffect("SMALL_EXPLOSION", content.Load<ParticleEffect>("Explosion-Red"));
             particleManager.addEffect("SMALL_EXPLOSION2", content.Load<ParticleEffect>("Explosion-Orange"));
+            particleManager.addEffect("MEDIUM_EXPLOSION_PINK", content.Load<ParticleEffect>("Explosion-Medium-Pink"));
+            particleManager.addEffect("LARGE_EXPLOSION_BLUE", content.Load<ParticleEffect>("Explosion-Large-Blue"));
             particleManager.LoadContent(content);
 
             playerLives = content.Load<SpriteFont>("menuFont");
             score = content.Load<SpriteFont>("menuFont");
+
             player = new Player(content.Load<Texture2D>("PlayerShip"));
             player.LoadContent(content);
+
             background = content.Load<Texture2D>("black_background");
 
             // Load enemy textures
@@ -47,6 +51,7 @@ namespace Aurora
             enemyManager.enemyTextures.Add("MEDIUM_ASTEROID", content.Load<Texture2D>("MEDIUM_ASTEROID"));
             enemyManager.enemyTextures.Add("LARGE_ASTEROID", content.Load<Texture2D>("LARGE_ASTEROID"));
             enemyManager.LoadContent(content);
+
             // Load projectile textures
             player.projectileTextures.Add("NORMAL_BULLET", content.Load<Texture2D>("Projectile1"));
 
@@ -71,6 +76,8 @@ namespace Aurora
             spriteBatch.Begin();
             enemyManager.Draw(spriteBatch);
             player.Draw(spriteBatch);
+
+            particleManager.Draw();
             spriteBatch.DrawString(playerLives, "Lives: " + player.Lives.ToString(), new Vector2(15, 10), Color.White);
             spriteBatch.DrawString(score, "Score: " + player.Score.ToString(), new Vector2(170, 10), Color.White);
             spriteBatch.End();

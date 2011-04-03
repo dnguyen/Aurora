@@ -89,7 +89,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Red.xnb</Output>
-      <Time>2011-03-30T08:41:25.774414-04:00</Time>
+      <Time>2011-04-03T09:40:09.9658203-04:00</Time>
     </Item>
     <Item>
       <Source>Cloud001.png</Source>
@@ -135,6 +135,24 @@
       <Options>None</Options>
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\black_background.xnb</Output>
       <Time>2011-04-02T15:45:22.5996093-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Explosion-Large-Blue.xml</Source>
+      <Name>Explosion-Large-Blue</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Large-Blue.xnb</Output>
+      <Time>2011-04-03T09:50:42.9746093-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Explosion-Medium-Pink.xml</Source>
+      <Name>Explosion-Medium-Pink</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Medium-Pink.xnb</Output>
+      <Time>2011-04-03T09:50:55.6474609-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

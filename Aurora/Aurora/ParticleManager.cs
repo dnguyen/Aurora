@@ -49,5 +49,13 @@ namespace Aurora
             }
         }
 
+        public void Draw()
+        {
+            foreach (KeyValuePair<string, ParticleEffect> effectPair in particleEffects)
+            {
+                particleRenderer.RenderEffect(effectPair.Value);
+            }
+        }
+
     }
 }
