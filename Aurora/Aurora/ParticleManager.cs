@@ -41,5 +41,13 @@ namespace Aurora
 
         }
 
+        public void Update(GameTime gameTime)
+        {
+            foreach (KeyValuePair<string, ParticleEffect> effectPair in particleEffects)
+            {
+                effectPair.Value.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            }
+        }
+
     }
 }

@@ -127,6 +127,15 @@
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Orange.xnb</Output>
       <Time>2011-04-02T08:58:40.5195312-04:00</Time>
     </Item>
+    <Item>
+      <Source>black_background.png</Source>
+      <Name>black_background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\black_background.xnb</Output>
+      <Time>2011-04-02T15:45:22.5996093-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

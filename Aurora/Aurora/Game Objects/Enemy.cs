@@ -46,7 +46,6 @@ namespace Aurora
             {
                 ParticleManager.particleEffects["SMALL_EXPLOSION2"].Trigger(position);
             }
-            ParticleManager.particleEffects["SMALL_EXPLOSION2"].Update(dt);
             
             angle += .05F;
             base.Update(gameTime);

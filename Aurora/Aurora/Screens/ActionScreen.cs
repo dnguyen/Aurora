@@ -21,6 +21,7 @@ namespace Aurora
         SpriteFont score;
         EnemyManager enemyManager;
         ParticleManager particleManager;
+
         public ActionScreen(Game game, SpriteBatch spriteBatch) : base(game, spriteBatch)
         {
             particleManager = new ParticleManager();
@@ -38,7 +39,7 @@ namespace Aurora
             score = content.Load<SpriteFont>("menuFont");
             player = new Player(content.Load<Texture2D>("PlayerShip"));
             player.LoadContent(content);
-            background = content.Load<Texture2D>("testbg");
+            background = content.Load<Texture2D>("black_background");
 
             // Load enemy textures
             enemyManager = new EnemyManager(player);
@@ -59,13 +60,14 @@ namespace Aurora
         {
             player.Update(gameTime);
             enemyManager.Update(gameTime, player);
+            particleManager.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            //spriteBatch.Begin();
-            //spriteBatch.Draw(background, (player.Position / 4) * -1, Color.White);
-            //spriteBatch.End();
+            spriteBatch.Begin();
+            spriteBatch.Draw(background, new Vector2(0,0), Color.White);
+            spriteBatch.End();
             spriteBatch.Begin();
             enemyManager.Draw(spriteBatch);
             player.Draw(spriteBatch);
