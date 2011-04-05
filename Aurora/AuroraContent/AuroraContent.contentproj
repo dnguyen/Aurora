@@ -73,22 +73,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SMALL_ASTEROID.png">
-      <Name>SMALL_ASTEROID</Name>
+    <Compile Include="SMALL_ASTEROID_RED.png">
+      <Name>SMALL_ASTEROID_RED</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MEDIUM_ASTEROID.png">
-      <Name>MEDIUM_ASTEROID</Name>
+    <Compile Include="MEDIUM_ASTEROID_RED.png">
+      <Name>MEDIUM_ASTEROID_RED</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LARGE_ASTEROID.png">
-      <Name>LARGE_ASTEROID</Name>
+    <Compile Include="LARGE_ASTEROID_RED.png">
+      <Name>LARGE_ASTEROID_RED</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -159,6 +159,74 @@
       <Name>Explosion-Medium-Pink</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LARGE_ASTEROID_BLUE.png">
+      <Name>LARGE_ASTEROID_BLUE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="LARGE_ASTEROID_PURPLE.png">
+      <Name>LARGE_ASTEROID_PURPLE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MEDIUM_ASTEROID_BLUE.PNG">
+      <Name>MEDIUM_ASTEROID_BLUE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MEDIUM_ASTEROID_PINK.PNG">
+      <Name>MEDIUM_ASTEROID_PINK</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SMALL_ASTEROID_BLUE.png">
+      <Name>SMALL_ASTEROID_BLUE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SMALL_ASTEROID_GREEN.png">
+      <Name>SMALL_ASTEROID_GREEN</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SMALL_ASTEROID_PINK.png">
+      <Name>SMALL_ASTEROID_PINK</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SMALL_ASTEROID_PURPLE.png">
+      <Name>SMALL_ASTEROID_PURPLE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LARGE_ASTEROID_GREEN.png">
+      <Name>LARGE_ASTEROID_GREEN</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="LARGE_ASTEROID_PINK.png">
+      <Name>LARGE_ASTEROID_PINK</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MEDIUM_ASTEROID_GREEN.PNG">
+      <Name>MEDIUM_ASTEROID_GREEN</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MEDIUM_ASTEROID_PURPLE.PNG">
+      <Name>MEDIUM_ASTEROID_PURPLE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

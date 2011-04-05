@@ -18,21 +18,34 @@ namespace Aurora
         COMET
     }
 
+    public enum EnemyColor
+    {
+        BLUE,
+        RED,
+        PURPLE,
+        PINK,
+        GREEN,
+        NONE
+    }
+
     class Enemy : Sprite
     {
         private EnemyType type;
+        private EnemyColor color;
         private int health;
         private int pointValue;
         private int speed;
 
         public int Health { get { return health; } set { health = value; } }
         public EnemyType Type { get { return type; } set { type = value; } }
+        public EnemyColor Color_ { get { return color; } set { color = value; } }
         public int PointValue { get { return pointValue; } set { pointValue = value; } }
         public int Speed { get { return speed; } set { speed = value; } }
 
-        public Enemy(EnemyType eType, Texture2D texture)
+        public Enemy(EnemyType eType, Texture2D texture, EnemyColor eColor)
         {
             type = eType;
+            color = eColor;
             sprite = texture;
             getStatsForType(type);
             base.Initialize();

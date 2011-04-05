@@ -44,13 +44,18 @@ namespace Aurora
                     // TODO: Create some kind of "algorithm" to figure out what enemies to spawn. Base it on
                     // points scored? Total time the player has survived?
                     spawnChance = rand.Next(100);
-
                     if (spawnChance <= largeAsteroidChance)
+                    {
                         SpawnRandomEnemy(EnemyType.LARGE_ASTEROID);
+                    }
                     else if (spawnChance >= mediumAsteroidChance && spawnChance < smallAsteroidChance)
+                    {
                         SpawnRandomEnemy(EnemyType.MEDIUM_ASTEROID);
+                    }
                     else if (spawnChance >= smallAsteroidChance)
+                    {
                         SpawnRandomEnemy(EnemyType.SMALL_ASTEROID);
+                    }
 
                     delayTimer = TimeSpan.FromSeconds(spawnDelay);
                 }
@@ -144,12 +149,12 @@ namespace Aurora
             {
                 case EnemyType.LARGE_ASTEROID:
                     enemy.Type = EnemyType.MEDIUM_ASTEROID;
-                    enemy.spriteImage = enemyTextures["MEDIUM_ASTEROID"];
+                    enemy.spriteImage = enemyTextures["MEDIUM_ASTEROID_" + enemy.Color_.ToString()];
                     ParticleManager.particleEffects["LARGE_EXPLOSION_BLUE"].Trigger(enemy.Position);
                     break;
                 case EnemyType.MEDIUM_ASTEROID:
                     enemy.Type = EnemyType.SMALL_ASTEROID;
-                    enemy.spriteImage = enemyTextures["SMALL_ASTEROID"];
+                    enemy.spriteImage = enemyTextures["SMALL_ASTEROID_" + enemy.Color_.ToString()];
                     ParticleManager.particleEffects["MEDIUM_EXPLOSION_PINK"].Trigger(enemy.Position);
                     break;
             }
@@ -157,7 +162,27 @@ namespace Aurora
 
         private void SpawnRandomEnemy(EnemyType eType)
         {
-            Enemy enemy = new Enemy(eType, enemyTextures[eType.ToString()]);
+            int color = rand.Next(0, 4);
+            EnemyColor eColor = EnemyColor.NONE;
+            switch (color)
+            {
+                case 0:
+                    eColor = EnemyColor.RED;
+                    break;
+                case 1:
+                    eColor = EnemyColor.BLUE;
+                    break;
+                case 2:
+                    eColor = EnemyColor.GREEN;
+                    break;
+                case 3:
+                    eColor = EnemyColor.PURPLE;
+                    break;
+                case 4:
+                    eColor = EnemyColor.PINK;
+                    break;
+            }
+            Enemy enemy = new Enemy(eType, enemyTextures[eType.ToString() + "_" + eColor.ToString()], eColor);
             int direction = rand.Next(0, 3); // Generate a number 0 - 3 [0, 1, 2, 3] to determine what side to spawn on.
             switch (direction)
             {

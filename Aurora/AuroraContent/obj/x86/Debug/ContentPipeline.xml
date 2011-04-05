@@ -38,33 +38,6 @@
       <Time>2011-03-18T22:16:40.6425781-04:00</Time>
     </Item>
     <Item>
-      <Source>SMALL_ASTEROID.png</Source>
-      <Name>SMALL_ASTEROID</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_ASTEROID.xnb</Output>
-      <Time>2011-03-26T14:33:49.1845703-04:00</Time>
-    </Item>
-    <Item>
-      <Source>MEDIUM_ASTEROID.png</Source>
-      <Name>MEDIUM_ASTEROID</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID.xnb</Output>
-      <Time>2011-03-26T14:38:31.352539-04:00</Time>
-    </Item>
-    <Item>
-      <Source>LARGE_ASTEROID.png</Source>
-      <Name>LARGE_ASTEROID</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTEROID.xnb</Output>
-      <Time>2011-03-26T14:58:24.2802734-04:00</Time>
-    </Item>
-    <Item>
       <Source>PlayerShip.png</Source>
       <Name>PlayerShip</Name>
       <Importer>TextureImporter</Importer>
@@ -153,6 +126,141 @@
       <Options>None</Options>
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Medium-Pink.xnb</Output>
       <Time>2011-04-03T09:50:55.6474609-04:00</Time>
+    </Item>
+    <Item>
+      <Source>LARGE_ASTEROID_BLUE.png</Source>
+      <Name>LARGE_ASTEROID_BLUE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTEROID_BLUE.xnb</Output>
+      <Time>2011-04-03T17:47:50.8183593-04:00</Time>
+    </Item>
+    <Item>
+      <Source>LARGE_ASTEROID_PURPLE.png</Source>
+      <Name>LARGE_ASTEROID_PURPLE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTEROID_PURPLE.xnb</Output>
+      <Time>2011-04-03T17:47:50.8007812-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MEDIUM_ASTEROID_BLUE.PNG</Source>
+      <Name>MEDIUM_ASTEROID_BLUE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID_BLUE.xnb</Output>
+      <Time>2011-04-03T17:47:50.8027343-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MEDIUM_ASTEROID_PINK.PNG</Source>
+      <Name>MEDIUM_ASTEROID_PINK</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID_PINK.xnb</Output>
+      <Time>2011-04-03T17:47:50.8046875-04:00</Time>
+    </Item>
+    <Item>
+      <Source>SMALL_ASTEROID_BLUE.png</Source>
+      <Name>SMALL_ASTEROID_BLUE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_ASTEROID_BLUE.xnb</Output>
+      <Time>2011-04-03T17:47:50.805664-04:00</Time>
+    </Item>
+    <Item>
+      <Source>SMALL_ASTEROID_GREEN.png</Source>
+      <Name>SMALL_ASTEROID_GREEN</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_ASTEROID_GREEN.xnb</Output>
+      <Time>2011-04-03T17:47:50.8066406-04:00</Time>
+    </Item>
+    <Item>
+      <Source>SMALL_ASTEROID_RED.png</Source>
+      <Name>SMALL_ASTEROID_RED</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_ASTEROID_RED.xnb</Output>
+      <Time>2011-03-26T14:33:49.1845703-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MEDIUM_ASTEROID_RED.png</Source>
+      <Name>MEDIUM_ASTEROID_RED</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID_RED.xnb</Output>
+      <Time>2011-03-26T14:38:31.352539-04:00</Time>
+    </Item>
+    <Item>
+      <Source>LARGE_ASTEROID_RED.png</Source>
+      <Name>LARGE_ASTEROID_RED</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTEROID_RED.xnb</Output>
+      <Time>2011-03-26T14:58:24.2802734-04:00</Time>
+    </Item>
+    <Item>
+      <Source>SMALL_ASTEROID_PINK.png</Source>
+      <Name>SMALL_ASTEROID_PINK</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_ASTEROID_PINK.xnb</Output>
+      <Time>2011-04-03T18:37:36.633789-04:00</Time>
+    </Item>
+    <Item>
+      <Source>SMALL_ASTEROID_PURPLE.png</Source>
+      <Name>SMALL_ASTEROID_PURPLE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_ASTEROID_PURPLE.xnb</Output>
+      <Time>2011-04-03T18:37:36.6357421-04:00</Time>
+    </Item>
+    <Item>
+      <Source>LARGE_ASTEROID_GREEN.png</Source>
+      <Name>LARGE_ASTEROID_GREEN</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTEROID_GREEN.xnb</Output>
+      <Time>2011-04-03T18:38:07.7832031-04:00</Time>
+    </Item>
+    <Item>
+      <Source>LARGE_ASTEROID_PINK.png</Source>
+      <Name>LARGE_ASTEROID_PINK</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTEROID_PINK.xnb</Output>
+      <Time>2011-04-03T18:38:07.7792968-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MEDIUM_ASTEROID_GREEN.PNG</Source>
+      <Name>MEDIUM_ASTEROID_GREEN</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID_GREEN.xnb</Output>
+      <Time>2011-04-03T18:38:16.0498046-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MEDIUM_ASTEROID_PURPLE.PNG</Source>
+      <Name>MEDIUM_ASTEROID_PURPLE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID_PURPLE.xnb</Output>
+      <Time>2011-04-03T18:38:16.0546875-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

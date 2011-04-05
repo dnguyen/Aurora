@@ -47,9 +47,23 @@ namespace Aurora
 
             // Load enemy textures
             enemyManager = new EnemyManager(player);
-            enemyManager.enemyTextures.Add("SMALL_ASTEROID", content.Load<Texture2D>("SMALL_ASTEROID"));
-            enemyManager.enemyTextures.Add("MEDIUM_ASTEROID", content.Load<Texture2D>("MEDIUM_ASTEROID"));
-            enemyManager.enemyTextures.Add("LARGE_ASTEROID", content.Load<Texture2D>("LARGE_ASTEROID"));
+            enemyManager.enemyTextures.Add("SMALL_ASTEROID_RED", content.Load<Texture2D>("SMALL_ASTEROID_RED"));
+            enemyManager.enemyTextures.Add("SMALL_ASTEROID_BLUE", content.Load<Texture2D>("SMALL_ASTEROID_BLUE"));
+            enemyManager.enemyTextures.Add("SMALL_ASTEROID_GREEN", content.Load<Texture2D>("SMALL_ASTEROID_GREEN"));
+            enemyManager.enemyTextures.Add("SMALL_ASTEROID_PINK", content.Load<Texture2D>("SMALL_ASTEROID_PINK"));
+            enemyManager.enemyTextures.Add("SMALL_ASTEROID_PURPLE", content.Load<Texture2D>("SMALL_ASTEROID_PURPLE"));
+
+            enemyManager.enemyTextures.Add("MEDIUM_ASTEROID_RED", content.Load<Texture2D>("MEDIUM_ASTEROID_RED"));
+            enemyManager.enemyTextures.Add("MEDIUM_ASTEROID_BLUE", content.Load<Texture2D>("MEDIUM_ASTEROID_BLUE"));
+            enemyManager.enemyTextures.Add("MEDIUM_ASTEROID_GREEN", content.Load<Texture2D>("MEDIUM_ASTEROID_GREEN"));
+            enemyManager.enemyTextures.Add("MEDIUM_ASTEROID_PINK", content.Load<Texture2D>("MEDIUM_ASTEROID_PINK"));
+            enemyManager.enemyTextures.Add("MEDIUM_ASTEROID_PURPLE", content.Load<Texture2D>("MEDIUM_ASTEROID_PURPLE"));
+
+            enemyManager.enemyTextures.Add("LARGE_ASTEROID_RED", content.Load<Texture2D>("LARGE_ASTEROID_RED"));
+            enemyManager.enemyTextures.Add("LARGE_ASTEROID_BLUE", content.Load<Texture2D>("LARGE_ASTEROID_BLUE"));
+            enemyManager.enemyTextures.Add("LARGE_ASTEROID_GREEN", content.Load<Texture2D>("LARGE_ASTEROID_GREEN"));
+            enemyManager.enemyTextures.Add("LARGE_ASTEROID_PINK", content.Load<Texture2D>("LARGE_ASTEROID_PINK"));
+            enemyManager.enemyTextures.Add("LARGE_ASTEROID_PURPLE", content.Load<Texture2D>("LARGE_ASTEROID_PURPLE"));
             enemyManager.LoadContent(content);
 
             // Load projectile textures
