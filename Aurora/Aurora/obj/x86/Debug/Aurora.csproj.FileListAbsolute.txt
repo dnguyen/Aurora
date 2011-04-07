@@ -49,3 +49,5 @@ F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTER
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTEROID_PINK.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID_GREEN.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID_PURPLE.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_SPINNER_BLUE.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_SPINNER_PINK.xnb

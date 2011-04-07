@@ -64,6 +64,10 @@ namespace Aurora
             enemyManager.enemyTextures.Add("LARGE_ASTEROID_GREEN", content.Load<Texture2D>("LARGE_ASTEROID_GREEN"));
             enemyManager.enemyTextures.Add("LARGE_ASTEROID_PINK", content.Load<Texture2D>("LARGE_ASTEROID_PINK"));
             enemyManager.enemyTextures.Add("LARGE_ASTEROID_PURPLE", content.Load<Texture2D>("LARGE_ASTEROID_PURPLE"));
+
+            enemyManager.enemyTextures.Add("LARGE_SPINNER_BLUE", content.Load<Texture2D>("LARGE_SPINNER_BLUE"));
+            enemyManager.enemyTextures.Add("SMALL_SPINNER_PINK", content.Load<Texture2D>("SMALL_SPINNER_Pink"));
+
             enemyManager.LoadContent(content);
 
             // Load projectile textures

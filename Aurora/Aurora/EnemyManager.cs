@@ -56,6 +56,14 @@ namespace Aurora
                     {
                         SpawnRandomEnemy(EnemyType.SMALL_ASTEROID);
                     }
+                    // Start spawning spinner groups after score reaches 3000
+                    if (player.Score > 1000)
+                    {
+                        if (spawnChance < 15)
+                        {
+                            SpawnSpinnerGroup(0);
+                        }
+                    }
 
                     delayTimer = TimeSpan.FromSeconds(spawnDelay);
                 }
@@ -128,6 +136,7 @@ namespace Aurora
                 player.Collided = false;
             }
         }
+
 
         public void LoadContent(ContentManager content)
         {
@@ -221,6 +230,48 @@ namespace Aurora
             Matrix.CreateRotationZ(enemy.Angle) *
             Matrix.CreateTranslation(new Vector3(enemy.Position, 0.0f));
             enemies.Add(enemy);
+        }
+
+        private void SpawnSpinnerGroup(int size)
+        {
+            //List<Enemy> group = new List<Enemy>();
+            EnemyColor color_ = EnemyColor.NONE; 
+            int direction = rand.Next(0, 3); // Generate a number 0 - 3 [0, 1, 2, 3] to determine what side to spawn on.
+
+            for (int i = 0; i < 15; i++)
+            {
+                Enemy enemy;
+                if (size == 0) // small
+                {
+                    color_ = EnemyColor.PINK;
+                    enemy = new Enemy(EnemyType.SMALL_SPINNER, enemyTextures[EnemyType.SMALL_SPINNER.ToString() + "_" + color_.ToString()], color_);
+                }
+                else
+                {
+                    color_ = EnemyColor.BLUE;
+                    enemy = new Enemy(EnemyType.LARGE_SPINNER, enemyTextures[EnemyType.SMALL_SPINNER.ToString() + "_" + color_.ToString()], color_);
+                } 
+                switch (direction)
+                {
+                    case 0: // Top
+                        enemy.Position = new Vector2(rand.Next(-50, Game1.SCREEN_WIDTH + 50), rand.Next(-50, 50));
+                        enemy.VY += enemy.Speed;
+                        break;
+                    case 1: // Bottom
+                        enemy.Position = new Vector2(rand.Next(-50, Game1.SCREEN_WIDTH + 50), rand.Next(Game1.SCREEN_HEIGHT - 50, Game1.SCREEN_HEIGHT + 50));
+                        enemy.VY -= enemy.Speed;
+                        break;
+                    case 2: // Left
+                        enemy.Position = new Vector2(rand.Next(-50, 50), rand.Next(-50, Game1.SCREEN_HEIGHT + 50));
+                        enemy.VX += enemy.Speed;
+                        break;
+                    case 3: // Right
+                        enemy.Position = new Vector2(rand.Next(Game1.SCREEN_WIDTH + 50, Game1.SCREEN_WIDTH - 50), rand.Next(-50, Game1.SCREEN_HEIGHT + 50));
+                        enemy.VX -= enemy.Speed;
+                        break;
+                }
+                enemies.Add(enemy);
+            }
         }
 
         /// <summary>

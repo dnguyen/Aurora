@@ -262,6 +262,24 @@
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID_PURPLE.xnb</Output>
       <Time>2011-04-03T18:38:16.0546875-04:00</Time>
     </Item>
+    <Item>
+      <Source>LARGE_SPINNER_BLUE.png</Source>
+      <Name>LARGE_SPINNER_BLUE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_SPINNER_BLUE.xnb</Output>
+      <Time>2011-04-06T20:10:10.0732421-04:00</Time>
+    </Item>
+    <Item>
+      <Source>SMALL_SPINNER_PINK.png</Source>
+      <Name>SMALL_SPINNER_PINK</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_SPINNER_PINK.xnb</Output>
+      <Time>2011-04-06T20:10:10.071289-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
