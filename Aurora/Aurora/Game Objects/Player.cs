@@ -28,7 +28,8 @@ namespace Aurora
         private Vector2 maxVelocity = new Vector2(1000, 1000);
         private Vector2 mousePosition = Vector2.Zero;
         private Vector2 direction;
-       
+        private bool moving;
+
         public Dictionary<string, Texture2D> projectileTextures = new Dictionary<string, Texture2D>();
         private SoundEffect shootSound;
         private List<Projectile> bullets = new List<Projectile>();
@@ -45,7 +46,7 @@ namespace Aurora
             position = new Vector2(Game1.graphics.GraphicsDevice.Viewport.Width / 2, Game1.graphics.GraphicsDevice.Viewport.Height / 2);
             velocity = Vector2.Zero;
             sprite = texture;
-
+            moving = false;
             base.Initialize();
         }
 
@@ -76,24 +77,36 @@ namespace Aurora
             if (currentKState.IsKeyDown(Keys.Right))
             {
                 if (velocity.X < maxVelocity.X)
+                {
                     velocity.X += BASE_SPEED + ACCELERATION;
+                    moving = true;
+                }
             }
             if (currentKState.IsKeyDown(Keys.Left))
             {
                 if (velocity.X < maxVelocity.X)
+                {
                     velocity.X -= BASE_SPEED + ACCELERATION;
+                    moving = true;
+                }
             }
             if (currentKState.IsKeyDown(Keys.Up))
             {
                 if (velocity.Y < maxVelocity.Y)
+                {
                     velocity.Y -= BASE_SPEED + ACCELERATION;
+                    moving = true;
+                }
             }
             if (currentKState.IsKeyDown(Keys.Down))
             {
                 if (velocity.Y < maxVelocity.Y)
+                {
                     velocity.Y += BASE_SPEED + ACCELERATION;
+                    moving = true;
+                }
             }
-            
+
             direction = position - mousePosition;
             angle = (float) (Math.Atan2(direction.Y, direction.X));
 
@@ -120,6 +133,12 @@ namespace Aurora
            
             velocity.X -= (velocity.X * DRAG) * elapsedTime;
             velocity.Y -= (velocity.Y * DRAG) * elapsedTime;
+
+            if ((velocity.X >= -30 && velocity.X <= 30) && (velocity.Y >= -30 && velocity.Y <= 30))
+                moving = false;
+
+            if (moving)
+                ParticleManager.particleEffects["Ship-Trail-Blue"].Trigger(position);
 
             transformation = Matrix.CreateTranslation(new Vector3(position, 0.0F));
 

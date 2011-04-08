@@ -98,7 +98,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Orange.xnb</Output>
-      <Time>2011-04-02T08:58:40.5195312-04:00</Time>
+      <Time>2011-04-07T20:31:18.9677734-04:00</Time>
     </Item>
     <Item>
       <Source>black_background.png</Source>
@@ -116,7 +116,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Large-Blue.xnb</Output>
-      <Time>2011-04-03T09:50:42.9746093-04:00</Time>
+      <Time>2011-04-07T20:31:18.9853515-04:00</Time>
     </Item>
     <Item>
       <Source>Explosion-Medium-Pink.xml</Source>
@@ -125,7 +125,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Medium-Pink.xnb</Output>
-      <Time>2011-04-03T09:50:55.6474609-04:00</Time>
+      <Time>2011-04-07T20:31:18.9755859-04:00</Time>
     </Item>
     <Item>
       <Source>LARGE_ASTEROID_BLUE.png</Source>
@@ -279,6 +279,33 @@
       <Options>None</Options>
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_SPINNER_PINK.xnb</Output>
       <Time>2011-04-06T20:10:10.071289-04:00</Time>
+    </Item>
+    <Item>
+      <Source>fx_explode_cyan_1.png</Source>
+      <Name>fx_explode_cyan_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\fx_explode_cyan_1.xnb</Output>
+      <Time>2011-04-07T20:56:10.2949218-04:00</Time>
+    </Item>
+    <Item>
+      <Source>fx_player_exhaust_1.png</Source>
+      <Name>fx_player_exhaust_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\fx_player_exhaust_1.xnb</Output>
+      <Time>2011-04-07T20:56:10.2949218-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship-Trail-Blue.xml</Source>
+      <Name>Ship-Trail-Blue</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Ship-Trail-Blue.xnb</Output>
+      <Time>2011-04-07T21:00:53.836914-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

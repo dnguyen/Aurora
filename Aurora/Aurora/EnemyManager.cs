@@ -122,6 +122,7 @@ namespace Aurora
                                             player.Score += enemies[i].PointValue;
                                         }
                                         player.Bullets[j].Collided = true;
+                                        player.Bullets.Remove(player.Bullets[j]);
                                     }
                                 }
                             }

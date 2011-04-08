@@ -35,6 +35,7 @@ namespace Aurora
             particleManager.addEffect("SMALL_EXPLOSION2", content.Load<ParticleEffect>("Explosion-Orange"));
             particleManager.addEffect("MEDIUM_EXPLOSION_PINK", content.Load<ParticleEffect>("Explosion-Medium-Pink"));
             particleManager.addEffect("LARGE_EXPLOSION_BLUE", content.Load<ParticleEffect>("Explosion-Large-Blue"));
+            particleManager.addEffect("Ship-Trail-Blue", content.Load<ParticleEffect>("Ship-Trail-Blue"));
             particleManager.LoadContent(content);
 
             playerLives = content.Load<SpriteFont>("menuFont");
