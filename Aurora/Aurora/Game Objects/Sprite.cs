@@ -72,6 +72,20 @@ namespace Aurora
             spriteBatch.Draw(sprite, position, Color.White);
         }
 
+        public bool OutOfViewPort()
+        {
+            if (position.X < sprite.Width / 2)
+                return true;
+            if (position.X > Game1.SCREEN_WIDTH - sprite.Width / 2)
+                return true;
+            if (position.Y < sprite.Height / 2)
+                return true;
+            if (position.Y > Game1.SCREEN_HEIGHT - sprite.Height / 2)
+                return true;
+
+            return false;
+        }
+
         public void ReflectOffViewport(int padding)
         {
             if (position.X > Game1.SCREEN_WIDTH + padding || position.X < -padding )

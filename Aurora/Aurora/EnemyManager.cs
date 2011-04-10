@@ -74,7 +74,13 @@ namespace Aurora
                     // Only update enemies that have no collided yet (Enemies that are not dead)
                     if (!enemies[i].Collided)
                     {
-
+                        if (enemies[i].Type == EnemyType.SMALL_SPINNER || enemies[i].Type == EnemyType.LARGE_SPINNER)
+                        {
+                            if (enemies[i].OutOfViewPort())
+                            {
+                                enemies[i].Collided = true;
+                            }
+                        }
                         // Collision detection for enemies and player
                         if (enemies[i].Bounds.Intersects(player.Bounds))
                         {
@@ -122,12 +128,26 @@ namespace Aurora
                                             player.Score += enemies[i].PointValue;
                                         }
                                         player.Bullets[j].Collided = true;
-                                        player.Bullets.Remove(player.Bullets[j]);
+                                    }
+                                }
+                                else
+                                {
+                                    if (player.Bullets[j].OutOfViewPort())
+                                    {
+                                        player.Bullets[j].Collided = true;
                                     }
                                 }
                             }
+                            if (player.Bullets[j].Collided)
+                            {
+                                player.Bullets.Remove(player.Bullets[j]);
+                            }
                         }
                         enemies[i].Update(gameTime);
+                    }
+                    if (enemies[i].Collided)
+                    {
+                        enemies.Remove(enemies[i]);
                     }
                 }
             }
@@ -136,6 +156,7 @@ namespace Aurora
             {
                 player.Collided = false;
             }
+            Console.WriteLine("bullet list size: " + player.Bullets.Count);
         }
 
 
@@ -145,6 +166,7 @@ namespace Aurora
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            Console.WriteLine("Enemy List Size: " + enemies.Count);
             foreach (Enemy enemy in enemies)
             {
                 if (!enemy.Collided)

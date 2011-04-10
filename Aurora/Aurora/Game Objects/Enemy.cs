@@ -62,13 +62,14 @@ namespace Aurora
             if (collided || health == 0)
             {
                 ParticleManager.particleEffects["SMALL_EXPLOSION"].Trigger(position);
+                
             }
             
             angle += rotation;
             base.Update(gameTime);
             if (type == EnemyType.SMALL_SPINNER || type == EnemyType.LARGE_SPINNER)
             {
-
+                
             }
             else
                 ReflectOffViewport(50);

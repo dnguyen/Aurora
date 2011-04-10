@@ -37,7 +37,11 @@ namespace Aurora
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(sprite, position, null, Color.White, angle, Center, 1.0F, SpriteEffects.None, 0f);
+            if (OutOfViewPort()) {
+                collided = true;
+            }
+            if (!collided)
+                spriteBatch.Draw(sprite, position, null, Color.White, angle, Center, 1.0F, SpriteEffects.None, 0f);
         }
 
         void getStatsForType(ProjectileType type_)

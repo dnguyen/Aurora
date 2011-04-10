@@ -40,8 +40,8 @@
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.VideoImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
-    <Reference Include="ProjectMercury">
-      <HintPath>..\Aurora\bin\x86\Debug\ProjectMercury.dll</HintPath>
+    <Reference Include="ProjectMercury.ContentPipeline">
+      <HintPath>C:\Users\Dylan\Desktop\Mercury Particle Engine\References\X86\ProjectMercury.ContentPipeline.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

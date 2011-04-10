@@ -113,8 +113,11 @@ namespace Aurora
             fireTime += elapsedTime;
             if (mouseState.LeftButton == ButtonState.Pressed && fireTime > FIRE_DELAY)
             {
-                Projectile bullet = new Projectile(ProjectileType.NORMAL_BULLET, projectileTextures["NORMAL_BULLET"], position, direction, angle);
-                bullets.Add(bullet);
+                for (int i = 0; i < 2; i++)
+                {
+                    Projectile bullet = new Projectile(ProjectileType.NORMAL_BULLET, projectileTextures["NORMAL_BULLET"], position, direction, angle);
+                    bullets.Add(bullet);
+                }
                 //shootSound.Play();
                 fireTime = 0;
             }
@@ -134,7 +137,7 @@ namespace Aurora
             velocity.X -= (velocity.X * DRAG) * elapsedTime;
             velocity.Y -= (velocity.Y * DRAG) * elapsedTime;
 
-            if ((velocity.X >= -30 && velocity.X <= 30) && (velocity.Y >= -30 && velocity.Y <= 30))
+            if ((velocity.X >= -40 && velocity.X <= 40) && (velocity.Y >= -40 && velocity.Y <= 40))
                 moving = false;
 
             if (moving)
