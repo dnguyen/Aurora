@@ -113,6 +113,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camera.cs" />
     <Compile Include="ParticleManager.cs" />
     <Compile Include="Screens\ActionScreen.cs" />
     <Compile Include="Game Objects\Enemy.cs" />

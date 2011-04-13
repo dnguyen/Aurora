@@ -113,9 +113,10 @@ namespace Aurora
             fireTime += elapsedTime;
             if (mouseState.LeftButton == ButtonState.Pressed && fireTime > FIRE_DELAY)
             {
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < 3; i++)
                 {
                     Projectile bullet = new Projectile(ProjectileType.NORMAL_BULLET, projectileTextures["NORMAL_BULLET"], position, direction, angle);
+                    
                     bullets.Add(bullet);
                 }
                 //shootSound.Play();

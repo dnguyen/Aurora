@@ -41,7 +41,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="ProjectMercury.ContentPipeline">
-      <HintPath>C:\Users\Dylan\Desktop\Mercury Particle Engine\References\X86\ProjectMercury.ContentPipeline.dll</HintPath>
+      <HintPath>..\Aurora\bin\x86\Debug\ProjectMercury.ContentPipeline.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -258,6 +258,13 @@
       <Name>Ship-Trail-Blue</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="transparent_background.png">
+      <Name>transparent_background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

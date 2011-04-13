@@ -30,6 +30,7 @@ namespace Aurora
             getStatsForType(type);
             direct.Normalize();
             velocity = direct * speed * -1;
+            //velocity *= speed;
             angle = ang;
             damage = 1;
             base.Initialize();

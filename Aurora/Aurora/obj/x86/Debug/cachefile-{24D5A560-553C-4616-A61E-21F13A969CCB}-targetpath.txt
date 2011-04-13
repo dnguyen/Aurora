@@ -32,3 +32,4 @@ Content\Explosion-Orange.xnb
 Content\Explosion-Large-Blue.xnb
 Content\Explosion-Medium-Pink.xnb
 Content\Ship-Trail-Blue.xnb
+Content\transparent_background.xnb

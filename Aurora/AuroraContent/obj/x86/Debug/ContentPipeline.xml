@@ -307,6 +307,15 @@
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Ship-Trail-Blue.xnb</Output>
       <Time>2011-04-09T19:34:57.5527343-04:00</Time>
     </Item>
+    <Item>
+      <Source>transparent_background.png</Source>
+      <Name>transparent_background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\transparent_background.xnb</Output>
+      <Time>2011-04-13T18:28:05.1621093-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
@@ -320,7 +329,7 @@
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Users\Dylan\Desktop\Mercury Particle Engine\References\X86\ProjectMercury.ContentPipeline.dll</Key>
+        <Key>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\ProjectMercury.ContentPipeline.dll</Key>
         <Value>2010-10-08T15:57:20-04:00</Value>
       </Assembly>
       <Assembly>

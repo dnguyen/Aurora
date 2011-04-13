@@ -21,6 +21,7 @@ namespace Aurora
         SpriteFont score;
         EnemyManager enemyManager;
         ParticleManager particleManager;
+        public static Camera cam;
 
         public ActionScreen(Game game, SpriteBatch spriteBatch) : base(game, spriteBatch)
         {
@@ -44,7 +45,7 @@ namespace Aurora
             player = new Player(content.Load<Texture2D>("PlayerShip"));
             player.LoadContent(content);
 
-            background = content.Load<Texture2D>("black_background");
+            background = content.Load<Texture2D>("transparent_background");
 
             // Load enemy textures
             enemyManager = new EnemyManager(player);
@@ -77,11 +78,13 @@ namespace Aurora
             // Load sounds
             player.ShootSound = content.Load<SoundEffect>("LaserShoot");
 
-           // player.LoadContent(content);
+            // player.LoadContent(content);
+            cam = new Camera();
         }
 
         public override void Update(GameTime gameTime)
         {
+            cam.Pos = player.Position;
             player.Update(gameTime);
             enemyManager.Update(gameTime, player);
             particleManager.Update(gameTime);
@@ -89,17 +92,30 @@ namespace Aurora
 
         public override void Draw(GameTime gameTime)
         {
-            spriteBatch.Begin();
-            spriteBatch.Draw(background, new Vector2(0,0), Color.White);
-            spriteBatch.End();
-            spriteBatch.Begin();
-            enemyManager.Draw(spriteBatch);
+            //spriteBatch.Begin();
+            
+            //spriteBatch.End();
+
+           // spriteBatch.Begin();
+            //spriteBatch.End();
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null, null, null, null, cam.get_transformation(game.GraphicsDevice));
+
+            
             player.Draw(spriteBatch);
 
+            enemyManager.Draw(spriteBatch);
+
             particleManager.Draw();
+
+
+            spriteBatch.Draw(background, new Vector2(0, 0), Color.White); 
+            spriteBatch.End();
+
+            spriteBatch.Begin();
             spriteBatch.DrawString(playerLives, "Lives: " + player.Lives.ToString(), new Vector2(15, 10), Color.White);
             spriteBatch.DrawString(score, "Score: " + player.Score.ToString(), new Vector2(170, 10), Color.White);
             spriteBatch.End();
+
             base.Draw(gameTime);
         }
     }
