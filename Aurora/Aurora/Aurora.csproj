@@ -114,6 +114,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bloom\BloomComponent.cs" />
+    <Compile Include="Bloom\BloomSettings.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="ParticleManager.cs" />
     <Compile Include="Screens\ActionScreen.cs" />

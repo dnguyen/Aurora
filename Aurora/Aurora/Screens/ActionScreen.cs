@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Audio;
 using ProjectMercury;
+using Aurora.Bloom;
 
 namespace Aurora
 {
@@ -22,10 +23,14 @@ namespace Aurora
         EnemyManager enemyManager;
         ParticleManager particleManager;
         public static Camera cam;
+        BloomComponent bloom;
 
         public ActionScreen(Game game, SpriteBatch spriteBatch) : base(game, spriteBatch)
         {
             particleManager = new ParticleManager();
+            bloom = new BloomComponent(game);
+            bloom.Initialize();
+            Components.Add(bloom);
         }
 
         public void LoadContent(ContentManager content)
@@ -45,7 +50,7 @@ namespace Aurora
             player = new Player(content.Load<Texture2D>("PlayerShip"));
             player.LoadContent(content);
 
-            background = content.Load<Texture2D>("transparent_background");
+            background = content.Load<Texture2D>("black_background");
 
             // Load enemy textures
             enemyManager = new EnemyManager(player);
@@ -80,6 +85,9 @@ namespace Aurora
 
             // player.LoadContent(content);
             cam = new Camera();
+            
+            bloom.Settings = BloomSettings.PresetSettings[6];
+            bloom.Visible = true;
         }
 
         public override void Update(GameTime gameTime)
@@ -93,13 +101,16 @@ namespace Aurora
         public override void Draw(GameTime gameTime)
         {
             //spriteBatch.Begin();
-            
             //spriteBatch.End();
-
+            bloom.BeginDraw(); 
+            Game1.graphics.GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
             //spriteBatch.End();
             //spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null, null, null, null, cam.get_transformation(game.GraphicsDevice));
 
+            //spriteBatch.Begin();
+            //spriteBatch.Draw(background, new Vector2(0, 0), Color.White);
+            //spriteBatch.End();
             
             player.Draw(spriteBatch);
 
@@ -108,7 +119,6 @@ namespace Aurora
             particleManager.Draw();
 
 
-            spriteBatch.Draw(background, new Vector2(0, 0), Color.White); 
             spriteBatch.End();
 
             spriteBatch.Begin();

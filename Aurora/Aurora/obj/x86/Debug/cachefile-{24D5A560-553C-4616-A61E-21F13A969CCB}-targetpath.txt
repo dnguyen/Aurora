@@ -33,3 +33,6 @@ Content\Explosion-Orange.xnb
 Content\Explosion-Large-Blue.xnb
 Content\Explosion-Medium-Pink.xnb
 Content\Ship-Trail-Blue.xnb
+Content\BloomCombine.xnb
+Content\BloomExtract.xnb
+Content\GaussianBlur.xnb
