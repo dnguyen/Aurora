@@ -41,7 +41,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="ProjectMercury.ContentPipeline">
-      <HintPath>..\Aurora\bin\x86\Debug\ProjectMercury.ContentPipeline.dll</HintPath>
+      <HintPath>E:\Programming\XNA\Mercury Particle Engine\References\X86\ProjectMercury.ContentPipeline.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

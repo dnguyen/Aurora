@@ -96,9 +96,9 @@ namespace Aurora
             
             //spriteBatch.End();
 
-           // spriteBatch.Begin();
+            spriteBatch.Begin();
             //spriteBatch.End();
-            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null, null, null, null, cam.get_transformation(game.GraphicsDevice));
+            //spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null, null, null, null, cam.get_transformation(game.GraphicsDevice));
 
             
             player.Draw(spriteBatch);
