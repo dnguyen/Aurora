@@ -16,7 +16,9 @@ namespace Aurora
     class ActionScreen : GameScreen
     {
         Player player;
+
         Texture2D background;
+        Texture2D crosshair;
 
         SpriteFont playerLives;
         SpriteFont score;
@@ -27,6 +29,7 @@ namespace Aurora
 
         public ActionScreen(Game game, SpriteBatch spriteBatch) : base(game, spriteBatch)
         {
+            game.IsMouseVisible = false;
             particleManager = new ParticleManager();
             bloom = new BloomComponent(game);
             bloom.Initialize();
@@ -42,14 +45,16 @@ namespace Aurora
             particleManager.addEffect("MEDIUM_EXPLOSION_PINK", content.Load<ParticleEffect>("Particle Effects/Explosion-Medium-Pink"));
             particleManager.addEffect("LARGE_EXPLOSION_BLUE", content.Load<ParticleEffect>("Particle Effects/Explosion-Large-Blue"));
             particleManager.addEffect("Ship-Trail-Blue", content.Load<ParticleEffect>("Particle Effects/Ship-Trail-Blue"));
+            particleManager.addEffect("MissleTrail-Orange", content.Load<ParticleEffect>("Particle Effects/MissleTrail-Orange"));
             particleManager.LoadContent(content);
 
             playerLives = content.Load<SpriteFont>("menuFont");
             score = content.Load<SpriteFont>("menuFont");
 
             player = new Player(content.Load<Texture2D>("PlayerShip"));
+            crosshair = content.Load<Texture2D>("crosshair");
 
-            background = content.Load<Texture2D>("black_background");
+            background = content.Load<Texture2D>("background_neon");
 
             // Load enemy textures
             enemyManager = new EnemyManager(player);
@@ -100,25 +105,25 @@ namespace Aurora
 
         public override void Draw(GameTime gameTime)
         {
+
+            bloom.BeginDraw();
+            Game1.graphics.GraphicsDevice.Clear(Color.Black);
             //spriteBatch.Begin();
             //spriteBatch.End();
-            bloom.BeginDraw(); 
-            Game1.graphics.GraphicsDevice.Clear(Color.Black);
-            spriteBatch.Begin();
-            //spriteBatch.End();
-            //spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null, null, null, null, cam.get_transformation(game.GraphicsDevice));
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null, null, null, null, cam.get_transformation(game.GraphicsDevice));
 
             //spriteBatch.Begin();
-            //spriteBatch.Draw(background, new Vector2(0, 0), Color.White);
             //spriteBatch.End();
-            
+
+            spriteBatch.Draw(background, new Vector2(0, 0), Color.White);
+
             player.Draw(spriteBatch);
 
             enemyManager.Draw(spriteBatch);
 
-            particleManager.Draw();
+            particleManager.Draw(cam.get_transformation(game.GraphicsDevice));
 
-
+            spriteBatch.Draw(crosshair, player.MousePosition, Color.White);
             spriteBatch.End();
 
             spriteBatch.Begin();

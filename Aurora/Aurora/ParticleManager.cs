@@ -49,12 +49,12 @@ namespace Aurora
             }
         }
 
-        public void Draw()
+        public void Draw(Matrix transform)
         {
             
             foreach (KeyValuePair<string, ParticleEffect> effectPair in particleEffects)
             {
-                particleRenderer.RenderEffect(effectPair.Value) ;
+                particleRenderer.RenderEffect(effectPair.Value, ref transform) ;
             }
         }
 

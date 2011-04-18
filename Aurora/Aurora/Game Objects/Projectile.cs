@@ -34,6 +34,13 @@ namespace Aurora
             base.Initialize();
         }
 
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+            if (type == ProjectileType.NORMAL_MISSLE)
+                ParticleManager.particleEffects["MissleTrail-Orange"].Trigger(position);
+        }
+
         public override void Draw(SpriteBatch spriteBatch)
         {
             if (OutOfViewPort()) {

@@ -41,6 +41,7 @@ namespace Aurora
         public float FireDelay { get { return FIRE_DELAY; } set { FIRE_DELAY = value; } }
         public List<Projectile> Bullets { get { return bullets; } set { bullets = value; } }
         public SoundEffect ShootSound { get { return shootSound; } set { shootSound = value; } }
+        public Vector2 MousePosition { get { return mousePosition; } set { mousePosition = value; } }
 
         public Player(Texture2D texture)
         {

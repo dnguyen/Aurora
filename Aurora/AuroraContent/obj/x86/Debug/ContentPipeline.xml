@@ -29,15 +29,6 @@
       <Time>2011-03-14T21:03:09.5566407-04:00</Time>
     </Item>
     <Item>
-      <Source>testbg.png</Source>
-      <Name>testbg</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\testbg.xnb</Output>
-      <Time>2011-03-18T22:16:40.6425781-04:00</Time>
-    </Item>
-    <Item>
       <Source>SMALL_ASTEROID_RED.png</Source>
       <Name>SMALL_ASTEROID_RED</Name>
       <Importer>TextureImporter</Importer>
@@ -99,15 +90,6 @@
       <Options>None</Options>
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle005.xnb</Output>
       <Time>2011-03-30T08:42:31.0175781-04:00</Time>
-    </Item>
-    <Item>
-      <Source>black_background.png</Source>
-      <Name>black_background</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\black_background.xnb</Output>
-      <Time>2011-04-02T15:45:22.5996093-04:00</Time>
     </Item>
     <Item>
       <Source>LARGE_ASTEROID_BLUE.png</Source>
@@ -254,15 +236,6 @@
       <Time>2011-04-07T20:56:10.2949218-04:00</Time>
     </Item>
     <Item>
-      <Source>transparent_background.png</Source>
-      <Name>transparent_background</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\transparent_background.xnb</Output>
-      <Time>2011-04-13T18:28:05.1621093-04:00</Time>
-    </Item>
-    <Item>
       <Source>LaserShoot.wav</Source>
       <Name>LaserShoot</Name>
       <Importer>WavImporter</Importer>
@@ -369,6 +342,42 @@
       <Options>None</Options>
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\NORMAL_MISSLE.xnb</Output>
       <Time>2011-04-17T20:26:14.5019531-04:00</Time>
+    </Item>
+    <Item>
+      <Source>crosshair.png</Source>
+      <Name>crosshair</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\crosshair.xnb</Output>
+      <Time>2011-04-18T16:19:52.0429687-04:00</Time>
+    </Item>
+    <Item>
+      <Source>background_neon.png</Source>
+      <Name>background_neon</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\background_neon.xnb</Output>
+      <Time>2011-04-18T16:29:53.6757812-04:00</Time>
+    </Item>
+    <Item>
+      <Source>fx_explode_1.png</Source>
+      <Name>fx_explode_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\fx_explode_1.xnb</Output>
+      <Time>2011-04-18T16:37:20.4404296-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Particle Effects\MissleTrail-Orange.xml</Source>
+      <Name>Particle Effects\MissleTrail-Orange</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\MissleTrail-Orange.xnb</Output>
+      <Time>2011-04-18T16:37:44.9560546-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
