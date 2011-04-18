@@ -272,76 +272,103 @@
       <Time>2011-03-26T19:04:47.9072265-04:00</Time>
     </Item>
     <Item>
-      <Source>Explosion-Red.xml</Source>
-      <Name>Explosion-Red</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-      <Options>None</Options>
-      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Red.xnb</Output>
-      <Time>2011-04-15T15:38:44.9414062-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Explosion-Orange.xml</Source>
-      <Name>Explosion-Orange</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-      <Options>None</Options>
-      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Orange.xnb</Output>
-      <Time>2011-04-07T20:31:18.9677734-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Explosion-Large-Blue.xml</Source>
-      <Name>Explosion-Large-Blue</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-      <Options>None</Options>
-      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Large-Blue.xnb</Output>
-      <Time>2011-04-07T20:31:18.9853515-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Explosion-Medium-Pink.xml</Source>
-      <Name>Explosion-Medium-Pink</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-      <Options>None</Options>
-      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Medium-Pink.xnb</Output>
-      <Time>2011-04-07T20:31:18.9755859-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Ship-Trail-Blue.xml</Source>
-      <Name>Ship-Trail-Blue</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-      <Options>None</Options>
-      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Ship-Trail-Blue.xnb</Output>
-      <Time>2011-04-09T19:34:57.5527343-04:00</Time>
-    </Item>
-    <Item>
-      <Source>BloomCombine.fx</Source>
-      <Name>BloomCombine</Name>
+      <Source>Bloom\BloomCombine.fx</Source>
+      <Name>Bloom\BloomCombine</Name>
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\BloomCombine.xnb</Output>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Bloom\BloomCombine.xnb</Output>
       <Time>2011-04-16T01:35:22.3164062-04:00</Time>
     </Item>
     <Item>
-      <Source>BloomExtract.fx</Source>
-      <Name>BloomExtract</Name>
+      <Source>Bloom\BloomExtract.fx</Source>
+      <Name>Bloom\BloomExtract</Name>
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\BloomExtract.xnb</Output>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Bloom\BloomExtract.xnb</Output>
       <Time>2011-04-16T01:35:22.3183593-04:00</Time>
     </Item>
     <Item>
-      <Source>GaussianBlur.fx</Source>
-      <Name>GaussianBlur</Name>
+      <Source>Bloom\GaussianBlur.fx</Source>
+      <Name>Bloom\GaussianBlur</Name>
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\GaussianBlur.xnb</Output>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Bloom\GaussianBlur.xnb</Output>
       <Time>2011-04-16T01:35:22.3203125-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Particle Effects\Explosion-Red.xml</Source>
+      <Name>Particle Effects\Explosion-Red</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Explosion-Red.xnb</Output>
+      <Time>2011-04-15T15:38:44.9414062-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Particle Effects\Explosion-Orange.xml</Source>
+      <Name>Particle Effects\Explosion-Orange</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Explosion-Orange.xnb</Output>
+      <Time>2011-04-07T20:31:18.9677734-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Particle Effects\Explosion-Large-Blue.xml</Source>
+      <Name>Particle Effects\Explosion-Large-Blue</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Explosion-Large-Blue.xnb</Output>
+      <Time>2011-04-07T20:31:18.9853515-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Particle Effects\Explosion-Medium-Pink.xml</Source>
+      <Name>Particle Effects\Explosion-Medium-Pink</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Explosion-Medium-Pink.xnb</Output>
+      <Time>2011-04-07T20:31:18.9755859-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Particle Effects\Ship-Trail-Blue.xml</Source>
+      <Name>Particle Effects\Ship-Trail-Blue</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Ship-Trail-Blue.xnb</Output>
+      <Time>2011-04-09T19:34:57.5527343-04:00</Time>
+    </Item>
+    <Item>
+      <Source>bulletA_1.png</Source>
+      <Name>bulletA_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\bulletA_1.xnb</Output>
+      <Time>2011-04-17T14:00:21.7646484-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Projectile2.png</Source>
+      <Name>Projectile2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Projectile2.xnb</Output>
+      <Time>2011-04-17T20:12:32.7255859-04:00</Time>
+    </Item>
+    <Item>
+      <Source>NORMAL_MISSLE.png</Source>
+      <Name>NORMAL_MISSLE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\NORMAL_MISSLE.xnb</Output>
+      <Time>2011-04-17T20:26:14.5019531-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

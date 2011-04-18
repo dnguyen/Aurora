@@ -19,10 +19,11 @@ namespace Aurora
         private const float DRAG = 0.9F;
         private const int ACCELERATION = 1;
         private const int BASE_SPEED = 7;
-        private const float FIRE_DELAY = 0.1F;
+        private float FIRE_DELAY = 0.1F;
 
         private int lives;
         private int score;
+        private int power;
         private float fireTime = 0F;
 
         private Vector2 maxVelocity = new Vector2(1000, 1000);
@@ -36,6 +37,8 @@ namespace Aurora
 
         public int Lives { get { return lives; } set { lives = value; } }
         public int Score { get { return score; } set { score = value; } }
+        public int Power { get { return power; } set { power = value; } }
+        public float FireDelay { get { return FIRE_DELAY; } set { FIRE_DELAY = value; } }
         public List<Projectile> Bullets { get { return bullets; } set { bullets = value; } }
         public SoundEffect ShootSound { get { return shootSound; } set { shootSound = value; } }
 
@@ -43,25 +46,12 @@ namespace Aurora
         {
             lives = 8;
             score = 0;
+            power = 3;
             position = new Vector2(Game1.graphics.GraphicsDevice.Viewport.Width / 2, Game1.graphics.GraphicsDevice.Viewport.Height / 2);
             velocity = Vector2.Zero;
             sprite = texture;
             moving = false;
             base.Initialize();
-        }
-
-        public override void LoadContent(ContentManager content)
-        {
-            //particleRenderer = new SpriteBatchRenderer
-            //{
-            //    GraphicsDeviceService = Game1.graphics
-            //};
-            //base.LoadContent(content);
-            //particleEffect = content.Load<ParticleEffect>("Explosion-Red");
-            //particleEffect = ParticleManager.particleEffects["SMALL_EXPLOSION"];
-            //particleEffect.LoadContent(content);
-            //particleEffect.Initialise();
-            //particleRenderer.LoadContent(content);
         }
 
         public override void Update(GameTime gameTime)
@@ -115,7 +105,38 @@ namespace Aurora
             {
                 for (int i = 0; i < 3; i++)
                 {
-                    Projectile bullet = new Projectile(ProjectileType.NORMAL_BULLET, projectileTextures["NORMAL_BULLET"], position, direction, angle);
+                    switch (i)
+                    {
+                        case 0:
+                            //direction += new Vector2(50, 50);
+                            break;
+                        case 2: 
+                            //direction -= new Vector2(50, 50);
+                            break;
+
+                    }
+
+                    ProjectileType newType = ProjectileType.NORMAL_BULLET;
+                    Texture2D newTexture = projectileTextures["NORMAL_BULLET"];
+                    switch (power)
+                    {
+                        case 1: 
+                            newType = ProjectileType.NORMAL_BULLET;
+                            newTexture = projectileTextures["NORMAL_BULLET"];
+                            FIRE_DELAY = 0.1F;
+                            break;
+                        case 2:
+                            newType = ProjectileType.DOUBLE_BULLET;
+                            newTexture = projectileTextures["NORMAL_BULLET"];
+                            FIRE_DELAY = 0.1F;
+                            break;
+                        case 3:
+                            newType = ProjectileType.NORMAL_MISSLE;
+                            newTexture = projectileTextures["NORMAL_MISSLE"];
+                            FIRE_DELAY = 0.3F;
+                            break;
+                    }
+                    Projectile bullet = new Projectile(newType, newTexture, position, direction, angle);
                     
                     bullets.Add(bullet);
                 }

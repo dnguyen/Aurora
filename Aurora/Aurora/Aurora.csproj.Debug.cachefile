@@ -28,11 +28,14 @@ Content\fx_explode_cyan_1.xnb
 Content\fx_player_exhaust_1.xnb
 Content\transparent_background.xnb
 Content\LaserShoot.xnb
-Content\Explosion-Red.xnb
-Content\Explosion-Orange.xnb
-Content\Explosion-Large-Blue.xnb
-Content\Explosion-Medium-Pink.xnb
-Content\Ship-Trail-Blue.xnb
-Content\BloomCombine.xnb
-Content\BloomExtract.xnb
-Content\GaussianBlur.xnb
+Content\Bloom\BloomCombine.xnb
+Content\Bloom\BloomExtract.xnb
+Content\Bloom\GaussianBlur.xnb
+Content\Particle Effects\Explosion-Red.xnb
+Content\Particle Effects\Explosion-Orange.xnb
+Content\Particle Effects\Explosion-Large-Blue.xnb
+Content\Particle Effects\Explosion-Medium-Pink.xnb
+Content\Particle Effects\Ship-Trail-Blue.xnb
+Content\bulletA_1.xnb
+Content\Projectile2.xnb
+Content\NORMAL_MISSLE.xnb

@@ -108,7 +108,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Explosion-Red.xml">
+    <Compile Include="Particle Effects\Explosion-Red.xml">
       <Name>Explosion-Red</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
@@ -136,7 +136,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Explosion-Orange.xml">
+    <Compile Include="Particle Effects\Explosion-Orange.xml">
       <Name>Explosion-Orange</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
@@ -150,12 +150,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Explosion-Large-Blue.xml">
+    <Compile Include="Particle Effects\Explosion-Large-Blue.xml">
       <Name>Explosion-Large-Blue</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
-    <Compile Include="Explosion-Medium-Pink.xml">
+    <Compile Include="Particle Effects\Explosion-Medium-Pink.xml">
       <Name>Explosion-Medium-Pink</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
@@ -254,7 +254,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ship-Trail-Blue.xml">
+    <Compile Include="Particle Effects\Ship-Trail-Blue.xml">
       <Name>Ship-Trail-Blue</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
@@ -268,20 +268,41 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BloomCombine.fx">
+    <Compile Include="Bloom\BloomCombine.fx">
       <Name>BloomCombine</Name>
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
     </Compile>
-    <Compile Include="BloomExtract.fx">
+    <Compile Include="Bloom\BloomExtract.fx">
       <Name>BloomExtract</Name>
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
     </Compile>
-    <Compile Include="GaussianBlur.fx">
+    <Compile Include="Bloom\GaussianBlur.fx">
       <Name>GaussianBlur</Name>
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bulletA_1.png">
+      <Name>bulletA_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Projectile2.png">
+      <Name>Projectile2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NORMAL_MISSLE.png">
+      <Name>NORMAL_MISSLE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

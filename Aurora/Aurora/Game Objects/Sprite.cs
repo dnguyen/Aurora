@@ -33,19 +33,9 @@ namespace Aurora
         public float Angle { get { return angle; } set { angle = value; } }
         public BoundingSphere Bounds { get { return bounds; } set { bounds = value; } }
         public Matrix Transformation { get { return transformation; } set { transformation = value; } }
+        public Vector2 Center { get { return center; } set { center = value; } }
         #endregion
 
-        public Vector2 Center
-        {
-            get
-            {
-                return center;
-            }
-            set
-            {
-                center = value;
-            }
-        }
 
         public virtual void Initialize()
         {

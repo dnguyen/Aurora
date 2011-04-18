@@ -117,7 +117,10 @@
     <Compile Include="Bloom\BloomComponent.cs" />
     <Compile Include="Bloom\BloomSettings.cs" />
     <Compile Include="Camera.cs" />
+    <Compile Include="Game Objects\PowerUp.cs" />
+    <Compile Include="Manager.cs" />
     <Compile Include="ParticleManager.cs" />
+    <Compile Include="PowerUpManager.cs" />
     <Compile Include="Screens\ActionScreen.cs" />
     <Compile Include="Game Objects\Enemy.cs" />
     <Compile Include="EnemyManager.cs" />

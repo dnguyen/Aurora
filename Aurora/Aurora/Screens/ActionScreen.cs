@@ -37,18 +37,17 @@ namespace Aurora
         {
 
             // Load particles
-            particleManager.addEffect("SMALL_EXPLOSION", content.Load<ParticleEffect>("Explosion-Red"));
-            particleManager.addEffect("SMALL_EXPLOSION2", content.Load<ParticleEffect>("Explosion-Orange"));
-            particleManager.addEffect("MEDIUM_EXPLOSION_PINK", content.Load<ParticleEffect>("Explosion-Medium-Pink"));
-            particleManager.addEffect("LARGE_EXPLOSION_BLUE", content.Load<ParticleEffect>("Explosion-Large-Blue"));
-            particleManager.addEffect("Ship-Trail-Blue", content.Load<ParticleEffect>("Ship-Trail-Blue"));
+            particleManager.addEffect("SMALL_EXPLOSION", content.Load<ParticleEffect>("Particle Effects/Explosion-Red"));
+            particleManager.addEffect("SMALL_EXPLOSION2", content.Load<ParticleEffect>("Particle Effects/Explosion-Orange"));
+            particleManager.addEffect("MEDIUM_EXPLOSION_PINK", content.Load<ParticleEffect>("Particle Effects/Explosion-Medium-Pink"));
+            particleManager.addEffect("LARGE_EXPLOSION_BLUE", content.Load<ParticleEffect>("Particle Effects/Explosion-Large-Blue"));
+            particleManager.addEffect("Ship-Trail-Blue", content.Load<ParticleEffect>("Particle Effects/Ship-Trail-Blue"));
             particleManager.LoadContent(content);
 
             playerLives = content.Load<SpriteFont>("menuFont");
             score = content.Load<SpriteFont>("menuFont");
 
             player = new Player(content.Load<Texture2D>("PlayerShip"));
-            player.LoadContent(content);
 
             background = content.Load<Texture2D>("black_background");
 
@@ -78,7 +77,8 @@ namespace Aurora
             enemyManager.LoadContent(content);
 
             // Load projectile textures
-            player.projectileTextures.Add("NORMAL_BULLET", content.Load<Texture2D>("Projectile1"));
+            player.projectileTextures.Add("NORMAL_BULLET", content.Load<Texture2D>("Projectile2"));
+            player.projectileTextures.Add("NORMAL_MISSLE", content.Load<Texture2D>("NORMAL_MISSLE"));
 
             // Load sounds
             player.ShootSound = content.Load<SoundEffect>("LaserShoot");

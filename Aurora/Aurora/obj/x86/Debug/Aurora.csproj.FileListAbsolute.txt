@@ -25,14 +25,10 @@ C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Resol
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Aurora.exe
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Aurora.pdb
-F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Red.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Cloud001.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle004.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle005.xnb
-F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Orange.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\black_background.xnb
-F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Large-Blue.xnb
-F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Explosion-Medium-Pink.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTEROID_BLUE.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTEROID_PURPLE.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID_BLUE.xnb
@@ -52,9 +48,16 @@ F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_SPINN
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_SPINNER_PINK.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\fx_explode_cyan_1.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\fx_player_exhaust_1.xnb
-F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Ship-Trail-Blue.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\transparent_background.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\ProjectMercury.dll
-F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\BloomCombine.xnb
-F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\BloomExtract.xnb
-F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\GaussianBlur.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Bloom\BloomCombine.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Bloom\BloomExtract.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Bloom\GaussianBlur.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Explosion-Red.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Explosion-Orange.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Explosion-Large-Blue.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Explosion-Medium-Pink.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Ship-Trail-Blue.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\bulletA_1.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Projectile2.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\NORMAL_MISSLE.xnb
