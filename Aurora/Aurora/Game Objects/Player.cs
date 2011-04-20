@@ -35,6 +35,7 @@ namespace Aurora
         private SoundEffect shootSound;
         private List<Projectile> bullets = new List<Projectile>();
 
+
         public int Lives { get { return lives; } set { lives = value; } }
         public int Score { get { return score; } set { score = value; } }
         public int Power { get { return power; } set { power = value; } }
@@ -98,13 +99,13 @@ namespace Aurora
                 }
             }
 
-            direction = position - mousePosition;
+            direction = new Vector2(Game1.SCREEN_WIDTH * 0.5f, Game1.SCREEN_HEIGHT * 0.5f) - mousePosition;
             angle = (float) (Math.Atan2(direction.Y, direction.X));
 
             fireTime += elapsedTime;
             if (mouseState.LeftButton == ButtonState.Pressed && fireTime > FIRE_DELAY)
             {
-                for (int i = 0; i < 3; i++)
+                /*for (int i = 0; i < 3; i++)
                 {
                     switch (i)
                     {
@@ -115,7 +116,7 @@ namespace Aurora
                             //direction -= new Vector2(50, 50);
                             break;
 
-                    }
+                    }*/
 
                     ProjectileType newType = ProjectileType.NORMAL_BULLET;
                     Texture2D newTexture = projectileTextures["NORMAL_BULLET"];
@@ -140,7 +141,7 @@ namespace Aurora
                     Projectile bullet = new Projectile(newType, newTexture, position, direction, angle);
                     
                     bullets.Add(bullet);
-                }
+                //}
                 //shootSound.Play();
                 fireTime = 0;
             }
@@ -149,7 +150,6 @@ namespace Aurora
             {
                 bullet.Update(gameTime);
                 bullet.Transformation = Matrix.CreateTranslation(new Vector3(-bullet.Center, 0.0f)) *
-                    // Matrix.CreateScale(block.Scale) *  would go here
                     Matrix.CreateRotationZ(bullet.Angle) *
                     Matrix.CreateTranslation(new Vector3(bullet.Position, 0.0f));
             }
@@ -168,21 +168,14 @@ namespace Aurora
 
             transformation = Matrix.CreateTranslation(new Vector3(position, 0.0F));
 
-            ClampToViewPort();
-
-            if (Collided)
-            {
-                //ParticleManager.particleEffects["SMALL_EXPLOSION"].Trigger(position);
-            }
-
-            //ParticleManager.particleEffects["SMALL_EXPLOSION"].Update(elapsedTime);
+            ClampToViewPort(ActionScreen.background);
 
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(sprite, position, null, Color.White, angle, Center, 1.0F, SpriteEffects.None, 0f);
-            //ParticleManager.particleRenderer.RenderEffect(ParticleManager.particleEffects["SMALL_EXPLOSION"]);
+
             foreach (Projectile bullet in bullets)
             {
                 if (!bullet.Collided)
@@ -197,18 +190,6 @@ namespace Aurora
             newPos.Y = position.Y + sprite.Height / 2;
 
             return newPos;
-        }
-
-        private void ClampToViewPort()
-        {
-            if (position.X < sprite.Width / 2)
-                position.X = sprite.Width / 2;
-            if (position.X > Game1.SCREEN_WIDTH - sprite.Width / 2)
-                position.X = Game1.SCREEN_WIDTH - sprite.Width / 2;
-            if (position.Y < sprite.Height / 2)
-                position.Y = sprite.Height / 2;
-            if (position.Y > Game1.SCREEN_HEIGHT - sprite.Height / 2)
-                position.Y = Game1.SCREEN_HEIGHT - sprite.Height / 2;
         }
     }
 }

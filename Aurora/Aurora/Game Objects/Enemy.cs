@@ -90,19 +90,19 @@ namespace Aurora
                 case EnemyType.SMALL_ASTEROID:
                     health = 3;
                     pointValue = 10;
-                    speed = 100;
+                    speed = 130;
                     rotation = .05F;
                     break;
                 case EnemyType.MEDIUM_ASTEROID:
                     health = 5;
                     pointValue = 50;
-                    speed = 85;
+                    speed = 100;
                     rotation = .05F;
                     break;
                 case EnemyType.LARGE_ASTEROID:
                     health = 10;
                     pointValue = 100;
-                    speed = 50;
+                    speed = 95;
                     rotation = .05F;
                     break;
                 case EnemyType.SMALL_SPINNER:

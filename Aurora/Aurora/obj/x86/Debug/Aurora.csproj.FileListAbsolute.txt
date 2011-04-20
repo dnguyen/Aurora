@@ -12,10 +12,6 @@ F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LaserShoot.
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\menuFont.xnb
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Spikey001.xnb
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Projectile1.xnb
-C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\testbg.xnb
-C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_ASTEROID.xnb
-C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID.xnb
-C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTEROID.xnb
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\PlayerShip.xnb
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LaserShoot.xnb
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Aurora.exe
@@ -46,7 +42,6 @@ F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_SPINN
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_SPINNER_PINK.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\fx_explode_cyan_1.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\fx_player_exhaust_1.xnb
-F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\ProjectMercury.dll
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Bloom\BloomCombine.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Bloom\BloomExtract.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Bloom\GaussianBlur.xnb
@@ -62,3 +57,40 @@ F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\crosshair.x
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\background_neon.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\fx_explode_1.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\MissleTrail-Orange.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_ASTEROID_RED.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID_RED.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTEROID_RED.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Cloud001.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle004.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle005.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTEROID_BLUE.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTEROID_PURPLE.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID_BLUE.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID_PINK.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_ASTEROID_BLUE.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_ASTEROID_GREEN.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_ASTEROID_PINK.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_ASTEROID_PURPLE.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTEROID_GREEN.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_ASTEROID_PINK.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID_GREEN.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\MEDIUM_ASTEROID_PURPLE.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LARGE_SPINNER_BLUE.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\SMALL_SPINNER_PINK.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\fx_explode_cyan_1.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\fx_player_exhaust_1.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\bulletA_1.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Projectile2.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\NORMAL_MISSLE.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\crosshair.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\background_neon.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\fx_explode_1.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Explosion-Red.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Explosion-Orange.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Explosion-Large-Blue.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Explosion-Medium-Pink.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Ship-Trail-Blue.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\MissleTrail-Orange.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Bloom\BloomCombine.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Bloom\BloomExtract.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Bloom\GaussianBlur.xnb

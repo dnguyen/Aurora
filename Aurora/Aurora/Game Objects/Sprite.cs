@@ -57,20 +57,40 @@ namespace Aurora
             bounds = new BoundingSphere(new Vector3(position.X, position.Y, 0), sprite.Width / 2);
         }
 
+        public virtual void Update(GameTime gameTime, Background bg)
+        {
+            float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            position += velocity * elapsedTime;
+            bounds = new BoundingSphere(new Vector3(position.X, position.Y, 0), sprite.Width / 2);
+        }
+
         public virtual void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(sprite, position, Color.White);
         }
 
-        public bool OutOfViewPort()
+
+        public void ClampToViewPort(Background bg)
         {
             if (position.X < sprite.Width / 2)
-                return true;
-            if (position.X > Game1.SCREEN_WIDTH - sprite.Width / 2)
-                return true;
+                position.X = sprite.Width / 2;
+            if (position.X > bg.Width - sprite.Width / 2)
+                position.X = bg.Width - sprite.Width / 2;
             if (position.Y < sprite.Height / 2)
+                position.Y = sprite.Height / 2;
+            if (position.Y > bg.Height - sprite.Height / 2)
+                position.Y = bg.Height - sprite.Height / 2;
+        }
+
+        public bool OutOfViewPort(Background bg)
+        {
+            if (position.X < sprite.Width)
                 return true;
-            if (position.Y > Game1.SCREEN_HEIGHT - sprite.Height / 2)
+            if (position.X > bg.Width - sprite.Width)
+                return true;
+            if (position.Y < sprite.Height)
+                return true;
+            if (position.Y > bg.Height - sprite.Height)
                 return true;
 
             return false;
@@ -78,11 +98,12 @@ namespace Aurora
 
         public void ReflectOffViewport(int padding)
         {
-            if (position.X > Game1.SCREEN_WIDTH + padding || position.X < -padding )
+            if (position.X > ActionScreen.background.Width - sprite.Width || position.X < sprite.Width )
             {
                 velocity.X *= -1;
             }
-            else if (position.Y > Game1.SCREEN_HEIGHT + padding || position.Y < -padding){
+            else if (position.Y > ActionScreen.background.Height - sprite.Height || position.Y < sprite.Height)
+            {
                 velocity.Y *= -1;
             }
         }

@@ -39,11 +39,12 @@ namespace Aurora
             base.Update(gameTime);
             if (type == ProjectileType.NORMAL_MISSLE)
                 ParticleManager.particleEffects["MissleTrail-Orange"].Trigger(position);
+            ClampToViewPort(ActionScreen.background);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            if (OutOfViewPort()) {
+            if (OutOfViewPort(ActionScreen.background)) {
                 collided = true;
             }
             if (!collided)
@@ -55,19 +56,19 @@ namespace Aurora
             switch (type_)
             {
                 case ProjectileType.NORMAL_BULLET:
-                    damage = 1;
-                    speed = 200;
-                    break;
-                case ProjectileType.DOUBLE_BULLET:
                     damage = 2;
                     speed = 200;
                     break;
-                case ProjectileType.NORMAL_MISSLE:
+                case ProjectileType.DOUBLE_BULLET:
                     damage = 3;
+                    speed = 200;
+                    break;
+                case ProjectileType.NORMAL_MISSLE:
+                    damage = 4;
                     speed = 150;
                     break;
                 case ProjectileType.DOUBLE_MISSLE:
-                    damage = 4;
+                    damage = 5;
                     speed = 150;
                     break;
             }

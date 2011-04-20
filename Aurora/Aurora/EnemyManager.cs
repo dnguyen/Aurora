@@ -76,7 +76,7 @@ namespace Aurora
                     {
                         if (enemies[i].Type == EnemyType.SMALL_SPINNER || enemies[i].Type == EnemyType.LARGE_SPINNER)
                         {
-                            if (enemies[i].OutOfViewPort())
+                            if (enemies[i].OutOfViewPort(ActionScreen.background))
                             {
                                 enemies[i].Collided = true;
                             }
@@ -134,7 +134,7 @@ namespace Aurora
                                 }
                                 else
                                 {
-                                    if (player.Bullets[j].OutOfViewPort())
+                                    if (player.Bullets[j].OutOfViewPort(ActionScreen.background))
                                     {
                                         player.Bullets[j].Collided = true;
                                     }
@@ -221,19 +221,19 @@ namespace Aurora
             switch (direction)
             {
                 case 0: // Top
-                    enemy.Position = new Vector2(rand.Next(-50, Game1.SCREEN_WIDTH + 50), rand.Next(-50, 50));
+                    enemy.Position = new Vector2(rand.Next(100, ActionScreen.background.Width - 100), 100);
                     break;
                 case 1: // Bottom
-                    enemy.Position = new Vector2(rand.Next(-50, Game1.SCREEN_WIDTH + 50), rand.Next(Game1.SCREEN_HEIGHT - 50, Game1.SCREEN_HEIGHT + 50));
+                    enemy.Position = new Vector2(rand.Next(100, ActionScreen.background.Width - 100), ActionScreen.background.Height - 100);
                     break;
                 case 2: // Left
-                    enemy.Position = new Vector2(rand.Next(-50, 50), rand.Next(-50, Game1.SCREEN_HEIGHT + 50));
+                    enemy.Position = new Vector2(100, rand.Next(100, ActionScreen.background.Height - 100));
                     break;
                 case 3: // Right
-                    enemy.Position = new Vector2(rand.Next(Game1.SCREEN_WIDTH + 50, Game1.SCREEN_WIDTH - 50), rand.Next(-50, Game1.SCREEN_HEIGHT + 50));
+                    enemy.Position = new Vector2(rand.Next(ActionScreen.background.Width + 50, ActionScreen.background.Width - 50), rand.Next(-50, ActionScreen.background.Height + 50));
                     break;
             }
-            if (enemy.Position.Y < 50)
+            if (enemy.Position.Y < 0)
             {
                 enemy.VY += enemy.Speed;
             }
@@ -241,11 +241,11 @@ namespace Aurora
             {
                 enemy.VX += enemy.Speed;
             }
-            if (enemy.Position.X > Game1.SCREEN_WIDTH - 50)
+            if (enemy.Position.X > ActionScreen.background.Width - 50)
             {
                 enemy.VX -= enemy.Speed;
             }
-            if (enemy.Position.Y > Game1.SCREEN_HEIGHT - 50)
+            if (enemy.Position.Y > ActionScreen.background.Height - 50)
             {
                 enemy.VY -= enemy.Speed;
             }

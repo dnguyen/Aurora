@@ -24,19 +24,19 @@ Content\LARGE_SPINNER_BLUE.xnb
 Content\SMALL_SPINNER_PINK.xnb
 Content\fx_explode_cyan_1.xnb
 Content\fx_player_exhaust_1.xnb
-Content\LaserShoot.xnb
-Content\Bloom\BloomCombine.xnb
-Content\Bloom\BloomExtract.xnb
-Content\Bloom\GaussianBlur.xnb
-Content\Particle Effects\Explosion-Red.xnb
-Content\Particle Effects\Explosion-Orange.xnb
-Content\Particle Effects\Explosion-Large-Blue.xnb
-Content\Particle Effects\Explosion-Medium-Pink.xnb
-Content\Particle Effects\Ship-Trail-Blue.xnb
 Content\bulletA_1.xnb
 Content\Projectile2.xnb
 Content\NORMAL_MISSLE.xnb
 Content\crosshair.xnb
 Content\background_neon.xnb
 Content\fx_explode_1.xnb
+Content\LaserShoot.xnb
+Content\Particle Effects\Explosion-Red.xnb
+Content\Particle Effects\Explosion-Orange.xnb
+Content\Particle Effects\Explosion-Large-Blue.xnb
+Content\Particle Effects\Explosion-Medium-Pink.xnb
+Content\Particle Effects\Ship-Trail-Blue.xnb
 Content\Particle Effects\MissleTrail-Orange.xnb
+Content\Bloom\BloomCombine.xnb
+Content\Bloom\BloomExtract.xnb
+Content\Bloom\GaussianBlur.xnb

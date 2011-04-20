@@ -41,7 +41,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="ProjectMercury.ContentPipeline">
-      <HintPath>E:\Programming\XNA\Mercury Particle Engine\References\X86\ProjectMercury.ContentPipeline.dll</HintPath>
+      <HintPath>..\..\MPE\ProjectMercury.ContentPipeline.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

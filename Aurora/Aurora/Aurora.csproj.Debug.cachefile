@@ -1,7 +1,6 @@
 Content\menuFont.xnb
 Content\Spikey001.xnb
 Content\Projectile1.xnb
-Content\testbg.xnb
 Content\SMALL_ASTEROID_RED.xnb
 Content\MEDIUM_ASTEROID_RED.xnb
 Content\LARGE_ASTEROID_RED.xnb
@@ -9,7 +8,6 @@ Content\PlayerShip.xnb
 Content\Cloud001.xnb
 Content\Particle004.xnb
 Content\Particle005.xnb
-Content\black_background.xnb
 Content\LARGE_ASTEROID_BLUE.xnb
 Content\LARGE_ASTEROID_PURPLE.xnb
 Content\MEDIUM_ASTEROID_BLUE.xnb
@@ -26,20 +24,19 @@ Content\LARGE_SPINNER_BLUE.xnb
 Content\SMALL_SPINNER_PINK.xnb
 Content\fx_explode_cyan_1.xnb
 Content\fx_player_exhaust_1.xnb
-Content\transparent_background.xnb
-Content\LaserShoot.xnb
-Content\Bloom\BloomCombine.xnb
-Content\Bloom\BloomExtract.xnb
-Content\Bloom\GaussianBlur.xnb
-Content\Particle Effects\Explosion-Red.xnb
-Content\Particle Effects\Explosion-Orange.xnb
-Content\Particle Effects\Explosion-Large-Blue.xnb
-Content\Particle Effects\Explosion-Medium-Pink.xnb
-Content\Particle Effects\Ship-Trail-Blue.xnb
 Content\bulletA_1.xnb
 Content\Projectile2.xnb
 Content\NORMAL_MISSLE.xnb
 Content\crosshair.xnb
 Content\background_neon.xnb
 Content\fx_explode_1.xnb
+Content\LaserShoot.xnb
+Content\Particle Effects\Explosion-Red.xnb
+Content\Particle Effects\Explosion-Orange.xnb
+Content\Particle Effects\Explosion-Large-Blue.xnb
+Content\Particle Effects\Explosion-Medium-Pink.xnb
+Content\Particle Effects\Ship-Trail-Blue.xnb
 Content\Particle Effects\MissleTrail-Orange.xnb
+Content\Bloom\BloomCombine.xnb
+Content\Bloom\BloomExtract.xnb
+Content\Bloom\GaussianBlur.xnb

@@ -16,8 +16,8 @@ namespace Aurora
     class ActionScreen : GameScreen
     {
         Player player;
+        public static Background background;
 
-        Texture2D background;
         Texture2D crosshair;
 
         SpriteFont playerLives;
@@ -29,6 +29,7 @@ namespace Aurora
 
         public ActionScreen(Game game, SpriteBatch spriteBatch) : base(game, spriteBatch)
         {
+            
             game.IsMouseVisible = false;
             particleManager = new ParticleManager();
             bloom = new BloomComponent(game);
@@ -51,10 +52,10 @@ namespace Aurora
             playerLives = content.Load<SpriteFont>("menuFont");
             score = content.Load<SpriteFont>("menuFont");
 
+            background = new Background(content.Load<Texture2D>("background_neon"));
+
             player = new Player(content.Load<Texture2D>("PlayerShip"));
             crosshair = content.Load<Texture2D>("crosshair");
-
-            background = content.Load<Texture2D>("background_neon");
 
             // Load enemy textures
             enemyManager = new EnemyManager(player);
@@ -88,7 +89,6 @@ namespace Aurora
             // Load sounds
             player.ShootSound = content.Load<SoundEffect>("LaserShoot");
 
-            // player.LoadContent(content);
             cam = new Camera();
             
             bloom.Settings = BloomSettings.PresetSettings[6];
@@ -99,6 +99,7 @@ namespace Aurora
         {
             cam.Pos = player.Position;
             player.Update(gameTime);
+            
             enemyManager.Update(gameTime, player);
             particleManager.Update(gameTime);
         }
@@ -108,25 +109,20 @@ namespace Aurora
 
             bloom.BeginDraw();
             Game1.graphics.GraphicsDevice.Clear(Color.Black);
-            //spriteBatch.Begin();
-            //spriteBatch.End();
+
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null, null, null, null, cam.get_transformation(game.GraphicsDevice));
 
-            //spriteBatch.Begin();
-            //spriteBatch.End();
-
-            spriteBatch.Draw(background, new Vector2(0, 0), Color.White);
-
+            background.Draw(spriteBatch);
             player.Draw(spriteBatch);
 
             enemyManager.Draw(spriteBatch);
 
             particleManager.Draw(cam.get_transformation(game.GraphicsDevice));
 
-            spriteBatch.Draw(crosshair, player.MousePosition, Color.White);
             spriteBatch.End();
 
             spriteBatch.Begin();
+            spriteBatch.Draw(crosshair, player.MousePosition - new Vector2(17/2, 9), Color.White);
             spriteBatch.DrawString(playerLives, "Lives: " + player.Lives.ToString(), new Vector2(15, 10), Color.White);
             spriteBatch.DrawString(score, "Score: " + player.Score.ToString(), new Vector2(170, 10), Color.White);
             spriteBatch.End();
