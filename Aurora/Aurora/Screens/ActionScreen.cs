@@ -24,6 +24,7 @@ namespace Aurora
         SpriteFont score;
         EnemyManager enemyManager;
         ParticleManager particleManager;
+        PowerUpManager powerUpManager;
         public static Camera cam;
         BloomComponent bloom;
 
@@ -32,6 +33,7 @@ namespace Aurora
             
             game.IsMouseVisible = false;
             particleManager = new ParticleManager();
+            powerUpManager = new PowerUpManager();
             bloom = new BloomComponent(game);
             bloom.Initialize();
             Components.Add(bloom);
@@ -47,12 +49,13 @@ namespace Aurora
             particleManager.addEffect("LARGE_EXPLOSION_BLUE", content.Load<ParticleEffect>("Particle Effects/Explosion-Large-Blue"));
             particleManager.addEffect("Ship-Trail-Blue", content.Load<ParticleEffect>("Particle Effects/Ship-Trail-Blue"));
             particleManager.addEffect("MissleTrail-Orange", content.Load<ParticleEffect>("Particle Effects/MissleTrail-Orange"));
+            particleManager.addEffect("Ricoshet", content.Load<ParticleEffect>("Particle Effects/Ricochet-Yellow"));
             particleManager.LoadContent(content);
 
             playerLives = content.Load<SpriteFont>("menuFont");
             score = content.Load<SpriteFont>("menuFont");
 
-            background = new Background(content.Load<Texture2D>("background_neon"));
+            background = new Background(content.Load<Texture2D>("grid_background"));
 
             player = new Player(content.Load<Texture2D>("PlayerShip"));
             crosshair = content.Load<Texture2D>("crosshair");
@@ -86,6 +89,9 @@ namespace Aurora
             player.projectileTextures.Add("NORMAL_BULLET", content.Load<Texture2D>("Projectile2"));
             player.projectileTextures.Add("NORMAL_MISSLE", content.Load<Texture2D>("NORMAL_MISSLE"));
 
+            PowerUpManager.PowerUpTextures.Add("LIFE_UP", content.Load<Texture2D>("pup_a_1"));
+            PowerUpManager.PowerUpTextures.Add("WEAPON_UPGRADE", content.Load<Texture2D>("pup_b_1"));
+
             // Load sounds
             player.ShootSound = content.Load<SoundEffect>("LaserShoot");
 
@@ -99,8 +105,8 @@ namespace Aurora
         {
             cam.Pos = player.Position;
             player.Update(gameTime);
-            
             enemyManager.Update(gameTime, player);
+            powerUpManager.Update(gameTime, player);
             particleManager.Update(gameTime);
         }
 
@@ -116,7 +122,7 @@ namespace Aurora
             player.Draw(spriteBatch);
 
             enemyManager.Draw(spriteBatch);
-
+            powerUpManager.Draw(spriteBatch);
             particleManager.Draw(cam.get_transformation(game.GraphicsDevice));
 
             spriteBatch.End();

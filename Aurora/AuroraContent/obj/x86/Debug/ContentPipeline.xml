@@ -290,6 +290,24 @@
       <Time>2011-04-18T16:37:20.4404296-04:00</Time>
     </Item>
     <Item>
+      <Source>grid_background.png</Source>
+      <Name>grid_background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\grid_background.xnb</Output>
+      <Time>2011-04-20T20:53:48.8496093-04:00</Time>
+    </Item>
+    <Item>
+      <Source>pup_b_1.png</Source>
+      <Name>pup_b_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\pup_b_1.xnb</Output>
+      <Time>2011-04-22T11:21:21.477539-04:00</Time>
+    </Item>
+    <Item>
       <Source>LaserShoot.wav</Source>
       <Name>LaserShoot</Name>
       <Importer>WavImporter</Importer>
@@ -305,7 +323,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Explosion-Red.xnb</Output>
-      <Time>2011-04-15T15:38:44.9414062-04:00</Time>
+      <Time>2011-04-22T13:19:09.1865234-04:00</Time>
     </Item>
     <Item>
       <Source>Particle Effects\Explosion-Orange.xml</Source>
@@ -378,6 +396,33 @@
       <Options>None</Options>
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Bloom\GaussianBlur.xnb</Output>
       <Time>2011-04-16T01:35:22.3203125-04:00</Time>
+    </Item>
+    <Item>
+      <Source>pup_a_1.png</Source>
+      <Name>pup_a_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\pup_a_1.xnb</Output>
+      <Time>2011-04-22T11:28:44.3261718-04:00</Time>
+    </Item>
+    <Item>
+      <Source>fx_ricochet_1.png</Source>
+      <Name>fx_ricochet_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\fx_ricochet_1.xnb</Output>
+      <Time>2011-04-22T12:54:43.2714843-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Particle Effects\testeffect.xml</Source>
+      <Name>Particle Effects\testeffect</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\testeffect.xnb</Output>
+      <Time>2011-04-22T13:28:49.4599609-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

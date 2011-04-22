@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using ProjectMercury;
 using ProjectMercury.Renderers;
+using Aurora.Game_Objects;
 
 namespace Aurora
 {
@@ -17,7 +18,8 @@ namespace Aurora
         LARGE_ASTEROID,
         COMET,
         LARGE_SPINNER,
-        SMALL_SPINNER
+        SMALL_SPINNER,
+        ALIEN
     }
 
     public enum EnemyColor
@@ -62,7 +64,16 @@ namespace Aurora
             if (collided || health == 0)
             {
                 ParticleManager.particleEffects["SMALL_EXPLOSION"].Trigger(position);
-                
+                int randn = Manager.rand.Next(0,100);
+                if (randn < 15)
+                {
+                    if (randn > 10 && randn <= 15)
+                        PowerUpManager.PowerUps.Add(new PowerUp(PowerUpType.WEAPON_UPGRADE, position));
+                    else if (randn <= 10 && randn >= 5)
+                        PowerUpManager.PowerUps.Add(new PowerUp(PowerUpType.LIFE_UP, position));
+                    //else
+                       // PowerUpManager.PowerUps.Add(new PowerUp(PowerUpType.WEAPON_SPEED, position));
+                }
             }
             
             angle += rotation;

@@ -9,6 +9,8 @@ namespace Aurora
     class Manager
     {
 
+        public static Random rand = new Random();
+
         /// <summary>
         /// Determines if there is overlap of the non-transparent pixels
         /// between two sprites.

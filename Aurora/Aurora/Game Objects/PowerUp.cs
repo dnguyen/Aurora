@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Aurora.Game_Objects
 {
@@ -22,7 +23,16 @@ namespace Aurora.Game_Objects
         public PowerUp(PowerUpType type_, Vector2 pos)
         {
             type = type_;
+            sprite = PowerUpManager.PowerUpTextures[type.ToString()];
             position = pos;
+            base.Initialize();
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+
+            spriteBatch.Draw(sprite, position, null, Color.White, angle, Center, 1.0F, SpriteEffects.None, 0f);
+
         }
     }
 }

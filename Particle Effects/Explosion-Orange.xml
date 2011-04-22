@@ -6,7 +6,7 @@
       <Budget>500</Budget>
       <Term>2.5</Term>
       <ReleaseQuantity>16</ReleaseQuantity>
-      <Enabled>False</Enabled>
+      <Enabled>false</Enabled>
       <ReleaseSpeed>
         <Value>0</Value>
         <Variation>128</Variation>
@@ -52,7 +52,7 @@
       </Modifiers>
       <BlendMode>Alpha</BlendMode>
       <TriggerOffset>0 0</TriggerOffset>
-      <MinimumTriggerPeriod>0.25</MinimumTriggerPeriod>
+      <MinimumTriggerPeriod>0</MinimumTriggerPeriod>
       <Radius>1</Radius>
       <Ring>true</Ring>
       <Radiate>true</Radiate>
@@ -62,7 +62,7 @@
       <Budget>1000</Budget>
       <Term>1</Term>
       <ReleaseQuantity>50</ReleaseQuantity>
-      <Enabled>True</Enabled>
+      <Enabled>true</Enabled>
       <ReleaseSpeed>
         <Value>0</Value>
         <Variation>100</Variation>
@@ -99,7 +99,7 @@
       </Modifiers>
       <BlendMode>Add</BlendMode>
       <TriggerOffset>0 0</TriggerOffset>
-      <MinimumTriggerPeriod>0.05</MinimumTriggerPeriod>
+      <MinimumTriggerPeriod>0</MinimumTriggerPeriod>
       <Radius>35</Radius>
       <Ring>true</Ring>
       <Radiate>true</Radiate>
@@ -109,7 +109,7 @@
       <Budget>250</Budget>
       <Term>0.75</Term>
       <ReleaseQuantity>100</ReleaseQuantity>
-      <Enabled>True</Enabled>
+      <Enabled>true</Enabled>
       <ReleaseSpeed>
         <Value>0</Value>
         <Variation>250</Variation>
@@ -143,14 +143,14 @@
       </Modifiers>
       <BlendMode>Add</BlendMode>
       <TriggerOffset>0 0</TriggerOffset>
-      <MinimumTriggerPeriod>0.25</MinimumTriggerPeriod>
+      <MinimumTriggerPeriod>0</MinimumTriggerPeriod>
     </Item>
     <Item>
       <Name>Flash</Name>
       <Budget>32</Budget>
       <Term>0.1</Term>
       <ReleaseQuantity>1</ReleaseQuantity>
-      <Enabled>True</Enabled>
+      <Enabled>true</Enabled>
       <ReleaseSpeed>
         <Value>50</Value>
         <Variation>0</Variation>
@@ -181,7 +181,7 @@
       </Modifiers>
       <BlendMode>Add</BlendMode>
       <TriggerOffset>0 0</TriggerOffset>
-      <MinimumTriggerPeriod>0.25</MinimumTriggerPeriod>
+      <MinimumTriggerPeriod>0</MinimumTriggerPeriod>
     </Item>
     <Name>Basic Explosion</Name>
     <Author>Matt Davey</Author>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent>
+  <Asset Type="ProjectMercury.ParticleEffect">
+    <Item>
+      <Name>Ricochet</Name>
+      <Budget>500</Budget>
+      <Term>2</Term>
+      <ReleaseQuantity>20</ReleaseQuantity>
+      <Enabled>True</Enabled>
+      <ReleaseSpeed>
+        <Value>156</Value>
+        <Variation>68</Variation>
+      </ReleaseSpeed>
+      <ReleaseColour>
+        <Value>1 1 1</Value>
+        <Variation>0 0 0</Variation>
+      </ReleaseColour>
+      <ReleaseOpacity>
+        <Value>1</Value>
+        <Variation>0</Variation>
+      </ReleaseOpacity>
+      <ReleaseScale>
+        <Value>32</Value>
+        <Variation>15</Variation>
+      </ReleaseScale>
+      <ReleaseRotation>
+        <Value>0</Value>
+        <Variation>0</Variation>
+      </ReleaseRotation>
+      <ReleaseImpulse>0 0</ReleaseImpulse>
+      <ParticleTextureAssetName>fx_ricochet_1</ParticleTextureAssetName>
+      <Modifiers>
+        <Item Type="ProjectMercury.Modifiers.ColourModifier">
+          <InitialColour>1 1 0</InitialColour>
+          <UltimateColour>1 1 0.5019608</UltimateColour>
+        </Item>
+        <Item Type="ProjectMercury.Modifiers.TrajectoryRotationModifier">
+          <RotationOffset>0</RotationOffset>
+        </Item>
+        <Item Type="ProjectMercury.Modifiers.OpacityInterpolatorModifier">
+          <InitialOpacity>1</InitialOpacity>
+          <MiddleOpacity>0</MiddleOpacity>
+          <MiddlePosition>0.3</MiddlePosition>
+          <FinalOpacity>0</FinalOpacity>
+        </Item>
+      </Modifiers>
+      <BlendMode>Add</BlendMode>
+      <TriggerOffset>0 0</TriggerOffset>
+      <MinimumTriggerPeriod>0</MinimumTriggerPeriod>
+    </Item>
+    <Name>Ricochet</Name>
+    <Author>Dylan Nguyen</Author>
+    <Description>Ricochet</Description>
+  </Asset>
+</XnaContent>

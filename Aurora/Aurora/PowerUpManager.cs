@@ -10,11 +10,11 @@ namespace Aurora
 {
     class PowerUpManager : Manager
     {
-        private Dictionary<string, Texture2D> powerUpTextures;
-        private List<PowerUp> powerUps;
+        private static Dictionary<string, Texture2D> powerUpTextures;
+        private static List<PowerUp> powerUps;
 
-        public Dictionary<string, Texture2D> PowerUpTextures { get { return powerUpTextures; } }
-        public List<PowerUp> PowerUps { get { return powerUps; } }
+        public static Dictionary<string, Texture2D> PowerUpTextures { get { return powerUpTextures; } }
+        public static List<PowerUp> PowerUps { get { return powerUps; } }
         
         public PowerUpManager()
         {
@@ -22,30 +22,38 @@ namespace Aurora
             powerUps = new List<PowerUp>();
         }
 
-        public void Update(Player player)
+        public void Update(GameTime gameTime, Player player)
         {
             if (player.Lives > 0)
             {
                 for (int i = powerUps.Count - 1; i >= 0; i--)
                 {
-                    if (powerUps[i].Bounds.Intersects(player.Bounds))
+                    if (!powerUps[i].Collided)
                     {
-                        if (!IntersectPixels(powerUps[i].Transformation, powerUps[i].spriteImage.Width, powerUps[i].spriteImage.Height, powerUps[i].TextureData,
-                                                player.Transformation, player.spriteImage.Width, player.spriteImage.Height, player.TextureData))
+                        if (powerUps[i].Bounds.Intersects(player.Bounds))
                         {
-                            switch (powerUps[i].Type)
+                            if (!IntersectPixels(powerUps[i].Transformation, powerUps[i].spriteImage.Width, powerUps[i].spriteImage.Height, powerUps[i].TextureData,
+                                                    player.Transformation, player.spriteImage.Width, player.spriteImage.Height, player.TextureData))
                             {
-                                case PowerUpType.LIFE_UP:
-                                    player.Lives++;
-                                    break;
-                                case PowerUpType.WEAPON_UPGRADE:
-                                    player.Power++;
-                                    break;
-                                case PowerUpType.WEAPON_SPEED:
-                                    break;
+                                switch (powerUps[i].Type)
+                                {
+                                    case PowerUpType.LIFE_UP:
+                                        player.Lives++;
+                                        Console.WriteLine("Life up");
+                                        break;
+                                    case PowerUpType.WEAPON_UPGRADE:
+                                        player.Power++;
+                                        break;
+                                    case PowerUpType.WEAPON_SPEED:
+                                        break;
+                                }
+                                powerUps[i].Collided = true;
                             }
                         }
+                        powerUps[i].Update(gameTime);
                     }
+                    if (powerUps[i].Collided)
+                        powerUps.Remove(powerUps[i]);
                 }
             }
         }

@@ -69,17 +69,24 @@ namespace Aurora
             spriteBatch.Draw(sprite, position, Color.White);
         }
 
-
         public void ClampToViewPort(Background bg)
         {
             if (position.X < sprite.Width / 2)
+            {
                 position.X = sprite.Width / 2;
+            }
             if (position.X > bg.Width - sprite.Width / 2)
+            {
                 position.X = bg.Width - sprite.Width / 2;
+            }
             if (position.Y < sprite.Height / 2)
+            {
                 position.Y = sprite.Height / 2;
+            }
             if (position.Y > bg.Height - sprite.Height / 2)
+            {
                 position.Y = bg.Height - sprite.Height / 2;
+            }
         }
 
         public bool OutOfViewPort(Background bg)

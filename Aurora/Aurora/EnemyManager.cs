@@ -18,7 +18,6 @@ namespace Aurora
 
         private float spawnDelay = 1.0F; // Time between each enemy spawn
         private TimeSpan delayTimer; // Timer for spawn delay
-        static Random rand = new Random();
 
         int smallAsteroidChance = 50;
         int mediumAsteroidChance = 30;
@@ -130,6 +129,7 @@ namespace Aurora
                                             player.Score += enemies[i].PointValue;
                                         }
                                         player.Bullets[j].Collided = true;
+                                        ParticleManager.particleEffects["Ricoshet"].Trigger(player.Bullets[j].Position);
                                     }
                                 }
                                 else
@@ -137,6 +137,7 @@ namespace Aurora
                                     if (player.Bullets[j].OutOfViewPort(ActionScreen.background))
                                     {
                                         player.Bullets[j].Collided = true;
+                                        ParticleManager.particleEffects["Ricoshet"].Trigger(player.Bullets[j].Position);
                                     }
                                 }
                             }

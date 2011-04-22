@@ -35,7 +35,6 @@ namespace Aurora
         private SoundEffect shootSound;
         private List<Projectile> bullets = new List<Projectile>();
 
-
         public int Lives { get { return lives; } set { lives = value; } }
         public int Score { get { return score; } set { score = value; } }
         public int Power { get { return power; } set { power = value; } }
@@ -66,7 +65,7 @@ namespace Aurora
 
             KeyboardState currentKState = Keyboard.GetState();
 
-            if (currentKState.IsKeyDown(Keys.Right))
+            if (currentKState.IsKeyDown(Keys.Right) || currentKState.IsKeyDown(Keys.D))
             {
                 if (velocity.X < maxVelocity.X)
                 {
@@ -74,7 +73,7 @@ namespace Aurora
                     moving = true;
                 }
             }
-            if (currentKState.IsKeyDown(Keys.Left))
+            if (currentKState.IsKeyDown(Keys.Left) || currentKState.IsKeyDown(Keys.A))
             {
                 if (velocity.X < maxVelocity.X)
                 {
@@ -82,7 +81,7 @@ namespace Aurora
                     moving = true;
                 }
             }
-            if (currentKState.IsKeyDown(Keys.Up))
+            if (currentKState.IsKeyDown(Keys.Up) || currentKState.IsKeyDown(Keys.W))
             {
                 if (velocity.Y < maxVelocity.Y)
                 {
@@ -90,7 +89,7 @@ namespace Aurora
                     moving = true;
                 }
             }
-            if (currentKState.IsKeyDown(Keys.Down))
+            if (currentKState.IsKeyDown(Keys.Down) || currentKState.IsKeyDown(Keys.S))
             {
                 if (velocity.Y < maxVelocity.Y)
                 {
