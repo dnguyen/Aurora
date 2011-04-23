@@ -19,7 +19,7 @@ namespace Aurora
         public static Background background;
 
         Texture2D crosshair;
-
+        Texture2D livesIcon;
         SpriteFont playerLives;
         SpriteFont score;
         EnemyManager enemyManager;
@@ -54,7 +54,7 @@ namespace Aurora
 
             playerLives = content.Load<SpriteFont>("menuFont");
             score = content.Load<SpriteFont>("menuFont");
-
+            livesIcon = content.Load<Texture2D>("lives_icon");
             background = new Background(content.Load<Texture2D>("grid_background"));
 
             player = new Player(content.Load<Texture2D>("PlayerShip"));
@@ -83,20 +83,21 @@ namespace Aurora
             enemyManager.enemyTextures.Add("LARGE_SPINNER_BLUE", content.Load<Texture2D>("LARGE_SPINNER_BLUE"));
             enemyManager.enemyTextures.Add("SMALL_SPINNER_PINK", content.Load<Texture2D>("SMALL_SPINNER_Pink"));
 
+            enemyManager.enemyTextures.Add("ALIEN", content.Load<Texture2D>("ALIEN"));
+
             enemyManager.LoadContent(content);
 
             // Load projectile textures
             player.projectileTextures.Add("NORMAL_BULLET", content.Load<Texture2D>("Projectile2"));
             player.projectileTextures.Add("NORMAL_MISSLE", content.Load<Texture2D>("NORMAL_MISSLE"));
 
-            PowerUpManager.PowerUpTextures.Add("LIFE_UP", content.Load<Texture2D>("pup_a_1"));
-            PowerUpManager.PowerUpTextures.Add("WEAPON_UPGRADE", content.Load<Texture2D>("pup_b_1"));
+            PowerUpManager.PowerUpTextures.Add("LIFE_UP", content.Load<Texture2D>("powerup_lifeup"));
+            PowerUpManager.PowerUpTextures.Add("WEAPON_UPGRADE", content.Load<Texture2D>("powerup_weaponPower"));
 
             // Load sounds
             player.ShootSound = content.Load<SoundEffect>("LaserShoot");
 
             cam = new Camera();
-            
             bloom.Settings = BloomSettings.PresetSettings[6];
             bloom.Visible = true;
         }
@@ -129,8 +130,16 @@ namespace Aurora
 
             spriteBatch.Begin();
             spriteBatch.Draw(crosshair, player.MousePosition - new Vector2(17/2, 9), Color.White);
-            spriteBatch.DrawString(playerLives, "Lives: " + player.Lives.ToString(), new Vector2(15, 10), Color.White);
-            spriteBatch.DrawString(score, "Score: " + player.Score.ToString(), new Vector2(170, 10), Color.White);
+            if (player.Score.ToString().Length > 5)
+                spriteBatch.DrawString(score, player.Score.ToString(), new Vector2(Game1.SCREEN_WIDTH - 185, -10), Color.White);
+            else
+                spriteBatch.DrawString(score, player.Score.ToString(), new Vector2(Game1.SCREEN_WIDTH - 160, -10), Color.White);
+            float xMargin = 15;
+            for (int i = 0; i < player.Lives; i++)
+            {
+                spriteBatch.Draw(livesIcon, new Vector2(xMargin, 10), Color.White);
+                xMargin += 50;
+            }
             spriteBatch.End();
 
             base.Draw(gameTime);

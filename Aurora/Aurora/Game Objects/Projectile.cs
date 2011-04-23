@@ -10,6 +10,7 @@ namespace Aurora
     public enum ProjectileType
     {
         NORMAL_BULLET,
+        NORMAL_BULLET_UPGRADE,
         DOUBLE_BULLET,
         NORMAL_MISSLE,
         DOUBLE_MISSLE
@@ -57,6 +58,10 @@ namespace Aurora
             {
                 case ProjectileType.NORMAL_BULLET:
                     damage = 2;
+                    speed = 200;
+                    break;
+                case ProjectileType.NORMAL_BULLET_UPGRADE:
+                    damage = 3;
                     speed = 200;
                     break;
                 case ProjectileType.DOUBLE_BULLET:

@@ -96,7 +96,9 @@ C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Conte
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Bloom\GaussianBlur.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\grid_background.xnb
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\grid_background.xnb
-F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\pup_b_1.xnb
-F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\pup_a_1.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\fx_ricochet_1.xnb
-F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\testeffect.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Ricochet-Yellow.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\powerup_weaponPower.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\powerup_lifeup.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\ALIEN.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\lives_icon.xnb

@@ -38,11 +38,13 @@ namespace Aurora
                                 switch (powerUps[i].Type)
                                 {
                                     case PowerUpType.LIFE_UP:
-                                        player.Lives++;
+                                        if (player.Lives < 8)
+                                            player.Lives++;
                                         Console.WriteLine("Life up");
                                         break;
                                     case PowerUpType.WEAPON_UPGRADE:
-                                        player.Power++;
+                                        if (player.WeaponLevel < 4)
+                                            player.WeaponLevel++;
                                         break;
                                     case PowerUpType.WEAPON_SPEED:
                                         break;

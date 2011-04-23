@@ -57,7 +57,7 @@ namespace Aurora
             base.Initialize();
         }
 
-        public override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime, Player player)
         {
             float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
@@ -75,8 +75,17 @@ namespace Aurora
                        // PowerUpManager.PowerUps.Add(new PowerUp(PowerUpType.WEAPON_SPEED, position));
                 }
             }
-            
-            angle += rotation;
+            if (type == EnemyType.ALIEN) // Follow player
+            {
+                Vector2 direction = player.Position - position;
+                direction.Normalize();
+                velocity = direction * speed;
+                angle = (float)(Math.Atan2(direction.Y, direction.X));
+            }
+            else
+            {
+                angle += rotation;
+            }
             base.Update(gameTime);
             if (type == EnemyType.SMALL_SPINNER || type == EnemyType.LARGE_SPINNER)
             {
@@ -126,6 +135,12 @@ namespace Aurora
                     health = 8;
                     pointValue = 110;
                     speed = 110;
+                    rotation = .07F;
+                    break;
+                case EnemyType.ALIEN:
+                    health = 10;
+                    pointValue = 150;
+                    speed = 200;
                     rotation = .07F;
                     break;
             }

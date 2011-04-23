@@ -23,7 +23,7 @@ namespace Aurora
 
         private int lives;
         private int score;
-        private int power;
+        private int weaponLevel;
         private float fireTime = 0F;
 
         private Vector2 maxVelocity = new Vector2(1000, 1000);
@@ -37,7 +37,7 @@ namespace Aurora
 
         public int Lives { get { return lives; } set { lives = value; } }
         public int Score { get { return score; } set { score = value; } }
-        public int Power { get { return power; } set { power = value; } }
+        public int WeaponLevel { get { return weaponLevel; } set { weaponLevel = value; } }
         public float FireDelay { get { return FIRE_DELAY; } set { FIRE_DELAY = value; } }
         public List<Projectile> Bullets { get { return bullets; } set { bullets = value; } }
         public SoundEffect ShootSound { get { return shootSound; } set { shootSound = value; } }
@@ -47,7 +47,7 @@ namespace Aurora
         {
             lives = 8;
             score = 0;
-            power = 3;
+            weaponLevel = 1;
             position = new Vector2(Game1.graphics.GraphicsDevice.Viewport.Width / 2, Game1.graphics.GraphicsDevice.Viewport.Height / 2);
             velocity = Vector2.Zero;
             sprite = texture;
@@ -104,43 +104,37 @@ namespace Aurora
             fireTime += elapsedTime;
             if (mouseState.LeftButton == ButtonState.Pressed && fireTime > FIRE_DELAY)
             {
-                /*for (int i = 0; i < 3; i++)
+                if (weaponLevel == 1) // Normal bullet
                 {
-                    switch (i)
-                    {
-                        case 0:
-                            //direction += new Vector2(50, 50);
-                            break;
-                        case 2: 
-                            //direction -= new Vector2(50, 50);
-                            break;
-
-                    }*/
-
-                    ProjectileType newType = ProjectileType.NORMAL_BULLET;
-                    Texture2D newTexture = projectileTextures["NORMAL_BULLET"];
-                    switch (power)
-                    {
-                        case 1: 
-                            newType = ProjectileType.NORMAL_BULLET;
-                            newTexture = projectileTextures["NORMAL_BULLET"];
-                            FIRE_DELAY = 0.1F;
-                            break;
-                        case 2:
-                            newType = ProjectileType.DOUBLE_BULLET;
-                            newTexture = projectileTextures["NORMAL_BULLET"];
-                            FIRE_DELAY = 0.1F;
-                            break;
-                        case 3:
-                            newType = ProjectileType.NORMAL_MISSLE;
-                            newTexture = projectileTextures["NORMAL_MISSLE"];
-                            FIRE_DELAY = 0.3F;
-                            break;
-                    }
-                    Projectile bullet = new Projectile(newType, newTexture, position, direction, angle);
-                    
+                    FIRE_DELAY = 0.1F;
+                    Projectile bullet = new Projectile(ProjectileType.NORMAL_BULLET, projectileTextures["NORMAL_BULLET"], position, direction, angle);
                     bullets.Add(bullet);
-                //}
+                }
+                else if (weaponLevel == 2) // Normal bullet upgraded
+                {
+                    FIRE_DELAY = 0.1F;
+                    Projectile bullet = new Projectile(ProjectileType.NORMAL_BULLET_UPGRADE, projectileTextures["NORMAL_BULLET"], position, direction, angle);
+                    bullets.Add(bullet);
+                }
+                else if (weaponLevel == 3) // Double normal bullet
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        direction.Normalize();
+                        Vector2 cross = Vector2.Multiply(new Vector2(-direction.Y, direction.X), 8F);
+                        Projectile bullet = new Projectile(ProjectileType.NORMAL_BULLET, projectileTextures["NORMAL_BULLET"], position, direction, angle);
+
+                        if (i == 0)
+                            bullet.Position += cross;
+                        else
+                            bullet.Position -= cross;
+
+                        bullets.Add(bullet);
+                    }
+                    FIRE_DELAY = 0.1F;
+                }
+
+
                 //shootSound.Play();
                 fireTime = 0;
             }

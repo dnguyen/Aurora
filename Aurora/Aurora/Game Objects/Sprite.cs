@@ -64,6 +64,13 @@ namespace Aurora
             bounds = new BoundingSphere(new Vector3(position.X, position.Y, 0), sprite.Width / 2);
         }
 
+        public virtual void Update(GameTime gameTime, Player player)
+        {
+            float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            position += velocity * elapsedTime;
+            bounds = new BoundingSphere(new Vector3(position.X, position.Y, 0), sprite.Width / 2);
+        }
+
         public virtual void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(sprite, position, Color.White);

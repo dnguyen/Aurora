@@ -63,7 +63,9 @@ namespace Aurora
                             SpawnSpinnerGroup(0);
                         }
                     }
-
+                    Enemy testEnemy = new Enemy(EnemyType.ALIEN, enemyTextures["ALIEN"], EnemyColor.NONE);
+                    testEnemy.Position = new Vector2(100, 100);
+                    enemies.Add(testEnemy);
                     delayTimer = TimeSpan.FromSeconds(spawnDelay);
                 }
                 player.Collided = false;
@@ -90,8 +92,8 @@ namespace Aurora
                                 enemies[i].Collided = true;
                                 player.Collided = true;
                                 player.Lives -= 1;
-                                if (player.Power > 1)
-                                    player.Power -= 1;
+                                if (player.WeaponLevel > 1)
+                                    player.WeaponLevel -= 1;
                             }
                         }
 
@@ -146,7 +148,7 @@ namespace Aurora
                                 player.Bullets.Remove(player.Bullets[j]);
                             }
                         }
-                        enemies[i].Update(gameTime);
+                        enemies[i].Update(gameTime, player);
                     }
                     if (enemies[i].Collided)
                     {
