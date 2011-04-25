@@ -16,7 +16,7 @@ namespace Aurora
         private List<Enemy> enemies = new List<Enemy>(); // List of enemy objects
         public Dictionary<string, Texture2D> enemyTextures = new Dictionary<string, Texture2D>(); // List of enemy textures, keys is the enemy type
 
-        private float spawnDelay = 1.0F; // Time between each enemy spawn
+        private float spawnDelay = 1.2F; // Time between each enemy spawn
         private TimeSpan delayTimer; // Timer for spawn delay
 
         int smallAsteroidChance = 50;
@@ -40,32 +40,37 @@ namespace Aurora
                 // Spawn enemies
                 if (delayTimer.TotalSeconds <= 0)
                 {
-                    // TODO: Create some kind of "algorithm" to figure out what enemies to spawn. Base it on
-                    // points scored? Total time the player has survived?
-                    spawnChance = rand.Next(100);
-                    if (spawnChance <= largeAsteroidChance)
+                    for (int i = 0; i < 2; i++)
                     {
-                        SpawnRandomEnemy(EnemyType.LARGE_ASTEROID);
+                        spawnChance = rand.Next(100);
+                        if (spawnChance <= largeAsteroidChance)
+                        {
+                            SpawnRandomEnemy(EnemyType.LARGE_ASTEROID);
+                        }
+                        else if (spawnChance >= mediumAsteroidChance && spawnChance < smallAsteroidChance)
+                        {
+                            SpawnRandomEnemy(EnemyType.MEDIUM_ASTEROID);
+                        }
+                        else if (spawnChance >= smallAsteroidChance)
+                        {
+                            SpawnRandomEnemy(EnemyType.SMALL_ASTEROID);
+                        }
                     }
-                    else if (spawnChance >= mediumAsteroidChance && spawnChance < smallAsteroidChance)
+                    if (player.Score > 5000)
                     {
-                        SpawnRandomEnemy(EnemyType.MEDIUM_ASTEROID);
-                    }
-                    else if (spawnChance >= smallAsteroidChance)
-                    {
-                        SpawnRandomEnemy(EnemyType.SMALL_ASTEROID);
-                    }
-                    // Start spawning spinner groups after score reaches 3000
-                    if (player.Score > 1000)
-                    {
-                        if (spawnChance < 15)
+                        if (spawnChance < 10)
                         {
                             SpawnSpinnerGroup(0);
                         }
                     }
-                    Enemy testEnemy = new Enemy(EnemyType.ALIEN, enemyTextures["ALIEN"], EnemyColor.NONE);
-                    testEnemy.Position = new Vector2(100, 100);
-                    enemies.Add(testEnemy);
+                    if (player.Score > 10000)
+                    {
+                        if (spawnChance < 15)
+                            SpawnAlien();
+
+                        spawnDelay = 1F;
+                    }
+
                     delayTimer = TimeSpan.FromSeconds(spawnDelay);
                 }
                 player.Collided = false;
@@ -258,6 +263,7 @@ namespace Aurora
             Matrix.CreateRotationZ(enemy.Angle) *
             Matrix.CreateTranslation(new Vector3(enemy.Position, 0.0f));
             enemies.Add(enemy);
+            ParticleManager.particleEffects["WarpIn"].Trigger(enemy.Position);
         }
 
         private void SpawnSpinnerGroup(int size)
@@ -282,24 +288,31 @@ namespace Aurora
                 switch (direction)
                 {
                     case 0: // Top
-                        enemy.Position = new Vector2(rand.Next(-50, Game1.SCREEN_WIDTH + 50), rand.Next(-50, 50));
+                        enemy.Position = new Vector2(rand.Next(50, ActionScreen.background.Width - 50), 50);
                         enemy.VY += enemy.Speed;
                         break;
                     case 1: // Bottom
-                        enemy.Position = new Vector2(rand.Next(-50, Game1.SCREEN_WIDTH + 50), rand.Next(Game1.SCREEN_HEIGHT - 50, Game1.SCREEN_HEIGHT + 50));
+                        enemy.Position = new Vector2(rand.Next(50, ActionScreen.background.Width - 50), ActionScreen.background.Height - 50);
                         enemy.VY -= enemy.Speed;
                         break;
                     case 2: // Left
-                        enemy.Position = new Vector2(rand.Next(-50, 50), rand.Next(-50, Game1.SCREEN_HEIGHT + 50));
+                        enemy.Position = new Vector2(100, rand.Next(50, ActionScreen.background.Height - 50));
                         enemy.VX += enemy.Speed;
                         break;
                     case 3: // Right
-                        enemy.Position = new Vector2(rand.Next(Game1.SCREEN_WIDTH + 50, Game1.SCREEN_WIDTH - 50), rand.Next(-50, Game1.SCREEN_HEIGHT + 50));
+                        enemy.Position = new Vector2(rand.Next(ActionScreen.background.Width + 50, ActionScreen.background.Width - 50), rand.Next(-50, ActionScreen.background.Height + 50));
                         enemy.VX -= enemy.Speed;
                         break;
                 }
                 enemies.Add(enemy);
             }
+        }
+
+        private void SpawnAlien()
+        {
+            Enemy alien = new Enemy(EnemyType.ALIEN, enemyTextures["ALIEN"], EnemyColor.NONE);
+            alien.Position = new Vector2(rand.Next(100, ActionScreen.background.Width), rand.Next(100, ActionScreen.background.Height));
+            enemies.Add(alien);
         }
     }
 }

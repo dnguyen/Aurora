@@ -31,6 +31,14 @@ Content\crosshair.xnb
 Content\background_neon.xnb
 Content\fx_explode_1.xnb
 Content\grid_background.xnb
+Content\fx_ricochet_1.xnb
+Content\powerup_weaponPower.xnb
+Content\powerup_lifeup.xnb
+Content\ALIEN.xnb
+Content\lives_icon.xnb
+Content\LensFlare.xnb
+Content\Beam.xnb
+Content\BeamBlurred.xnb
 Content\LaserShoot.xnb
 Content\Particle Effects\Explosion-Red.xnb
 Content\Particle Effects\Explosion-Orange.xnb
@@ -38,12 +46,9 @@ Content\Particle Effects\Explosion-Large-Blue.xnb
 Content\Particle Effects\Explosion-Medium-Pink.xnb
 Content\Particle Effects\Ship-Trail-Blue.xnb
 Content\Particle Effects\MissleTrail-Orange.xnb
+Content\Particle Effects\Ricochet-Yellow.xnb
+Content\Particle Effects\WarpIn.xnb
+Content\Particle Effects\WarpIn2.xnb
 Content\Bloom\BloomCombine.xnb
 Content\Bloom\BloomExtract.xnb
 Content\Bloom\GaussianBlur.xnb
-Content\fx_ricochet_1.xnb
-Content\Particle Effects\Ricochet-Yellow.xnb
-Content\powerup_weaponPower.xnb
-Content\powerup_lifeup.xnb
-Content\ALIEN.xnb
-Content\lives_icon.xnb

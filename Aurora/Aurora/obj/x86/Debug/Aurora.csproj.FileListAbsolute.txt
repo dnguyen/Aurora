@@ -102,3 +102,27 @@ F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\powerup_wea
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\powerup_lifeup.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\ALIEN.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\lives_icon.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Aurora.exe.manifest
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Aurora.application
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Aurora.exe.manifest
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Aurora.application
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LensFlare.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Beam.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\BeamBlurred.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\WarpIn.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\WarpIn2.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\fx_ricochet_1.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\powerup_weaponPower.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\powerup_lifeup.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\ALIEN.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\lives_icon.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LensFlare.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Beam.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\BeamBlurred.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Ricochet-Yellow.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\WarpIn.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\WarpIn2.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Aurora.exe.manifest
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Aurora.application
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Aurora.exe.manifest
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Aurora.application

@@ -40,10 +40,9 @@ namespace Aurora
                                     case PowerUpType.LIFE_UP:
                                         if (player.Lives < 8)
                                             player.Lives++;
-                                        Console.WriteLine("Life up");
                                         break;
                                     case PowerUpType.WEAPON_UPGRADE:
-                                        if (player.WeaponLevel < 4)
+                                        if (player.WeaponLevel < 3)
                                             player.WeaponLevel++;
                                         break;
                                     case PowerUpType.WEAPON_SPEED:

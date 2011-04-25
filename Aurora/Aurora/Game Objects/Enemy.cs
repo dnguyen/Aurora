@@ -57,7 +57,7 @@ namespace Aurora
             base.Initialize();
         }
 
-        public override void Update(GameTime gameTime, Player player)
+        public void Update(GameTime gameTime, Player player)
         {
             float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
 

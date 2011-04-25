@@ -45,28 +45,9 @@ namespace Aurora
             bounds = new BoundingSphere(new Vector3(Center.X, Center.Y, 0), sprite.Width / 2);
         }
 
-        public virtual void LoadContent(ContentManager content)
-        {
-           
-        }
-
         public virtual void Update(GameTime gameTime)
         {
             float elapsedTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
-            position += velocity * elapsedTime;
-            bounds = new BoundingSphere(new Vector3(position.X, position.Y, 0), sprite.Width / 2);
-        }
-
-        public virtual void Update(GameTime gameTime, Background bg)
-        {
-            float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            position += velocity * elapsedTime;
-            bounds = new BoundingSphere(new Vector3(position.X, position.Y, 0), sprite.Width / 2);
-        }
-
-        public virtual void Update(GameTime gameTime, Player player)
-        {
-            float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             position += velocity * elapsedTime;
             bounds = new BoundingSphere(new Vector3(position.X, position.Y, 0), sprite.Width / 2);
         }

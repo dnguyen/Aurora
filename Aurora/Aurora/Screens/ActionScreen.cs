@@ -20,7 +20,6 @@ namespace Aurora
 
         Texture2D crosshair;
         Texture2D livesIcon;
-        SpriteFont playerLives;
         SpriteFont score;
         EnemyManager enemyManager;
         ParticleManager particleManager;
@@ -30,7 +29,6 @@ namespace Aurora
 
         public ActionScreen(Game game, SpriteBatch spriteBatch) : base(game, spriteBatch)
         {
-            
             game.IsMouseVisible = false;
             particleManager = new ParticleManager();
             powerUpManager = new PowerUpManager();
@@ -41,7 +39,6 @@ namespace Aurora
 
         public void LoadContent(ContentManager content)
         {
-
             // Load particles
             particleManager.addEffect("SMALL_EXPLOSION", content.Load<ParticleEffect>("Particle Effects/Explosion-Red"));
             particleManager.addEffect("SMALL_EXPLOSION2", content.Load<ParticleEffect>("Particle Effects/Explosion-Orange"));
@@ -50,9 +47,9 @@ namespace Aurora
             particleManager.addEffect("Ship-Trail-Blue", content.Load<ParticleEffect>("Particle Effects/Ship-Trail-Blue"));
             particleManager.addEffect("MissleTrail-Orange", content.Load<ParticleEffect>("Particle Effects/MissleTrail-Orange"));
             particleManager.addEffect("Ricoshet", content.Load<ParticleEffect>("Particle Effects/Ricochet-Yellow"));
+            particleManager.addEffect("WarpIn", content.Load<ParticleEffect>("Particle Effects/WarpIn2"));
             particleManager.LoadContent(content);
 
-            playerLives = content.Load<SpriteFont>("menuFont");
             score = content.Load<SpriteFont>("menuFont");
             livesIcon = content.Load<Texture2D>("lives_icon");
             background = new Background(content.Load<Texture2D>("grid_background"));
