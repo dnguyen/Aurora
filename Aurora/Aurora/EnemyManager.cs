@@ -40,7 +40,7 @@ namespace Aurora
                 // Spawn enemies
                 if (delayTimer.TotalSeconds <= 0)
                 {
-                    for (int i = 0; i < 2; i++)
+                    for (int i = 0; i < rand.Next(1, 2); i++)
                     {
                         spawnChance = rand.Next(100);
                         if (spawnChance <= largeAsteroidChance)
@@ -62,13 +62,21 @@ namespace Aurora
                         {
                             SpawnSpinnerGroup(0);
                         }
+                        spawnDelay = 1.1F;
                     }
-                    if (player.Score > 10000)
+                    if (player.Score > 8000)
                     {
                         if (spawnChance < 15)
-                            SpawnAlien();
+                        {
+                            for (int i = 0; i < rand.Next(1, 3); i++)
+                                SpawnAlien();
+                        }
 
                         spawnDelay = 1F;
+                    }
+                    if (player.Score > 15000)
+                    {
+                        spawnDelay = .9F;
                     }
 
                     delayTimer = TimeSpan.FromSeconds(spawnDelay);
@@ -77,7 +85,7 @@ namespace Aurora
                 // Update all enemies in the enemies list
                 for (int i = enemies.Count - 1; i >= 0; i--)
                 {
-                    // Only update enemies that have no collided yet (Enemies that are not dead)
+                    // Only update enemies that have not collided yet (Enemies that are not dead)
                     if (!enemies[i].Collided)
                     {
                         if (enemies[i].Type == EnemyType.SMALL_SPINNER || enemies[i].Type == EnemyType.LARGE_SPINNER)
@@ -151,6 +159,28 @@ namespace Aurora
                             if (player.Bullets[j].Collided)
                             {
                                 player.Bullets.Remove(player.Bullets[j]);
+                            }
+                        }
+
+                        // Collision detection for alien bullets with player
+                        if (enemies[i].Type == EnemyType.ALIEN)
+                        {
+                            for (int j = enemies[i].EBullets.Count - 1; j >= 0; j--)
+                            {
+                                if (player.Bounds.Intersects(enemies[i].EBullets[j].Bounds))
+                                {
+
+                                    if (!IntersectPixels(player.Transformation, player.spriteImage.Width, player.spriteImage.Height, player.TextureData,
+                                                        enemies[i].EBullets[j].Transformation, enemies[i].EBullets[j].spriteImage.Width, enemies[i].EBullets[j].spriteImage.Height, enemies[i].EBullets[j].TextureData))
+                                    {
+                                        enemies[i].EBullets[j].Collided = true;
+                                        player.Lives--;
+                                    }
+                                }
+                                if (enemies[i].EBullets[j].Collided)
+                                {
+                                    enemies[i].EBullets.Remove(enemies[i].EBullets[j]);
+                                }
                             }
                         }
                         enemies[i].Update(gameTime, player);
@@ -240,22 +270,6 @@ namespace Aurora
                 case 3: // Right
                     enemy.Position = new Vector2(rand.Next(ActionScreen.background.Width + 50, ActionScreen.background.Width - 50), rand.Next(-50, ActionScreen.background.Height + 50));
                     break;
-            }
-            if (enemy.Position.Y < 0)
-            {
-                enemy.VY += enemy.Speed;
-            }
-            if (enemy.Position.X < 50)
-            {
-                enemy.VX += enemy.Speed;
-            }
-            if (enemy.Position.X > ActionScreen.background.Width - 50)
-            {
-                enemy.VX -= enemy.Speed;
-            }
-            if (enemy.Position.Y > ActionScreen.background.Height - 50)
-            {
-                enemy.VY -= enemy.Speed;
             }
             enemy.Velocity += new Vector2(rand.Next(-enemy.Speed, enemy.Speed), rand.Next(-enemy.Speed, enemy.Speed));
             enemy.Transformation = Matrix.CreateTranslation(new Vector3(-enemy.Center, 0.0f)) *

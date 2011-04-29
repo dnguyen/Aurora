@@ -487,6 +487,24 @@
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Bloom\GaussianBlur.xnb</Output>
       <Time>2011-04-16T01:35:22.3203125-04:00</Time>
     </Item>
+    <Item>
+      <Source>Particle Effects\Large-Explosion-Blue-Remake.xml</Source>
+      <Name>Particle Effects\Large-Explosion-Blue-Remake</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Large-Explosion-Blue-Remake.xnb</Output>
+      <Time>2011-04-25T14:49:27.383789-04:00</Time>
+    </Item>
+    <Item>
+      <Source>pause_overlay.png</Source>
+      <Name>pause_overlay</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\pause_overlay.xnb</Output>
+      <Time>2011-04-27T19:48:10.7783203-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

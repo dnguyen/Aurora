@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aurora.exe" size="43520">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aurora.exe" size="46592">
       <assemblyIdentity name="Aurora" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>+IQa0QBtOrrEWAmg4EMMSwrihdw=</dsig:DigestValue>
+        <dsig:DigestValue>G/2RqvfHlc2Gj/H9NXxzfI9yPZM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -431,6 +431,15 @@
       <dsig:DigestValue>6Qk9RvrlerwC52my3BJGR5g4vHg=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Particle Effects\Large-Explosion-Blue-Remake.xnb" size="3755">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>qkc+XYZAml0wypyYkJhTNjVNz0o=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Particle Effects\MissleTrail-Orange.xnb" size="2458">
     <hash>
       <dsig:Transforms>
@@ -492,6 +501,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>nwzVxFtGSoOEt1+jO/fXxnSzstA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\pause_overlay.xnb" size="2160187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>XyZgZwjEhWDu9idCU8BkXyoONFU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\PlayerShip.xnb" size="5647">

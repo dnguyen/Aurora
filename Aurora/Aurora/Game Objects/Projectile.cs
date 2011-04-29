@@ -37,6 +37,10 @@ namespace Aurora
 
         public override void Update(GameTime gameTime)
         {
+            Transformation = Matrix.CreateTranslation(new Vector3(-Center, 0.0f)) *
+                Matrix.CreateRotationZ(Angle) *
+                Matrix.CreateTranslation(new Vector3(Position, 0.0f));
+
             base.Update(gameTime);
             if (type == ProjectileType.NORMAL_MISSLE)
                 ParticleManager.particleEffects["MissleTrail-Orange"].Trigger(position);

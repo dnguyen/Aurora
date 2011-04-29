@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Audio;
 using ProjectMercury;
 using Aurora.Bloom;
+using Microsoft.Xna.Framework.Input;
 
 namespace Aurora
 {
@@ -15,9 +16,12 @@ namespace Aurora
 
     class ActionScreen : GameScreen
     {
-        Player player;
         public static Background background;
+        bool paused;
+        bool pauseKeyDown;
+        Texture2D PauseOverlay;
 
+        Player player;
         Texture2D crosshair;
         Texture2D livesIcon;
         SpriteFont score;
@@ -26,7 +30,7 @@ namespace Aurora
         PowerUpManager powerUpManager;
         public static Camera cam;
         BloomComponent bloom;
-
+        
         public ActionScreen(Game game, SpriteBatch spriteBatch) : base(game, spriteBatch)
         {
             game.IsMouseVisible = false;
@@ -35,6 +39,7 @@ namespace Aurora
             bloom = new BloomComponent(game);
             bloom.Initialize();
             Components.Add(bloom);
+            paused = false;
         }
 
         public void LoadContent(ContentManager content)
@@ -43,7 +48,7 @@ namespace Aurora
             particleManager.addEffect("SMALL_EXPLOSION", content.Load<ParticleEffect>("Particle Effects/Explosion-Red"));
             particleManager.addEffect("SMALL_EXPLOSION2", content.Load<ParticleEffect>("Particle Effects/Explosion-Orange"));
             particleManager.addEffect("MEDIUM_EXPLOSION_PINK", content.Load<ParticleEffect>("Particle Effects/Explosion-Medium-Pink"));
-            particleManager.addEffect("LARGE_EXPLOSION_BLUE", content.Load<ParticleEffect>("Particle Effects/Explosion-Large-Blue"));
+            particleManager.addEffect("LARGE_EXPLOSION_BLUE", content.Load<ParticleEffect>("Particle Effects/Large-Explosion-Blue-Remake"));
             particleManager.addEffect("Ship-Trail-Blue", content.Load<ParticleEffect>("Particle Effects/Ship-Trail-Blue"));
             particleManager.addEffect("MissleTrail-Orange", content.Load<ParticleEffect>("Particle Effects/MissleTrail-Orange"));
             particleManager.addEffect("Ricoshet", content.Load<ParticleEffect>("Particle Effects/Ricochet-Yellow"));
@@ -94,6 +99,8 @@ namespace Aurora
             // Load sounds
             player.ShootSound = content.Load<SoundEffect>("LaserShoot");
 
+            PauseOverlay = content.Load<Texture2D>("pause_overlay");
+
             cam = new Camera();
             bloom.Settings = BloomSettings.PresetSettings[6];
             bloom.Visible = true;
@@ -101,11 +108,24 @@ namespace Aurora
 
         public override void Update(GameTime gameTime)
         {
-            cam.Pos = player.Position;
-            player.Update(gameTime);
-            enemyManager.Update(gameTime, player);
-            powerUpManager.Update(gameTime, player);
-            particleManager.Update(gameTime);
+            KeyboardState currentKState = Keyboard.GetState();
+            bool pauseKeyDownThisFrame = currentKState.IsKeyDown(Keys.Escape);
+            if (!pauseKeyDown && pauseKeyDownThisFrame)
+            {
+                if (paused == false)
+                    paused = true;
+                else
+                    paused = false;
+            }
+            pauseKeyDown = pauseKeyDownThisFrame;
+            if (!paused)
+            {
+                cam.Pos = player.Position;
+                player.Update(gameTime);
+                enemyManager.Update(gameTime, player);
+                powerUpManager.Update(gameTime, player);
+                particleManager.Update(gameTime);
+            }
         }
 
         public override void Draw(GameTime gameTime)
@@ -136,6 +156,12 @@ namespace Aurora
             {
                 spriteBatch.Draw(livesIcon, new Vector2(xMargin, 10), Color.White);
                 xMargin += 50;
+            }
+            if (paused)
+            {
+                spriteBatch.Draw(PauseOverlay, new Vector2(0, 0), Color.White);
+                spriteBatch.DrawString(score, "GAME PAUSED", new Vector2((game.GraphicsDevice.Viewport.Width / 2) - (score.MeasureString("GAME PAUSED").X / 2), (game.GraphicsDevice.Viewport.Height / 2) - (score.MeasureString("GAME PAUSED").Y / 2) - 100), Color.White);
+                spriteBatch.DrawString(score, "Press ESC to resume", new Vector2((game.GraphicsDevice.Viewport.Width / 2) - (score.MeasureString("GAME PAUSED").X / 2) - 100, (game.GraphicsDevice.Viewport.Height / 2) - (score.MeasureString("GAME PAUSED").Y / 2)), Color.White);
             }
             spriteBatch.End();
 

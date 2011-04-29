@@ -52,3 +52,5 @@ Content\Particle Effects\WarpIn2.xnb
 Content\Bloom\BloomCombine.xnb
 Content\Bloom\BloomExtract.xnb
 Content\Bloom\GaussianBlur.xnb
+Content\Particle Effects\Large-Explosion-Blue-Remake.xnb
+Content\pause_overlay.xnb

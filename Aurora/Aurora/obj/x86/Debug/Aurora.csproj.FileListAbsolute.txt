@@ -126,3 +126,5 @@ C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Auror
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Aurora.application
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Aurora.exe.manifest
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Aurora.application
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Large-Explosion-Blue-Remake.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\pause_overlay.xnb
