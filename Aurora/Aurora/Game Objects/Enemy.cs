@@ -19,7 +19,8 @@ namespace Aurora
         COMET,
         LARGE_SPINNER,
         SMALL_SPINNER,
-        ALIEN
+        ALIEN,
+        ARMORED
     }
 
     public enum EnemyColor
@@ -52,7 +53,6 @@ namespace Aurora
         public int Speed { get { return speed; } set { speed = value; } }
         public float Rotation { get { return rotation; } set { rotation = value; } }
         public List<Projectile> EBullets { get { return eBullets; } }
-        Vector2 wanderDirection;
 
         public Enemy(EnemyType eType, Texture2D texture, EnemyColor eColor)
         {
@@ -87,7 +87,8 @@ namespace Aurora
                 fireTime += dt;
 
                 float distanceFromPlayer = Vector2.Distance(position, player.Position);
-                // Only follow player if the distance is > 100
+
+                // Only follow player if the enemy is close enough to the player, else wander around the map
                 if (distanceFromPlayer < 200.0F)
                 {
                     Vector2 direction = player.Position - position;
@@ -109,16 +110,35 @@ namespace Aurora
                     velocity += new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle)) * (1.2F);
                 }
 
+                foreach (Projectile eBullet in eBullets)
+                {
+                    eBullet.Update(gameTime);
+                }
+            }
+            // Armored type enemies evade the player when too close
+            else if (type == EnemyType.ARMORED)
+            {
+                float distanceFromPlayer = Vector2.Distance(position, player.Position);
+                if (distanceFromPlayer < 200F)
+                {
+                    Vector2 seekPosition = 2 * position - player.Position;
+
+                    angle = TurnToFace(position, seekPosition,
+                        angle, 44.0F);
+                    if (velocity.X < maxVelocity && velocity.Y < maxVelocity)
+                        velocity += new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle)) * 1.2F;
+                }
+                else
+                {
+                    Vector2 dir = player.Position;
+                    Wander(position, ref dir, ref angle, 15.0F);
+                    velocity += new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle)) * (1.2F);
+                }
             }
             else
             {
                 angle += rotation;
             }
-            
-            foreach (Projectile eBullet in eBullets) {
-                eBullet.Update(gameTime);
-            }
-
             base.Update(gameTime);
 
             if (type == EnemyType.SMALL_SPINNER || type == EnemyType.LARGE_SPINNER)
@@ -179,6 +199,13 @@ namespace Aurora
                     pointValue = 300;
                     speed = 140;
                     rotation = .07F;
+                    break;
+                case EnemyType.ARMORED:
+                    health = 25;
+                    pointValue = 350;
+                    speed = 130;
+                    rotation = .07F;
+                    maxVelocity = 300F;
                     break;
             }
         }

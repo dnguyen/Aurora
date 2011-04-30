@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aurora.exe" size="46592">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aurora.exe" size="47104">
       <assemblyIdentity name="Aurora" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>G/2RqvfHlc2Gj/H9NXxzfI9yPZM=</dsig:DigestValue>
+        <dsig:DigestValue>csii6tqUMYx8nd+M+uomJG95mWQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -123,6 +123,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>o82698lW5fyvtDQF9uwc5q/Kxds=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\ArmoredEnemy.xnb" size="14587">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>MZp7LXXAZMEyrORP7yDxm45nRIQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\background_neon.xnb" size="2949307">

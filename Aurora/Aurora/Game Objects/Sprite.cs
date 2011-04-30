@@ -19,6 +19,7 @@ namespace Aurora
         protected float angle;
         protected BoundingSphere bounds;
         protected Matrix transformation;
+        protected float maxVelocity;
 
         #region Properties
         public Texture2D spriteImage { get { return sprite; } set { sprite = value; } }
@@ -34,6 +35,7 @@ namespace Aurora
         public BoundingSphere Bounds { get { return bounds; } set { bounds = value; } }
         public Matrix Transformation { get { return transformation; } set { transformation = value; } }
         public Vector2 Center { get { return center; } set { center = value; } }
+        public float MaxVelocity { get { return maxVelocity; } set { maxVelocity = value; } }
         #endregion
 
 

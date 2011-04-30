@@ -13,7 +13,7 @@ namespace Aurora
 {
     class EnemyManager : Manager
     {
-        private List<Enemy> enemies = new List<Enemy>(); // List of enemy objects
+        private List<Enemy> enemies; // List of enemy objects
         public Dictionary<string, Texture2D> enemyTextures = new Dictionary<string, Texture2D>(); // List of enemy textures, keys is the enemy type
 
         private float spawnDelay = 1.2F; // Time between each enemy spawn
@@ -45,15 +45,15 @@ namespace Aurora
                         spawnChance = rand.Next(100);
                         if (spawnChance <= largeAsteroidChance)
                         {
-                            SpawnRandomEnemy(EnemyType.LARGE_ASTEROID);
+                            SpawnRandomAsteroid(EnemyType.LARGE_ASTEROID);
                         }
                         else if (spawnChance >= mediumAsteroidChance && spawnChance < smallAsteroidChance)
                         {
-                            SpawnRandomEnemy(EnemyType.MEDIUM_ASTEROID);
+                            SpawnRandomAsteroid(EnemyType.MEDIUM_ASTEROID);
                         }
                         else if (spawnChance >= smallAsteroidChance)
                         {
-                            SpawnRandomEnemy(EnemyType.SMALL_ASTEROID);
+                            SpawnRandomAsteroid(EnemyType.SMALL_ASTEROID);
                         }
                     }
                     if (player.Score > 5000)
@@ -71,7 +71,15 @@ namespace Aurora
                             for (int i = 0; i < rand.Next(1, 3); i++)
                                 SpawnAlien();
                         }
-
+                        if (rand.Next(0, 50) < 15)
+                        {
+                            for (int i = 0; i < rand.Next(1, 3); i++)
+                            {
+                                Enemy armored = new Enemy(EnemyType.ARMORED, enemyTextures["ARMORED"], EnemyColor.NONE);
+                                armored.Position = new Vector2(rand.Next(100, ActionScreen.background.Width), rand.Next(100, ActionScreen.background.Height));
+                                enemies.Add(armored);
+                            }
+                        }
                         spawnDelay = 1F;
                     }
                     if (player.Score > 15000)
@@ -199,11 +207,6 @@ namespace Aurora
             Console.WriteLine("bullet list size: " + player.Bullets.Count);
         }
 
-
-        public void LoadContent(ContentManager content)
-        {
-        }
-
         public void Draw(SpriteBatch spriteBatch)
         {
             Console.WriteLine("Enemy List Size: " + enemies.Count);
@@ -232,7 +235,7 @@ namespace Aurora
             }
         }
 
-        private void SpawnRandomEnemy(EnemyType eType)
+        private void SpawnRandomAsteroid(EnemyType eType)
         {
             int color = rand.Next(0, 4);
             EnemyColor eColor = EnemyColor.NONE;

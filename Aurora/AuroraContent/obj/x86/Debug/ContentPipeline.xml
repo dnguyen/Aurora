@@ -505,6 +505,15 @@
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\pause_overlay.xnb</Output>
       <Time>2011-04-27T19:48:10.7783203-04:00</Time>
     </Item>
+    <Item>
+      <Source>ArmoredEnemy.PNG</Source>
+      <Name>ArmoredEnemy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\ArmoredEnemy.xnb</Output>
+      <Time>2011-04-30T08:50:00.5205078-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

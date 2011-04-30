@@ -86,8 +86,7 @@ namespace Aurora
             enemyManager.enemyTextures.Add("SMALL_SPINNER_PINK", content.Load<Texture2D>("SMALL_SPINNER_Pink"));
 
             enemyManager.enemyTextures.Add("ALIEN", content.Load<Texture2D>("ALIEN"));
-
-            enemyManager.LoadContent(content);
+            enemyManager.enemyTextures.Add("ARMORED", content.Load<Texture2D>("ArmoredEnemy"));
 
             // Load projectile textures
             player.projectileTextures.Add("NORMAL_BULLET", content.Load<Texture2D>("Projectile2"));
