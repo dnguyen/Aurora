@@ -71,9 +71,9 @@ namespace Aurora
                             for (int i = 0; i < rand.Next(1, 3); i++)
                                 SpawnAlien();
                         }
-                        if (rand.Next(0, 50) < 15)
+                        if (rand.Next(0, 50) < 10)
                         {
-                            for (int i = 0; i < rand.Next(1, 3); i++)
+                            for (int i = 0; i < rand.Next(1, 2); i++)
                             {
                                 Enemy armored = new Enemy(EnemyType.ARMORED, enemyTextures["ARMORED"], EnemyColor.NONE);
                                 armored.Position = new Vector2(rand.Next(100, ActionScreen.background.Width), rand.Next(100, ActionScreen.background.Height));

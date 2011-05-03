@@ -26,7 +26,6 @@ namespace Aurora
         private int weaponLevel;
         private float fireTime = 0F;
 
-        private Vector2 maxVelocity = new Vector2(1000, 1000);
         private Vector2 mousePosition = Vector2.Zero;
         private Vector2 direction;
         private bool moving;
@@ -47,11 +46,12 @@ namespace Aurora
 
         public Player(Texture2D texture)
         {
-            lives = 8;
+            lives = 5;
             score = 0;
             weaponLevel = 1;
             position = new Vector2(Game1.graphics.GraphicsDevice.Viewport.Width / 2, Game1.graphics.GraphicsDevice.Viewport.Height / 2);
             velocity = Vector2.Zero;
+            maxVelocity = 500F;
             sprite = texture;
             moving = false;
             usedBomb = false;
@@ -60,119 +60,121 @@ namespace Aurora
 
         public override void Update(GameTime gameTime)
         {
-            float elapsedTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
-
-            MouseState mouseState = Mouse.GetState();
-            mousePosition.X = mouseState.X;
-            mousePosition.Y = mouseState.Y;
-
-            KeyboardState currentKState = Keyboard.GetState();
-
-            if (currentKState.IsKeyDown(Keys.Right) || currentKState.IsKeyDown(Keys.D))
+            if (lives > 0)
             {
-                if (velocity.X < maxVelocity.X)
-                {
-                    velocity.X += BASE_SPEED + ACCELERATION;
-                    moving = true;
-                }
-            }
-            if (currentKState.IsKeyDown(Keys.Left) || currentKState.IsKeyDown(Keys.A))
-            {
-                if (velocity.X < maxVelocity.X)
-                {
-                    velocity.X -= BASE_SPEED + ACCELERATION;
-                    moving = true;
-                }
-            }
-            if (currentKState.IsKeyDown(Keys.Up) || currentKState.IsKeyDown(Keys.W))
-            {
-                if (velocity.Y < maxVelocity.Y)
-                {
-                    velocity.Y -= BASE_SPEED + ACCELERATION;
-                    moving = true;
-                }
-            }
-            if (currentKState.IsKeyDown(Keys.Down) || currentKState.IsKeyDown(Keys.S))
-            {
-                if (velocity.Y < maxVelocity.Y)
-                {
-                    velocity.Y += BASE_SPEED + ACCELERATION;
-                    moving = true;
-                }
-            }
+                float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            if (currentKState.IsKeyDown(Keys.OemTilde))
-            {
-                score += 5000;
-            }
+                MouseState mouseState = Mouse.GetState();
+                mousePosition.X = mouseState.X;
+                mousePosition.Y = mouseState.Y;
 
-            if (currentKState.IsKeyDown(Keys.Space))
-            {
-                usedBomb = true;
-            }
+                KeyboardState currentKState = Keyboard.GetState();
 
-            direction = new Vector2(Game1.SCREEN_WIDTH * 0.5f, Game1.SCREEN_HEIGHT * 0.5f) - mousePosition;
-            angle = (float) (Math.Atan2(direction.Y, direction.X));
-
-            fireTime += elapsedTime;
-            if (mouseState.LeftButton == ButtonState.Pressed && fireTime > FIRE_DELAY)
-            {
-                if (weaponLevel == 1) // Normal bullet
+                if (currentKState.IsKeyDown(Keys.Right) || currentKState.IsKeyDown(Keys.D))
                 {
-                    FIRE_DELAY = 0.1F;
-                    Projectile bullet = new Projectile(ProjectileType.NORMAL_BULLET, projectileTextures["NORMAL_BULLET"], position, direction, angle);
-                    bullets.Add(bullet);
-                }
-                else if (weaponLevel == 2) // Normal bullet upgraded
-                {
-                    FIRE_DELAY = 0.1F;
-                    Projectile bullet = new Projectile(ProjectileType.NORMAL_BULLET_UPGRADE, projectileTextures["NORMAL_BULLET"], position, direction, angle);
-                    bullets.Add(bullet);
-                }
-                else if (weaponLevel == 3) // Double normal bullet
-                {
-                    for (int i = 0; i < 2; i++)
+                    if (velocity.X < maxVelocity)
                     {
-                        direction.Normalize();
-                        Vector2 cross = Vector2.Multiply(new Vector2(-direction.Y, direction.X), 8F);
+                        velocity.X += BASE_SPEED + ACCELERATION;
+                        moving = true;
+                    }
+                }
+                if (currentKState.IsKeyDown(Keys.Left) || currentKState.IsKeyDown(Keys.A))
+                {
+                    if (velocity.X < maxVelocity)
+                    {
+                        velocity.X -= BASE_SPEED + ACCELERATION;
+                        moving = true;
+                    }
+                }
+                if (currentKState.IsKeyDown(Keys.Up) || currentKState.IsKeyDown(Keys.W))
+                {
+                    if (velocity.Y < maxVelocity)
+                    {
+                        velocity.Y -= BASE_SPEED + ACCELERATION;
+                        moving = true;
+                    }
+                }
+                if (currentKState.IsKeyDown(Keys.Down) || currentKState.IsKeyDown(Keys.S))
+                {
+                    if (velocity.Y < maxVelocity)
+                    {
+                        velocity.Y += BASE_SPEED + ACCELERATION;
+                        moving = true;
+                    }
+                }
+
+                if (currentKState.IsKeyDown(Keys.OemTilde))
+                {
+                    score += 5000;
+                }
+
+                if (currentKState.IsKeyDown(Keys.Space))
+                {
+                    usedBomb = true;
+                }
+
+                direction = new Vector2(Game1.SCREEN_WIDTH * 0.5f, Game1.SCREEN_HEIGHT * 0.5f) - mousePosition;
+                angle = (float)(Math.Atan2(direction.Y, direction.X));
+
+                fireTime += elapsedTime;
+                if (mouseState.LeftButton == ButtonState.Pressed && fireTime > FIRE_DELAY)
+                {
+                    if (weaponLevel == 1) // Normal bullet
+                    {
+                        FIRE_DELAY = 0.1F;
                         Projectile bullet = new Projectile(ProjectileType.NORMAL_BULLET, projectileTextures["NORMAL_BULLET"], position, direction, angle);
-
-                        if (i == 0)
-                            bullet.Position += cross;
-                        else
-                            bullet.Position -= cross;
-
                         bullets.Add(bullet);
                     }
-                    FIRE_DELAY = 0.1F;
+                    else if (weaponLevel == 2) // Normal bullet upgraded
+                    {
+                        FIRE_DELAY = 0.1F;
+                        Projectile bullet = new Projectile(ProjectileType.NORMAL_BULLET_UPGRADE, projectileTextures["NORMAL_BULLET"], position, direction, angle);
+                        bullets.Add(bullet);
+                    }
+                    else if (weaponLevel == 3) // Double normal bullet
+                    {
+                        for (int i = 0; i < 2; i++)
+                        {
+                            direction.Normalize();
+                            Vector2 cross = Vector2.Multiply(new Vector2(-direction.Y, direction.X), 8F);
+                            Projectile bullet = new Projectile(ProjectileType.NORMAL_BULLET, projectileTextures["NORMAL_BULLET"], position, direction, angle);
+
+                            if (i == 0)
+                                bullet.Position += cross;
+                            else
+                                bullet.Position -= cross;
+
+                            bullets.Add(bullet);
+                        }
+                        FIRE_DELAY = 0.1F;
+                    }
+
+
+                    //shootSound.Play();
+                    fireTime = 0;
+                }
+
+                foreach (Projectile bullet in bullets)
+                {
+                    bullet.Update(gameTime);
                 }
 
 
-                //shootSound.Play();
-                fireTime = 0;
+                base.Update(gameTime);
+
+                velocity.X -= (velocity.X * DRAG) * elapsedTime;
+                velocity.Y -= (velocity.Y * DRAG) * elapsedTime;
+
+                if ((velocity.X >= -40 && velocity.X <= 40) && (velocity.Y >= -40 && velocity.Y <= 40))
+                    moving = false;
+
+                if (moving)
+                    ParticleManager.particleEffects["Ship-Trail-Blue"].Trigger(position);
+
+                transformation = Matrix.CreateTranslation(new Vector3(position, 0.0F));
+
+                ClampToViewPort(ActionScreen.background);
             }
-
-            foreach (Projectile bullet in bullets)
-            {
-                bullet.Update(gameTime);
-            }
-
-            
-            base.Update(gameTime);
-           
-            velocity.X -= (velocity.X * DRAG) * elapsedTime;
-            velocity.Y -= (velocity.Y * DRAG) * elapsedTime;
-
-            if ((velocity.X >= -40 && velocity.X <= 40) && (velocity.Y >= -40 && velocity.Y <= 40))
-                moving = false;
-
-            if (moving)
-                ParticleManager.particleEffects["Ship-Trail-Blue"].Trigger(position);
-
-            transformation = Matrix.CreateTranslation(new Vector3(position, 0.0F));
-
-            ClampToViewPort(ActionScreen.background);
-
         }
 
         public override void Draw(SpriteBatch spriteBatch)

@@ -35,6 +35,7 @@ namespace Aurora
             graphics.ApplyChanges();
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+            
         }
 
 
@@ -50,7 +51,7 @@ namespace Aurora
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            startScreen = new StartScreen(this, spriteBatch, Content.Load<SpriteFont>("menuFont"));
+            startScreen = new StartScreen(this, spriteBatch, Content.Load<SpriteFont>("Fonts/menuFont"));
             Components.Add(startScreen);
             startScreen.Hide();
 

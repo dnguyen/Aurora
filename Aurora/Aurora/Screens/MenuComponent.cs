@@ -129,6 +129,10 @@ namespace Aurora
                 spriteBatch.DrawString(spriteFont, menuItems[i], location, tint);
                 location.Y += spriteFont.LineSpacing + 5;
             }
+            spriteBatch.DrawString(spriteFont, "Controls", new Vector2(50, 50), Color.White);
+            spriteBatch.DrawString(spriteFont, "Arrow keys or WASD - Movement",new Vector2(50, 80), Color.Turquoise);
+            spriteBatch.DrawString(spriteFont, "Mouse - Aim", new Vector2(50, 110), Color.Turquoise);
+            spriteBatch.DrawString(spriteFont, "Left Mouse Click - Shoot", new Vector2(50, 140), Color.Turquoise);
             spriteBatch.End();
         }
     }

@@ -4,7 +4,6 @@ F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\ResolveAssemblyRefe
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Aurora.exe
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Aurora.pdb
-F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\menuFont.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\PlayerShip.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Spikey001.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Projectile1.xnb
@@ -129,3 +128,5 @@ C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\obj\x86\Debug\Auror
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Large-Explosion-Blue-Remake.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\pause_overlay.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\ArmoredEnemy.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Fonts\menuFont.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Fonts\scoreFont.xnb

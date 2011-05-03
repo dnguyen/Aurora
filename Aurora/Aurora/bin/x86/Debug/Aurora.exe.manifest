@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aurora.exe" size="47104">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aurora.exe" size="48128">
       <assemblyIdentity name="Aurora" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>csii6tqUMYx8nd+M+uomJG95mWQ=</dsig:DigestValue>
+        <dsig:DigestValue>cGAakCpykcmlwX+RQ+GdiuUjpFo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -213,6 +213,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>+fpVec5Tt5bqG9Q0X8zS/xly7LE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Fonts\menuFont.xnb" size="27310">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>cgGBKeUX+L5du/WF+PVAoLXXcQg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Fonts\scoreFont.xnb" size="87214">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>OaM4R+6+0UmryDFrP+1PRATY1UI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\fx_explode_1.xnb" size="4283">
@@ -384,15 +402,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>oF9aU8HfJsBVDy4ihh+pglE5seM=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\menuFont.xnb" size="87214">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>OaM4R+6+0UmryDFrP+1PRATY1UI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\NORMAL_MISSLE.xnb" size="3099">

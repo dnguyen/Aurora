@@ -19,6 +19,7 @@ namespace Aurora
         public static Background background;
         bool paused;
         bool pauseKeyDown;
+        bool gameOver;
         Texture2D PauseOverlay;
 
         Player player;
@@ -40,6 +41,7 @@ namespace Aurora
             bloom.Initialize();
             Components.Add(bloom);
             paused = false;
+            gameOver = false;
         }
 
         public void LoadContent(ContentManager content)
@@ -55,7 +57,7 @@ namespace Aurora
             particleManager.addEffect("WarpIn", content.Load<ParticleEffect>("Particle Effects/WarpIn2"));
             particleManager.LoadContent(content);
 
-            score = content.Load<SpriteFont>("menuFont");
+            score = content.Load<SpriteFont>("Fonts/scoreFont");
             livesIcon = content.Load<Texture2D>("lives_icon");
             background = new Background(content.Load<Texture2D>("grid_background"));
 
@@ -109,7 +111,7 @@ namespace Aurora
         {
             KeyboardState currentKState = Keyboard.GetState();
             bool pauseKeyDownThisFrame = currentKState.IsKeyDown(Keys.Escape);
-            if (!pauseKeyDown && pauseKeyDownThisFrame)
+            if (!pauseKeyDown && pauseKeyDownThisFrame && !gameOver)
             {
                 if (paused == false)
                     paused = true;
@@ -124,12 +126,14 @@ namespace Aurora
                 enemyManager.Update(gameTime, player);
                 powerUpManager.Update(gameTime, player);
                 particleManager.Update(gameTime);
+                if (player.Lives <= 0)
+                    gameOver = true;
             }
         }
 
         public override void Draw(GameTime gameTime)
         {
-
+            
             bloom.BeginDraw();
             Game1.graphics.GraphicsDevice.Clear(Color.Black);
 
@@ -161,6 +165,17 @@ namespace Aurora
                 spriteBatch.Draw(PauseOverlay, new Vector2(0, 0), Color.White);
                 spriteBatch.DrawString(score, "GAME PAUSED", new Vector2((game.GraphicsDevice.Viewport.Width / 2) - (score.MeasureString("GAME PAUSED").X / 2), (game.GraphicsDevice.Viewport.Height / 2) - (score.MeasureString("GAME PAUSED").Y / 2) - 100), Color.White);
                 spriteBatch.DrawString(score, "Press ESC to resume", new Vector2((game.GraphicsDevice.Viewport.Width / 2) - (score.MeasureString("GAME PAUSED").X / 2) - 100, (game.GraphicsDevice.Viewport.Height / 2) - (score.MeasureString("GAME PAUSED").Y / 2)), Color.White);
+            }
+
+            if (gameOver)
+            {
+                spriteBatch.Draw(PauseOverlay, new Vector2(0, 0), Color.White);
+                spriteBatch.DrawString(score, "GAME OVER", new Vector2((game.GraphicsDevice.Viewport.Width / 2) - (score.MeasureString("GAME OVER").X / 2), (game.GraphicsDevice.Viewport.Height / 2) - (score.MeasureString("GAME OVER").Y / 2) - 100), Color.DarkRed);
+                spriteBatch.DrawString(score, "Score: " + player.Score, 
+                    new Vector2(
+                        (game.GraphicsDevice.Viewport.Width / 2) - (score.MeasureString("Score: " + player.Score.ToString()).X / 2),
+                        (game.GraphicsDevice.Viewport.Height / 2) - (score.MeasureString("Score: " + player.Score.ToString()).Y / 2)), 
+                    Color.GreenYellow);
             }
             spriteBatch.End();
 

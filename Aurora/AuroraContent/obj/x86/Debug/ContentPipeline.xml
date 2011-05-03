@@ -2,15 +2,6 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>menuFont.spritefont</Source>
-      <Name>menuFont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\menuFont.xnb</Output>
-      <Time>2011-04-23T14:16:07.5439453-04:00</Time>
-    </Item>
-    <Item>
       <Source>Spikey001.png</Source>
       <Name>Spikey001</Name>
       <Importer>TextureImporter</Importer>
@@ -513,6 +504,24 @@
       <Options>None</Options>
       <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\ArmoredEnemy.xnb</Output>
       <Time>2011-04-30T08:50:00.5205078-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\menuFont.spritefont</Source>
+      <Name>Fonts\menuFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Fonts\menuFont.xnb</Output>
+      <Time>2011-05-03T17:03:09.7412109-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\scoreFont.spritefont</Source>
+      <Name>Fonts\scoreFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Fonts\scoreFont.xnb</Output>
+      <Time>2011-05-03T16:59:23.3867187-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

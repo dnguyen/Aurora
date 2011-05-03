@@ -1,4 +1,3 @@
-Content\menuFont.xnb
 Content\Spikey001.xnb
 Content\Projectile1.xnb
 Content\SMALL_ASTEROID_RED.xnb
@@ -55,3 +54,5 @@ Content\Bloom\GaussianBlur.xnb
 Content\Particle Effects\Large-Explosion-Blue-Remake.xnb
 Content\pause_overlay.xnb
 Content\ArmoredEnemy.xnb
+Content\Fonts\menuFont.xnb
+Content\Fonts\scoreFont.xnb
