@@ -8,7 +8,6 @@ F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\PlayerShip.
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Spikey001.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Projectile1.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\LaserShoot.xnb
-C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\menuFont.xnb
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Spikey001.xnb
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Projectile1.xnb
 C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\PlayerShip.xnb
@@ -130,3 +129,22 @@ F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\pause_overl
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\ArmoredEnemy.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Fonts\menuFont.xnb
 F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Fonts\scoreFont.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Sounds\sound_weapon_a.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Sounds\sound_weapon_b.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Sounds\sound_explosion.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Sounds\sound_powerup.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Sounds\particleillusionloop.xnb
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Sounds\particleillusionloop.wma
+F:\Dropbox\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Sounds\fire_laser1.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Fonts\menuFont.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Fonts\scoreFont.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\pause_overlay.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\ArmoredEnemy.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Sounds\sound_weapon_a.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Sounds\sound_weapon_b.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Sounds\sound_explosion.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Sounds\sound_powerup.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Sounds\fire_laser1.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Particle Effects\Large-Explosion-Blue-Remake.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Sounds\particleillusionloop.xnb
+C:\Users\Dylan\Documents\My Dropbox\XNA\Aurora\Aurora\Aurora\bin\x86\Debug\Content\Sounds\particleillusionloop.wma

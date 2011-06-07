@@ -48,6 +48,7 @@ namespace Aurora
                                     case PowerUpType.WEAPON_SPEED:
                                         break;
                                 }
+                                SoundManager.soundEffects["powerup"].Play();
                                 powerUps[i].Collided = true;
                             }
                         }

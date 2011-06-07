@@ -23,15 +23,15 @@ namespace Aurora
         StartScreen startScreen;
         ActionScreen actionScreen;
 
-        public static int SCREEN_HEIGHT = 600;
-        public static int SCREEN_WIDTH = 900;
+        public static int SCREEN_HEIGHT = 768;
+        public static int SCREEN_WIDTH = 1366;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferHeight = SCREEN_HEIGHT;
             graphics.PreferredBackBufferWidth = SCREEN_WIDTH;
-            //graphics.IsFullScreen = true;
+            graphics.IsFullScreen = true;
             graphics.ApplyChanges();
             Content.RootDirectory = "Content";
             IsMouseVisible = true;

@@ -70,6 +70,8 @@ namespace Aurora
             if (collided || health == 0)
             {
                 ParticleManager.particleEffects["SMALL_EXPLOSION"].Trigger(position);
+                if (type != EnemyType.SMALL_SPINNER)
+                    SoundManager.soundEffects["explosion"].Play();
                 int randn = Manager.rand.Next(0,100);
                 if (randn <= 5 && type != EnemyType.SMALL_SPINNER)
                 {

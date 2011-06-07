@@ -14,6 +14,8 @@ namespace Aurora
     class EnemyManager : Manager
     {
         private List<Enemy> enemies; // List of enemy objects
+        public List<Enemy> Enemies { get { return enemies; } set { enemies = value; } }
+
         public Dictionary<string, Texture2D> enemyTextures = new Dictionary<string, Texture2D>(); // List of enemy textures, keys is the enemy type
 
         private float spawnDelay = 1.2F; // Time between each enemy spawn
@@ -232,7 +234,8 @@ namespace Aurora
                     enemy.spriteImage = enemyTextures["SMALL_ASTEROID_" + enemy.Color_.ToString()];
                     ParticleManager.particleEffects["MEDIUM_EXPLOSION_PINK"].Trigger(enemy.Position);
                     break;
-            }
+            } 
+            SoundManager.soundEffects["explosion"].Play();
         }
 
         private void SpawnRandomAsteroid(EnemyType eType)

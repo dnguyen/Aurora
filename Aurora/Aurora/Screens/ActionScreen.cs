@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Audio;
 using ProjectMercury;
 using Aurora.Bloom;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace Aurora
 {
@@ -31,7 +32,8 @@ namespace Aurora
         PowerUpManager powerUpManager;
         public static Camera cam;
         BloomComponent bloom;
-        
+        Song backgroundLoop;
+
         public ActionScreen(Game game, SpriteBatch spriteBatch) : base(game, spriteBatch)
         {
             game.IsMouseVisible = false;
@@ -98,8 +100,13 @@ namespace Aurora
             PowerUpManager.PowerUpTextures.Add("WEAPON_UPGRADE", content.Load<Texture2D>("powerup_weaponPower"));
 
             // Load sounds
-            player.ShootSound = content.Load<SoundEffect>("LaserShoot");
+            SoundManager.soundEffects.Add("player_weapon", content.Load<SoundEffect>("Sounds/fire_laser1"));
+            SoundManager.soundEffects.Add("explosion", content.Load<SoundEffect>("Sounds/sound_explosion"));
+            SoundManager.soundEffects.Add("powerup", content.Load<SoundEffect>("Sounds/sound_powerup"));
 
+            backgroundLoop = content.Load<Song>("Sounds/particleillusionloop");
+            MediaPlayer.Play(backgroundLoop);
+            MediaPlayer.IsRepeating = true;
             PauseOverlay = content.Load<Texture2D>("pause_overlay");
 
             cam = new Camera();
@@ -128,6 +135,14 @@ namespace Aurora
                 particleManager.Update(gameTime);
                 if (player.Lives <= 0)
                     gameOver = true;
+            }
+            if (currentKState.IsKeyDown(Keys.F1))
+            {
+                RestartGame();
+            }
+            if (currentKState.IsKeyDown(Keys.F2))
+            {
+                game.Exit();
             }
         }
 
@@ -180,6 +195,13 @@ namespace Aurora
             spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        private void RestartGame() {
+            player.Score = 0;
+            player.Lives = 5;
+            player.Position = new Vector2(background.Width / 2, background.Height / 2);
+            enemyManager.Enemies.Clear();
         }
     }
 }

@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aurora.exe" size="48128">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aurora.exe" size="48640">
       <assemblyIdentity name="Aurora" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>cGAakCpykcmlwX+RQ+GdiuUjpFo=</dsig:DigestValue>
+        <dsig:DigestValue>CFE7v0sDTmXVWVhRcslOdyo9ztY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -161,31 +161,31 @@
       <dsig:DigestValue>PFtIWAYejU4EJxhgu1YCBqoK2yQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Bloom\BloomCombine.xnb" size="2540">
+  <file name="Content\Bloom\BloomCombine.xnb" size="2556">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>WUF+hNJh7/sA1Ay/qXiTDlkZhj8=</dsig:DigestValue>
+      <dsig:DigestValue>LQxscKtIc6IlvMkphTBspcdLmZ4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Bloom\BloomExtract.xnb" size="1472">
+  <file name="Content\Bloom\BloomExtract.xnb" size="1488">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>NWiwd80oCVzPX+KlPUJ6toyFM4s=</dsig:DigestValue>
+      <dsig:DigestValue>bwGGuJYMRKa/WvxFzu7EpuZJd7A=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Bloom\GaussianBlur.xnb" size="3296">
+  <file name="Content\Bloom\GaussianBlur.xnb" size="3312">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>QzW5O53H8RCtwRKs4l06fpVKA3k=</dsig:DigestValue>
+      <dsig:DigestValue>p7YEeGHDb1viQz3h2pSA0lNqXqk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\bulletA_1.xnb" size="1331">
@@ -521,13 +521,13 @@
       <dsig:DigestValue>nwzVxFtGSoOEt1+jO/fXxnSzstA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\pause_overlay.xnb" size="2160187">
+  <file name="Content\pause_overlay.xnb" size="4196539">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>XyZgZwjEhWDu9idCU8BkXyoONFU=</dsig:DigestValue>
+      <dsig:DigestValue>cIq8IGchagNK7pQOsu+fyNT9ECk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\PlayerShip.xnb" size="5647">
@@ -627,6 +627,69 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>3g4ZRPrcOB50sbmLODQ7OEcm4P4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Sounds\fire_laser1.xnb" size="443497">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Ha8ABq+vwtWD/+W+W7zIBluqcrs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Sounds\particleillusionloop.wma" size="3494699">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>MiCzYNVkbhKeO6yY9KVoW/pXb6I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Sounds\particleillusionloop.xnb" size="138">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>++ER+Obf8bjnpI4erDE9qwqpLN4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Sounds\sound_explosion.xnb" size="777353">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ZCypwEgxbHc/Y3RCyOHhLOXuqeU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Sounds\sound_powerup.xnb" size="604905">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>dOczFxQKLifNBpr86x2/BTPGpQA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Sounds\sound_weapon_a.xnb" size="160385">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>OA99nAu59IOGNaeik2qqnwJoGKM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Sounds\sound_weapon_b.xnb" size="67241">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>z9UDxswJtFQMH0mpJpDXDAazeWQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Spikey001.xnb" size="65723">

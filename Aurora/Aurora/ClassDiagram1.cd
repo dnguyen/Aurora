@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Aurora.Bloom.BloomComponent" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAIEUAAAAAAAgCAAAAAAgQAAACEAACAgAaAAAAAAAQ=</HashCode>
+      <FileName>Bloom\BloomComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.Bloom.BloomSettings" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAIAAAACBAAAAAAQAAAAAAACAAAAAQAAAAQA=</HashCode>
+      <FileName>Bloom\BloomSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.Camera" Collapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAIAAAIQQEQAAACAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Camera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.EnemyManager">
+    <Position X="17.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAIAAAABEBgAAAAAAkAAIAAEIAAEBIAAAAAAAAAA=</HashCode>
+      <FileName>EnemyManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.Background" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAgAAAAAAAEAAEAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Game Objects\Background.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.Enemy" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQCgAAIQAQCoEAAACAAgABAAIhAQCAAQAAgAAAAAg=</HashCode>
+      <FileName>Game Objects\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.Player">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABYggAAQAICQaggEAACIAAAAgAIAAAACAAAAAAACAAA=</HashCode>
+      <FileName>Game Objects\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.Projectile" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQAACAAAAAggAAAAAAAAAAAAABAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Game Objects\Projectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.Sprite" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAQABBABAxQgAQAAIAAAABASAAAAEFQCBABcYgQ=</HashCode>
+      <FileName>Game Objects\Sprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.Game1" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAFEIAAAAAAwAAAAAAAQAggIAgAAgABAAAAAAAAAQ=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.Manager" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.ParticleManager" Collapsed="true">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAABAAAAAgAAAAAAAAAAAAAAAAAgAABAAAAAAAQ=</HashCode>
+      <FileName>ParticleManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.PowerUpManager">
+    <Position X="15.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAAAAAAAAAgAAAAAAAAAAAAAAAIAAAACAACAAAAA=</HashCode>
+      <FileName>PowerUpManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.Program" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.ActionScreen" Collapsed="true">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABBAAAAAACgABAgAoAAAAgAAAAAABAAAABAAAoIQ=</HashCode>
+      <FileName>Screens\ActionScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.GameScreen" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAA4AAEACAAAAAAAAEAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Screens\GameScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.MenuComponent" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEEIAAgAAAwQAQCAQIAgAAAAggAAABIAAAAAAAAA=</HashCode>
+      <FileName>Screens\MenuComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.StartScreen" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAEAAAAAEAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Screens\StartScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.SoundManager" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SoundManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurora.Game_Objects.PowerUp">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAABAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Game Objects\PowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Aurora.EnemyType" Collapsed="true">
+    <Position X="12" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAYAQAAAAAAAAACIAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Game Objects\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Aurora.EnemyColor" Collapsed="true">
+    <Position X="10.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIAAAAAAAAAAAIAAAQAAAAAAAgAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Game Objects\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Aurora.ProjectileType" Collapsed="true">
+    <Position X="10.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAIAAAAAAAAEABBAAAAAAAAAAA=</HashCode>
+      <FileName>Game Objects\Projectile.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Aurora.Game_Objects.PowerUpType" Collapsed="true">
+    <Position X="13.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAIAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Game Objects\PowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

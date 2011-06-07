@@ -29,10 +29,8 @@ namespace Aurora
         private Vector2 mousePosition = Vector2.Zero;
         private Vector2 direction;
         private bool moving;
-        private bool usedBomb;
 
         public Dictionary<string, Texture2D> projectileTextures = new Dictionary<string, Texture2D>();
-        private SoundEffect shootSound;
         private List<Projectile> bullets = new List<Projectile>();
 
         public int Lives { get { return lives; } set { lives = value; } }
@@ -40,21 +38,18 @@ namespace Aurora
         public int WeaponLevel { get { return weaponLevel; } set { weaponLevel = value; } }
         public float FireDelay { get { return FIRE_DELAY; } set { FIRE_DELAY = value; } }
         public List<Projectile> Bullets { get { return bullets; } set { bullets = value; } }
-        public SoundEffect ShootSound { get { return shootSound; } set { shootSound = value; } }
         public Vector2 MousePosition { get { return mousePosition; } set { mousePosition = value; } }
-        public bool UsedBomb { get { return usedBomb; } set { usedBomb = value; } }
 
         public Player(Texture2D texture)
         {
             lives = 5;
             score = 0;
             weaponLevel = 1;
-            position = new Vector2(Game1.graphics.GraphicsDevice.Viewport.Width / 2, Game1.graphics.GraphicsDevice.Viewport.Height / 2);
+            position = new Vector2(ActionScreen.background.Width / 2, ActionScreen.background.Height / 2);
             velocity = Vector2.Zero;
             maxVelocity = 500F;
             sprite = texture;
             moving = false;
-            usedBomb = false;
             base.Initialize();
         }
 
@@ -108,11 +103,6 @@ namespace Aurora
                     score += 5000;
                 }
 
-                if (currentKState.IsKeyDown(Keys.Space))
-                {
-                    usedBomb = true;
-                }
-
                 direction = new Vector2(Game1.SCREEN_WIDTH * 0.5f, Game1.SCREEN_HEIGHT * 0.5f) - mousePosition;
                 angle = (float)(Math.Atan2(direction.Y, direction.X));
 
@@ -148,9 +138,7 @@ namespace Aurora
                         }
                         FIRE_DELAY = 0.1F;
                     }
-
-
-                    //shootSound.Play();
+                    //SoundManager.soundEffects["player_weapon"].Play();
                     fireTime = 0;
                 }
 
